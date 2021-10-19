@@ -1,0 +1,39 @@
+Body {    
+    background-color: #e8e8fa;
+    opacity: 1;
+    background-image:  linear-gradient(30deg, #a1a5fb 12%, transparent 12.5%, transparent 87%, #a1a5fb 87.5%, #a1a5fb), linear-gradient(150deg, #a1a5fb 12%, transparent 12.5%, transparent 87%, #a1a5fb 87.5%, #a1a5fb), linear-gradient(30deg, #a1a5fb 12%, transparent 12.5%, transparent 87%, #a1a5fb 87.5%, #a1a5fb), linear-gradient(150deg, #a1a5fb 12%, transparent 12.5%, transparent 87%, #a1a5fb 87.5%, #a1a5fb), linear-gradient(60deg, #a1a5fb77 25%, transparent 25.5%, transparent 75%, #a1a5fb77 75%, #a1a5fb77), linear-gradient(60deg, #a1a5fb77 25%, transparent 25.5%, transparent 75%, #a1a5fb77 75%, #a1a5fb77);
+    background-size: 80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+.login{
+    position: relative;
+    height: 700px;
+    width: 600px;
+    margin: auto;
+    background-color: white;
+    box-shadow: 0px 2px 20px black;
+}
+
+input[type=username], input[type=password] {   
+    width: 80%;   
+    margin: 8px 0;  
+    padding: 12px 20px;   
+    display: inline-block;   
+    border: 2px solid #9397e5;   
+    box-sizing: border-box;   
+}
+
+button {   
+    background-color: #9397e5;   
+    width: 80%;  
+    color: white;   
+    padding: 15px;   
+    margin: 10px 0px;   
+    border: none;   
+    cursor: pointer;
+}
+
+button:hover {   
+    opacity: 0.8;   
+}
