@@ -23,6 +23,8 @@ Body {
     margin: 10px 0 30px 0;
     border-bottom: 1px solid white;
     padding-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 200%;
 }
 
 input[type=username], input[type=password] {   
@@ -33,6 +35,11 @@ input[type=username], input[type=password] {
     border: 2px solid rgb(230, 113, 18);   
     box-sizing: border-box;
     border-radius: 5px;
+}
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 80%;
 }
 
 button {   
