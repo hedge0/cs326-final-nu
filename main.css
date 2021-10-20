@@ -46,9 +46,9 @@ button:hover {
 .login{
     background-color: white;
     position: relative;
-    top: 100px;
-    height: 650px;
-    width: 600px;
+    top: 175px;
+    height: 550px;
+    width: 500px;
     margin: auto;
     box-shadow: 0px 0px 20px black;
     border-radius: 10px;
@@ -59,7 +59,7 @@ button:hover {
     font-weight: bold;
     margin: 10px 0 30px 0;
     border-bottom: 1px solid white;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 200%;
 }
