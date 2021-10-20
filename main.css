@@ -46,17 +46,17 @@ button:hover {
     background-color: white;
     position: relative;
     top: 150px;
-    height: 550px;
+    height: 530px;
     width: 500px;
     margin: auto;
-    box-shadow: 0px 0px 20px black;
+    box-shadow: 0px 0px 15px black;
     border-radius: 10px;
 }
 
 .title {
     color: #444;
     font-weight: bold;
-    margin: 10px 0 30px 0;
+    margin: 10px 0 0px 0;
     border-bottom: 1px solid white;
     padding-bottom: 0px;
     font-family: Arial, Helvetica, sans-serif;
