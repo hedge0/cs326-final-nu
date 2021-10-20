@@ -18,7 +18,6 @@ input[type=username], input[type=password] {
 
 input[type=username], input[type=password]:focus {
     border: 2px solid #e67112;
-    box-shadow: 0 0 0px #e67112;
     outline-offset: 0px;
     outline: none;
 }
