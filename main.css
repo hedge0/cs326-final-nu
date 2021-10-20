@@ -34,7 +34,7 @@ input[type=username], input[type=password] {
     display: inline-block;   
     border: 2px solid rgb(230, 113, 18);   
     box-sizing: border-box;
-    border-radius: 5px;
+    border-radius: 25px;
 }
 
 label {
@@ -50,7 +50,7 @@ button {
     margin: 10px 0px;   
     border: none;   
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 25px;
 }
 
 button:hover {   
