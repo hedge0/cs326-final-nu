@@ -29,12 +29,12 @@ input[type=username], input[type=password] {
     margin: 8px 0;  
     padding: 12px 20px;   
     display: inline-block;   
-    border: 2px solid rgb(233, 134, 4);   
+    border: 2px solid rgb(218, 105, 13);   
     box-sizing: border-box;   
 }
 
 button {   
-    background-color: rgb(233, 134, 4);   
+    background-color: rgb(218, 105, 13);   
     width: 80%;  
     color: white;   
     padding: 15px;   
