@@ -15,6 +15,13 @@ input[type=username], input[type=password] {
     border-radius: 25px;
 }
 
+input[type=username], input[type=password]:focus {
+    border: 2px solid rgb(230, 113, 18);
+    box-shadow: 0 0 0px rgb(230, 113, 18);
+    outline-offset: 0px;
+    outline: none;
+}
+
 label {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 80%;
