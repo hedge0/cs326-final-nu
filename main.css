@@ -12,7 +12,8 @@ Body {
     width: 600px;
     margin: auto;
     background-color: white;
-    box-shadow: 0px 2px 20px black;
+    box-shadow: 0px 2px 25px black;
+    border-radius: 10px;
 }
 
 .title {
@@ -30,7 +31,8 @@ input[type=username], input[type=password] {
     padding: 12px 20px;   
     display: inline-block;   
     border: 2px solid rgb(230, 113, 18);   
-    box-sizing: border-box;   
+    box-sizing: border-box;
+    border-radius: 5px;
 }
 
 button {   
@@ -41,6 +43,7 @@ button {
     margin: 10px 0px;   
     border: none;   
     cursor: pointer;
+    border-radius: 5px;
 }
 
 button:hover {   
