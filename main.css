@@ -12,7 +12,7 @@ Body {
     width: 600px;
     margin: auto;
     background-color: white;
-    box-shadow: 0px 2px 25px black;
+    box-shadow: 0px 0px 20px black;
     border-radius: 10px;
 }
 
