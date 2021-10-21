@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8" />
+        <title>Login Page</title>
+
+        <script type = "module" src = "main.js" defer></script>
+        <link rel = "stylesheet" href = "main.css" />
+        <script src="particles/particles.js" defer></script>
+        <script src="particles/app.js" defer></script>
+    </head>
+    <body id="particles-js">
+        <form>
+            <div class = "login">
+                <br>
+                <br/>
+                <center> <h1 class = "title"> Sign Up </h1>  
+                <br>
+                <label id = "username-status">Choose a username</label>
+                <br/>
+                
+                <input type = "username" placeholder = "Enter Username" id = "username" name = "username" required>
+                <br>
+                <br/>  
+                <label id = "password-status">Enter a password</label>
+                <br>
+                <input type = "password" placeholder = "Enter Password" id = "password" name = "password" required>
+                <input type = "password" placeholder = "Confirm Password" id = "confirm" name = "password" required>
+                <br>
+                <br/>
+                <input type = "checkbox" id = show-password><label for = "checkbox">Show password</label>
+                <br/>
+                <label></label>
+                <button type = "submit" id = "signup" >Sign Up</button>
+                </center>
+            </div>   
+        </form>
+    </body>
+    <script>
+        let show_password = document.getElementById("show-password");
+        show_password.addEventListener('change', function() {
+            const password_fields = document.getElementsByName("password");
+            if (this.checked) {
+                for (const field of password_fields) {
+                    field.type = 'username';
+                }
+            } else {
+                for (const field of password_fields) {
+                    field.type = 'password';
+                }
+            }
+        });
+    </script>
+</html>
