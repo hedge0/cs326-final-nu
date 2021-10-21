@@ -1,5 +1,5 @@
 input[type=username], input[type=password] {   
-    width: 80%;   
+    width: 75%;   
     margin: 8px 0;  
     padding: 12px 20px;   
     display: inline-block;   
@@ -22,7 +22,7 @@ label {
 button {   
     background-color: #ff8800;
     color: white;
-    width: 80%;
+    width: 75%;
     margin: 10px 0px;
     padding: 15px;      
     border: none;   
@@ -38,11 +38,11 @@ button:hover {
     background-color: white;
     position: absolute;
     top: 150px;
-    height: 530px;
-    width: 500px;
+    height: 520px;
+    width: 460px;
     margin: auto;
-    box-shadow: 0px 0px 10px black;
-    border-radius: 10px;
+    box-shadow: 0px 0px 8px black;
+    border-radius: 15px;
     top: 0; left: 0; bottom: 0; right: 0;
 }
 
