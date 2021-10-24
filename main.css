@@ -46,7 +46,16 @@ button {
     cursor: pointer;
     border-radius: 25px;
 }
-
+.output_button{
+    background-color: #ff8800;
+    color: white;
+    width: 30%;
+    margin: 10px 0px;
+    padding: 15px;      
+    border: none;   
+    cursor: pointer;
+    border-radius: 25px;
+}
 button:hover {   
     opacity: 0.75;   
 }
