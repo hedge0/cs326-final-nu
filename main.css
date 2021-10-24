@@ -8,7 +8,24 @@ input[type=username], input[type=password] {
     border-radius: 25px;
 }
 
-input[type=username], input[type=password]:focus {
+input:focus {
+    border: 2px solid #ff8800;
+    outline-offset: 0px;
+    outline: none;
+}
+
+textarea {   
+    resize: none;
+    width: 65%;
+    min-height: 150px;
+    margin: 8px 0;  
+    padding: 12px 20px;   
+    display: inline-block;
+    border: 2px solid #ff8800;
+    border-radius: 25px;
+}
+
+textarea:focus {
     border: 2px solid #ff8800;
     outline-offset: 0px;
     outline: none;
@@ -47,7 +64,7 @@ button:hover {
 }
 
 .title {
-    color: #444;
+    color: black;
     font-weight: bold;
     margin: 10px 0 0px 0;
     border-bottom: 1px solid white;
@@ -55,27 +72,30 @@ button:hover {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 200%;
 }
-.output_tweets{
+
+.output_container{
     background-color: white;
     position: absolute;
-    top: 100px;
-    height: 800px;
-    width: 1400px;
+    width: 80%;
+    height: 80%;
     margin: auto;
     box-shadow: 0px 0px 8px black;
     border-radius: 15px;
     top: 0; left: 0; bottom: 0; right: 0;
 }
-.tweets{
-background-color: grey;
-  width: 1300px;
-  height: 550px;
-  padding: 10px;
-  font-weight: bold;
-  font-size: 25px;
-  border: 5px solid gray;
-  margin: 0;
+
+.text{
+    background-color: grey;
+    position: relative;
+    width: 80%;
+    height: 100%;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 25px;
+    border: 5px solid gray;
+    margin: 0;
 }
+
 #particles-js{
     width: 100%;
     height: 100%;
