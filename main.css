@@ -37,9 +37,15 @@ label {
 }
 
 label[type=results] {      
-    margin: 10px 10px;  
-    padding: 15px 0px px;   
+ 
+ 
     float: left;
+    color: black;
+    width: 75%;
+    margin: 10px 10%;
+    padding: 15px;      
+    border-radius: 25px;
+    text-align: left;
 }
 
 button {   
