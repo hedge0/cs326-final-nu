@@ -19,5 +19,6 @@ These are the following pages that will be used for our application:
  ![alt text](https://user-images.githubusercontent.com/28848384/138577312-c9e80a3f-8a29-4ce4-a217-43dc85f96ac1.png)
 * input 
     * this will be the input page of the text where users can put in whatever they want to be analyzed and scored by hitting the anaylze button. In addition there is a sign out button you can sign out of your account which holds a history of inputted text.
+  ![alt text](https://user-images.githubusercontent.com/28848384/138577395-88a2c6fd-1d08-46c6-8658-ab0eb40d4e48.png)
 * output 
     * this will be the output results page. this is where the sentiment score, langauge, etc will be placed. It will also have the rest of the history of inputted texts/results from the user's previous inputs. There is a sign out button to exit the account and a "analyze again" button that will bring you to the input page to do it once again.
