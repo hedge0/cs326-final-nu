@@ -50,7 +50,6 @@ button {
 button:hover {   
     opacity: 0.75;   
 }
-
 .login {
     background-color: white;
     position: absolute;
@@ -95,7 +94,26 @@ button:hover {
     border: 5px solid gray;
     margin: 0;
 }
+table {
+    background-color: grey;
+    position: relative;
+    width: 1400px;
+    height: 500px;
+    padding: 2px;
+    font-size: 25px;
+    display: table-row-group;
+    border: 2px solid rgb(238, 233, 228);
+    border-collapse: collapse;
+    font: 16px "Arial";
+    table-layout: fixed;
+    overflow:auto;
+}
 
+tr,td,th{
+    overflow: auto;
+     height: 100%; 
+     width: 100%;
+}
 #particles-js{
     width: 100%;
     height: 100%;
