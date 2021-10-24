@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Input Page</title>
+    <title>Results Page</title>
 
     <script type="module" src="main.js" defer></script>
     <link rel="stylesheet" href="main.css" />
@@ -17,13 +17,14 @@
             <br>
             <br />
             <center>
-                <h1 class="title"> Analyze Text </h1>
+                <h1 class="title"> Results </h1>
                 <br>
                 <br/>
-                <textarea placeholder="Enter text" id="input" name="input_text" rows="4" cols="50"></textarea>
-                <br>
-                <br/>
-                <button type="submit" id="analyze">Analyze Text</button>
+                <label type = "results">Sentiment: </label>
+                <label type = "results">Language: </label>
+                <label type = "results">Entities: </label>
+                <button type="submit" id="getlogs">See Log</button>
+                <button type="submit" id="analyze">Analyze more Text</button>
                 <button type="submit" id="signout">Sign Out</button>
             </center>
         </div>
