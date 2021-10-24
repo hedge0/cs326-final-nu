@@ -22,5 +22,6 @@ These are the following pages that will be used for our application:
   ![alt text](https://user-images.githubusercontent.com/28848384/138577395-88a2c6fd-1d08-46c6-8658-ab0eb40d4e48.png)
 * output 
     * this will be the output results page. This page will contain the results/metrics of the rest of the user's history of inputted texts/results previous inputs. There is a sign out button to exit the account and a "analyze again" button that will bring you to the input page to do it once again.
+    ![alt text](https://user-images.githubusercontent.com/28848384/138579074-78301e6a-7389-4714-90e9-e40fdb1f024b.png)
 * results
     * This will be the result page. This page will carry all the metrics of the previously inputted text. There is a sign out button to exit the account, an "Analyze More Text" button that will bring the user back to the input page to perform more analysis.
