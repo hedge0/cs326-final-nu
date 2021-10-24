@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Results Page</title>
+
+    <script type="module" src="main.js" defer></script>
+    <link rel="stylesheet" href="main.css" />
+    <script src="node_modules/particles.js/particles.js" defer></script>
+    <script src="node_modules/particles.js/demo/js/app.js" defer></script>
+</head>
+
+<body id="particles-js">
+    <form>
+        <div class="login">
+            <br>
+            <br />
+            <center>
+                <h1 class="title"> Results </h1>
+                <br>
+                <br/>
+
+                <label type = "results">Sentiment: </label>
+                <output name = "sentiment" id = "sentiment"> </output>
+                <label type = "results">Language: </label>
+                <output name = "language" id = "language"> </output>
+                <label type = "results">Entities: </label>
+                <output name = "entities" id = "entities"> </output>
+                <button type="submit" id="getlogs">See Log</button>
+                <button type="submit" id="analyze">Analyze more Text</button>
+                <button type="submit" id="signout">Sign Out</button>
+            </center>
+        </div>
+    </form>
+</body>
+</html>
