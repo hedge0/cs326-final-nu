@@ -16,6 +16,7 @@ These are the following pages that will be used for our application:
 ![alt text](https://user-images.githubusercontent.com/28848384/138577218-4fa42c42-6b79-4d2c-a9f8-10408afc3363.png)
 * Signup
     * standard sign up page, sign up button, asks for a username, password and confirmation of the password. There is also a checkbox for showing password. 
+ ![alt text](https://user-images.githubusercontent.com/28848384/138577312-c9e80a3f-8a29-4ce4-a217-43dc85f96ac1.png)
 * input 
     * this will be the input page of the text where users can put in whatever they want to be analyzed and scored by hitting the anaylze button. In addition there is a sign out button you can sign out of your account which holds a history of inputted text.
 * output 
