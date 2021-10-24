@@ -25,3 +25,4 @@ These are the following pages that will be used for our application:
     ![alt text](https://user-images.githubusercontent.com/28848384/138579074-78301e6a-7389-4714-90e9-e40fdb1f024b.png)
 * results
     * This will be the result page. This page will carry all the metrics of the previously inputted text. There is a sign out button to exit the account, an "Analyze More Text" button that will bring the user back to the input page to perform more analysis.
+    ![alt text](https://user-images.githubusercontent.com/28848384/138579136-98d85a2c-d161-4ddc-a4a7-479716f6e446.png)
