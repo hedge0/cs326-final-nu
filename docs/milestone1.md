@@ -13,6 +13,7 @@ We will be using AWS's pre-trained NLP API to detect the language of the user. O
 These are the following pages that will be used for our application:
 * Login
     * a typical log in page with a button to sign in with a username and password. there is also a button to create a new account. We'll also make a logo for our site once we get a good concept. 
+![alt text](https://user-images.githubusercontent.com/28848384/138577218-4fa42c42-6b79-4d2c-a9f8-10408afc3363.png)
 * Signup
     * standard sign up page, sign up button, asks for a username, password and confirmation of the password. There is also a checkbox for showing password. 
 * input 
