@@ -17,3 +17,5 @@ These are the following pages that will be used for our application:
     * standard sign up page, sign up button, asks for a username, password and confirmation of the password. There is also a checkbox for showing password. 
 * input 
     * this will be the input page of the text where users can put in whatever they want to be analyzed and scored by hitting the anaylze button. In addition there is a sign out button you can sign out of your account which holds a history of inputted text.
+* output 
+    * this will be the output results page. this is where the sentiment score, langauge, etc will be placed. It will also have the rest of the history of inputted texts/results from the user's previous inputs. There is a sign out button to exit the account and a "analyze again" button that will bring you to the input page to do it once again.
