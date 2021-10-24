@@ -16,4 +16,4 @@ These are the following pages that will be used for our application:
 * Signup
     * standard sign up page, sign up button, asks for a username, password and confirmation of the password. There is also a checkbox for showing password. 
 * input 
-    * this will be the input page of the text, 
+    * this will be the input page of the text where users can put in whatever they want to be analyzed and scored by hitting the anaylze button. In addition there is a sign out button you can sign out of your account which holds a history of inputted text.
