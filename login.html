@@ -4,7 +4,7 @@
         <meta charset = "UTF-8" />
         <title>Login Page</title>
 
-        <script type = "module" src = "main.js" defer></script>
+        <script type = "module" src = "login.js" defer></script>
         <link rel = "stylesheet" href = "main.css" />
         <script src="node_modules/particles.js/particles.js" defer></script>
         <script src="node_modules/particles.js/demo/js/app.js" defer></script>
@@ -17,13 +17,14 @@
                 <h1 class = "title"> Login </h1>  
                 <br>
                 <br/>
-                <input type = "username" placeholder = "Enter Username" id = "username" name = "username" required>
+                <input type = "username" placeholder = "Enter Username" id = "username-1" name = "username-1" required>
                 <br>
                 <br/>  
-                <input type = "password" placeholder = "Enter Password" id = "password" name = "password" required>
+                <input type = "password" placeholder = "Enter Password" id = "password-1" name = "password-1" required>
                 <br>
                 <br/>
-                <input type = "checkbox" checked = "checked" id = checkbox><label for = "checkbox">Keep me logged in</label>
+                <input type = "checkbox" id = show-password-1><label for = "checkbox">Show password</label>
+                <br/>
                 <button type = "submit" id = "login">Login</button>
                 <br>
                 <br/>
