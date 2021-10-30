@@ -1,0 +1,26 @@
+{
+  "name": "cs326-final-nu",
+  "version": "1.0.0",
+  "description": "CS 326 Group Project",
+  "main": "main.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "particles.js": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hedge0/cs326-final-nu.git"
+  },
+  "author": "Elias, Andrew, Benjamin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hedge0/cs326-final-nu/issues"
+  },
+  "homepage": "https://github.com/hedge0/cs326-final-nu#readme"
+}
