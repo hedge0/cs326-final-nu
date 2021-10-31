@@ -1,5 +1,7 @@
 document.getElementById('login').addEventListener('click', () => {
-    location.href = "input.html";
+    if (true) {
+        location.href = "input.html";
+    }
 });
 
 document.getElementById('signup').addEventListener('click', () => {
