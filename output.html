@@ -2,25 +2,25 @@
 <html>
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset = "UTF-8" />
     <title>Output Page</title>
 
-    <script type="module" src="output.js" defer></script>
-    <link rel="stylesheet" href="main.css" />
-    <script src="node_modules/particles.js/particles.js" defer></script>
-    <script src="node_modules/particles.js/demo/js/app.js" defer></script>
+    <script type = "module" src = "output.js" defer></script>
+    <link rel = "stylesheet" href = "main.css" />
+    <script src = "node_modules/particles.js/particles.js" defer></script>
+    <script src = "node_modules/particles.js/demo/js/app.js" defer></script>
 </head>
 
-<body id="particles-js">
+<body id = "particles-js">
     <form>
-        <div class="container">
-            <div class="output_container">
+        <div class = "container">
+            <div class = "output_container">
                 <h1>Analysis of text </h1>
                 <table>
                     <thead>
                         <tr>
                             <th>Inputted text</th>
-                            <th scope=" col">Sentiment analysis</th>
+                            <th scope="col">Sentiment analysis</th>
                             <th scope="col">Language</th>
                             <th scope="col">Other</th>
                         </tr>
@@ -42,11 +42,10 @@
                     </tbody>
                 </table>
                 <br><br />
-                <button class="output_button" type="submit" id="signout">Analyze more Texts</button>
-                <button class="output_button" type="submit" id="signout">Sign Out</button>
+                <button class = "output_button" type = "button" id = "analyze">Analyze more Texts</button>
+                <button class = "output_button" type = "button" id = "signout">Sign Out</button>
             </div>
         </div>
     </form>
 </body>
-
 </html>
