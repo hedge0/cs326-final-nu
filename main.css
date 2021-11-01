@@ -36,9 +36,7 @@ label {
     font-size: 80%;
 }
 
-label[type=results] {      
- 
- 
+label[type=results] {
     float: left;
     color: black;
     width: 75%;
@@ -94,7 +92,7 @@ button:hover {
     font-size: 200%;
 }
 
-.output_container{
+.output_container {
     background-color: white;
     position: absolute;
     width: 80%;
@@ -106,7 +104,7 @@ button:hover {
     text-align: center;
 }
 
-.text{
+.text {
     background-color: grey;
     position: relative;
     width: 80%;
@@ -117,30 +115,8 @@ button:hover {
     border: 5px solid gray;
     margin: 0;
 }
-table {
-    background-color: rgb(168, 167, 167);
-    position: relative;
-    height:100%;
-    width:100%;
-    padding:0;
-    margin:0;
-    font-size: 25px;
-    display: table-row-group;
-    border: 1px black;
-    font: normal 16px "Arial";
-    overflow:auto;
-}
 
-tr,td,th{
-    text-align:left;
-    vertical-align: bottom;
-    overflow: auto;
-     height: 20%; 
-     width: 20%;
-     border:1px solid black;
-}
-
-#particles-js{
+#particles-js {
     width: 100%;
     height: 100%;
     background-color: white;

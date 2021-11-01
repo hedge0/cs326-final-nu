@@ -9,42 +9,27 @@
     <link rel = "stylesheet" href = "main.css" />
     <script src = "node_modules/particles.js/particles.js" defer></script>
     <script src = "node_modules/particles.js/demo/js/app.js" defer></script>
+    <script src = "https://code.jquery.com/jquery-3.6.0.js" integrity = "sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin = "anonymous"></script>
+    <link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity = "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin = "anonymous">
 </head>
 
 <body id = "particles-js">
     <form>
-        <div class = "container">
-            <div class = "output_container">
-                <h1>Analysis of text </h1>
+        <div class = "output_container">
+            <div style="height: 80%;overflow: scroll;">
                 <table>
-                    <thead>
-                        <tr>
-                            <th>Inputted text</th>
-                            <th scope="col">Sentiment analysis</th>
-                            <th scope="col">Language</th>
-                            <th scope="col">Other</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">text</th>
-                            <td>score</td>
-                            <td>language</td>
-                            <td>score</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">text</th>
-                            <td>score</td>
-                            <td>language</td>
-                            <td>score</td>
-
-                        </tr>
-                    </tbody>
+                    <tr>
+                        <th id = left>Text</th>
+                        <th>Sentiment</th>
+                        <th>Languages</th>
+                        <th id = right>Date</th>
+                    </tr>
+                    <tbody id="table"></tbody>
                 </table>
-                <br><br />
-                <button class = "output_button" type = "button" id = "analyze">Analyze more Texts</button>
-                <button class = "output_button" type = "button" id = "signout">Sign Out</button>
             </div>
+            <br><br />
+            <button class = "output_button" type = "button" id = "analyze">Analyze</button>
+            <button class = "output_button" type = "button" id = "signout">Sign Out</button>
         </div>
     </form>
 </body>
