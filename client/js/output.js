@@ -1,3 +1,4 @@
+//test array, not final
 let myArray = [
     {'Text':'RECORD HIGH', 'Sentiment':'80', 'Languages':'English', 'Date':'10/14/1990'},
     {'Text':'RECORD HIGH', 'Sentiment':'80', 'Languages':'English', 'Date':'10/14/1990'},
