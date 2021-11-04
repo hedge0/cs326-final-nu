@@ -1,3 +1,4 @@
+//STILL NEED TO ADD RIGHT ENDPOINT AND TEST THIS FUNCTION, ALSO "id" AND "valid" MIGHT CHANGE DEPENDING ON ANDREWS RESPONSE
 document.getElementById('login').addEventListener('click', () => {
     const response = await fetch('https://.com', {
         method: 'POST',
