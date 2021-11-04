@@ -48,8 +48,8 @@ document.getElementById('signout').addEventListener('click', () => {
 
 
 function createTable(data){
-    let table = document.getElementById('table')
-    for (let i = 0; i < data.length; i++){
+    let table = document.getElementById('table');
+    for (let i = 0; i < data.length; i++) {
         let row = `<tr>
                         <td>${data[i].Text}</td>
                         <td>${data[i].Sentiment}</td>

@@ -8,12 +8,17 @@ createTable(myArray)
 
 
 document.getElementById('update_sentiment').addEventListener('click', () => {
+    let table = document.getElementById('table');
 });
 
 document.getElementById('update_languages').addEventListener('click', () => {
+    let table = document.getElementById('table');
 });
 
 document.getElementById('delete').addEventListener('click', () => {
+    if (true) {
+        location.href = "input.html";
+    }
 });
 
 
@@ -35,7 +40,7 @@ document.getElementById('signout').addEventListener('click', () => {
 });
 
 function createTable(data){
-    let table = document.getElementById('table')
+    let table = document.getElementById('table');
     let row = `<tr>
                     <td>${data.Sentiment}</td>
                     <td>${data.Languages}</td>
