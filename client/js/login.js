@@ -1,18 +1,21 @@
 document.getElementById('login').addEventListener('click', () => {
-    location.href = "input.html";
-});
-async function checklogin() {
-    let response = await fetch(window.location.href);
+    const response = await fetch('https://.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({ username : document.getElementById("username").value, password : document.getElementById("password").value })
+    });
+
     if (response.ok) {
-        let result = response.json;
-        if (result.length != 2) {
-            document.getElementById('errorname').innerHTML = "enter both username and password";
-        }
-        else {
-            document.getElementById('errorname').innerHTML = "";
+        const responseJSON = await response.json();
+        if (responseJSON.valid) {
+            window.id = responseJSON.id;
+            location.href = "input.html";
         }
     }
-}
+});
+
 document.getElementById('signup').addEventListener('click', () => {
     location.href = "signup.html";
 });
@@ -23,14 +26,10 @@ document.getElementById("show-password").addEventListener('change', function () 
         for (const field of password_fields) {
             field.type = 'username';
         }
-    } else {
+    } 
+    else {
         for (const field of password_fields) {
             field.type = 'password';
         }
     }
 });
-// let http = require('http');
-// http.createServer(function (req, res) {
-//     res.writeHead(200, { 'Content-Type': 'text/html' });
-//     res.end();
-// }).listen(8080);
