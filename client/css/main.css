@@ -50,6 +50,18 @@ label[type=results] {
     height: 15%;
 }
 
+.box3 {
+    position: relative;
+    height: auto;
+    overflow-x: hidden;
+    height: 80%;
+}
+
+.box4 {
+    position: relative;
+    height: 20%;
+}
+
 .title {
     color: black;
     font-weight: bold;
