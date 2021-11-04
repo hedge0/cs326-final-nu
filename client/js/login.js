@@ -1,5 +1,5 @@
 //STILL NEED TO ADD RIGHT ENDPOINT AND TEST THIS FUNCTION, ALSO "id" AND "valid" MIGHT CHANGE DEPENDING ON ANDREWS RESPONSE
-document.getElementById('login').addEventListener('click', () => {
+document.getElementById('login').addEventListener('click', async () => {
     const response = await fetch('https://.com', {
         method: 'POST',
         headers: {
@@ -24,7 +24,7 @@ document.getElementById('signup').addEventListener('click', () => {
     location.href = "signup.html";
 });
 
-document.getElementById("show-password").addEventListener('change', function () {
+document.getElementById("show-password").addEventListener('change', () => {
     const password_fields = document.getElementsByName("password");
     if (this.checked) {
         for (const field of password_fields) {
