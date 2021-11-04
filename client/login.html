@@ -5,10 +5,12 @@
     <meta charset = "UTF-8" />
     <title>Login Page</title>
 
+    <script src = "https://code.jquery.com/jquery-3.5.1.js" defer></script>
     <script type = "module" src = "js/login.js" defer></script>
     <link rel = "stylesheet" href = "css/main.css" />
     <script src = "../node_modules/particles.js/particles.js" defer></script>
     <script src = "../node_modules/particles.js/demo/js/app.js" defer></script>
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" />
 </head>
 
 <body id = "particles-js">
@@ -19,19 +21,21 @@
             <h1 class = "title"> Login </h1>  
             <br>
             <br/>
-            <input type = "username" placeholder = "Enter Username" id = "username" name = "username" required>
+            <input type = "username" class = "form-control" placeholder = "Enter Username" id = "username" name = "username" style = "display:inline-block; width:75%;" required>
             <br>
             <br/>  
-            <input type = "password" placeholder = "Enter Password" id = "password" name = "password" required>
+            <input type = "password" class = "form-control" placeholder = "Enter Password" id = "password" name = "password" style = "display:inline-block; width:75%;" required>
             <br>
             <br/>
-            <input type = "checkbox" id = show-password><label for = "checkbox">Show password</label>
+            <input type = "checkbox" id = "show-password">
+            <label for = "show-password">Show password</label>
             <br/>
-            <button type = "submit" id = "login">Login</button>
+            <button class = "btn btn-primary" type = "submit" id = "login" style = "width:40%">Login</button>
             <br>
             <br/>
             <label>Don’t have an account?</label>
-            <button type = "button" id = "signup">Sign Up</button>
+            <br/>
+            <button class = "btn btn-primary" type = "button" id = "signup" style = "width:40%">Sign Up</button>
         </div>   
     </form>
 </body>

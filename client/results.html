@@ -5,15 +5,17 @@
     <meta charset = "UTF-8" />
     <title>Results Page</title>
 
+    <script src = "https://code.jquery.com/jquery-3.5.1.js" defer></script>
     <script type = "module" src = "js/results.js" defer></script>
     <link rel = "stylesheet" href = "css/main.css" />
     <script src = "../node_modules/particles.js/particles.js" defer></script>
     <script src = "../node_modules/particles.js/demo/js/app.js" defer></script>
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" />
 </head>
 
 <body id = "particles-js">
     <form>
-        <div class = "baseshape">
+        <div class = "container">
             <br>
             <br/>
             <h1 class = "title"> Results </h1>
@@ -25,8 +27,7 @@
                 </tr>
                 <tbody id="table"></tbody>
             </table>
-            <button type = "button" id = "analyze">Analyze</button>
-            <button type = "button" id = "getlogs">History</button>
+            <button type = "button" id = "getlogs">Log</button>
             <button type = "button" id = "signout">Sign Out</button>
         </div>
     </form>

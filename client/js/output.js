@@ -34,7 +34,6 @@ let myArray = [
 ]
 
 createTable(myArray)
-
 $(document).ready(function() {
     $('#data').DataTable();
 } );

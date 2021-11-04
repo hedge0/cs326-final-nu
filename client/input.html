@@ -5,10 +5,12 @@
     <meta charset = "UTF-8" />
     <title>Input Page</title>
 
+    <script src = "https://code.jquery.com/jquery-3.5.1.js" defer></script>
     <script type = "module" src = "js/input.js" defer></script>
     <link rel = "stylesheet" href = "css/main.css" />
     <script src = "../node_modules/particles.js/particles.js" defer></script>
     <script src = "../node_modules/particles.js/demo/js/app.js" defer></script>
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" />
 </head>
 
 <body id = "particles-js">
@@ -19,11 +21,13 @@
             <h1 class = "title"> Analyze Text </h1>
             <br>
             <br/>
-            <textarea placeholder = "Enter text" id = "input" name = "input_text" rows = "4" cols = "50" required></textarea>
+            <textarea class = "form-control" placeholder = "Enter text" id = "input" name = "input_text" rows = "8" style = "display:inline-block; width:75%;" required></textarea>
             <br>
             <br/>
-            <button type = "submit" id = "analyze">Analyze</button>
-            <button type = "button" id = "signout">Sign Out</button>
+            <button class = "btn btn-primary" type = "submit" id = "analyze" style = "width:40%">Analyze</button>
+            <br>
+            <br/>
+            <button class = "btn btn-primary" type = "button" id = "signout" style = "width:40%">Sign Out</button>
         </div>
     </form>
 </body>
