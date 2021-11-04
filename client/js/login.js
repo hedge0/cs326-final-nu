@@ -5,7 +5,10 @@ document.getElementById('login').addEventListener('click', () => {
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
         },
-        body: JSON.stringify({ username : document.getElementById("username").value, password : document.getElementById("password").value })
+        body: JSON.stringify({ 
+            username : document.getElementById("username").value, 
+            password : document.getElementById("password").value 
+        })
     });
 
     if (response.ok) {
