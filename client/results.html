@@ -20,19 +20,23 @@
 <body id = "particles-js">
     <form>
         <div class = "container">
-            <br>
-            <br/>
-            <h1 class = "title"> Results </h1>
-            <br/>
-            <table>
-                <tr>
-                    <th>Sentiment</th>
-                    <th>Languages</th>
-                </tr>
-                <tbody id="table"></tbody>
-            </table>
-            <button type = "button" id = "getlogs">Log</button>
-            <button type = "button" id = "signout">Sign Out</button>
+            <div class = "box1">
+                <br/>
+                <table>
+                    <tr>
+                        <th>Sentiment</th>
+                        <th>Languages</th>
+                    </tr>
+                    <tbody id="table"></tbody>
+                </table>
+            </div>
+            <div class = "box2">
+                <br/>
+                <button class = "btn btn-primary" type = "button" id = "getlogs" style = "width:20%; min-width:175px;">Log</button>
+                <br>
+                <br/>
+                <button class = "btn btn-primary" type = "button" id = "signout" style = "width:20%; min-width:175px;">Sign Out</button>
+            </div>
         </div>
     </form>
 </body>
