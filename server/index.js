@@ -3,14 +3,17 @@
 
 
 const express = require('express');
-const bodyParser = require('body-parser'); 
 app.use(express.json()); 
 const app = express();
 const port = 3000;
 
 let datastore = {};
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+}));
+
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
