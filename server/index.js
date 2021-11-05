@@ -6,6 +6,7 @@ const express = require('express');
 const bodyParser = require('body-parser'); 
 app.use(express.json()); 
 const app = express();
+const port = 3000;
 
 
 
