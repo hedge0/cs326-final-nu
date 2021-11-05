@@ -36,6 +36,8 @@ label[type=results] {
     border-radius: 15px;
     top: 0; left: 0; bottom: 0; right: 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .box1 {
