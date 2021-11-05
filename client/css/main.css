@@ -36,6 +36,8 @@ label[type=results] {
     border-radius: 15px;
     top: 0; left: 0; bottom: 0; right: 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .box1 {
@@ -48,18 +50,6 @@ label[type=results] {
 .box2 {
     position: relative;
     height: 15%;
-}
-
-.box3 {
-    position: relative;
-    height: auto;
-    overflow-x: hidden;
-    height: 80%;
-}
-
-.box4 {
-    position: relative;
-    height: 20%;
 }
 
 .title {
