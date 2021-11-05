@@ -4,27 +4,24 @@
 
 const express = require('express');
 const bodyParser = require('body-parser'); 
-const http = require('http');
-const url = require('url');
-const fs = require('fs');
+app.use(express.json()); 
 const app = express();
 
 
 
 
-const server = http.createServer(async (req, res) => {
-    if (req.method === 'POST') {
-        res.writeHead(200, { "Content-Type": "application/json" });
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+  });
 
-    }
-
-    else {
-        res.writeHead(404, { "Content-Type": "application/json" });
-        res.end();
-    }
-});
-
-server.listen(8080);
+  
 
 
-
+app.get('*', (req, res) => {
+    res.send('NO FOOL, BAD COMMAND');
+  });
+  
+  app.listen(port, () => {
+      console.log(`Example app listening at http://localhost:${port}`);
+  });
+  
