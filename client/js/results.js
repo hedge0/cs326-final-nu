@@ -9,16 +9,39 @@ createTable(myArray)
 
 document.getElementById('update_sentiment').addEventListener('click', () => {
     let table = document.getElementById('table');
+    const response = await fetch('/updateSentiment', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({
+            sentiment: document.getElementById('update_sentiment_value')
+        })
+    });
+
+
 });
 
 document.getElementById('update_languages').addEventListener('click', () => {
     let table = document.getElementById('table');
+    const response = await fetch('/updateLanguage', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({
+            language: document.getElementById('update_language_value')
+        })
+    });
+
+
 });
 
 document.getElementById('delete').addEventListener('click', () => {
     if (true) {
         location.href = "input.html";
     }
+    //delete request goes here
 });
 
 
