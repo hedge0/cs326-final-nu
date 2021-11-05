@@ -15,8 +15,12 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
   });
 
-  
-
+app.post('/login', (req, res) => {
+    const k = req.body["username"]
+    const v = req.body["password"]
+    datastore[k] = v;
+    res.send('Sent');
+});
 
 app.get('*', (req, res) => {
     res.send('NO FOOL, BAD COMMAND');
