@@ -11,7 +11,7 @@ document.getElementById('login').addEventListener('click', async () => {
         })
     });
 
-    if (response) {
+    if (response.ok) {
         const responseJSON = await response.json();
         if (responseJSON.valid) {
             window.id = responseJSON.id;

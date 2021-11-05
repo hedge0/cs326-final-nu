@@ -23,16 +23,10 @@ app.get('/', (req, res) => {
 app.post('/login', (req, res) => {
     const username = req.body["username"]
     const password = req.body["password"]
-    //ask elias on what how are we storing username and passwords.
-    //really just a guess 
-    if (datastore[username] !== null){
-      if (datastore[username] === password) {
-        res.send(true);
-      }
-    }
-    else {
-      res.send(false);
-    }
+    res.send({
+      valid: true, 
+      id: username 
+    });
 });
 
 app.get('*', (req, res) => {
