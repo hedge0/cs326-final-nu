@@ -29,6 +29,16 @@ app.post('/login', (req, res) => {
     });
 });
 
+
+app.post('/signup', (req, res) => {
+  const username = req.body["username"]
+  const password = req.body["password"]
+  res.send({
+    valid: true, 
+    id: username 
+  });
+});
+
 app.get('*', (req, res) => {
     res.send('NO FOOL, BAD COMMAND');
   });
