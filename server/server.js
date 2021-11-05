@@ -40,6 +40,37 @@ app.post('/signup', (req, res) => {
   });
 });
 
+
+
+//four different requests:
+// '/analyze' 
+// '/getResults'
+// '/updateSentiment'
+//'/updateLanguage'
+app.post('/analyze', (req, res) => {
+
+});
+app.get('/getResults', (req, res) => {
+
+});
+app.post('/updateSentiment', (req, res) => {
+
+})
+app.post('/updateLanguage', (req, res) => {
+
+});
+
+
+//get user log
+
+app.get('/getUserLog', (req, res) => {
+  //req body fields: valid, id, history
+
+});
+
+
+
+
 app.get('*', (req, res) => {
     res.send('NO FOOL, BAD COMMAND');
   });
