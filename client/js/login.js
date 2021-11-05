@@ -1,6 +1,6 @@
 //STILL NEED TO ADD RIGHT ENDPOINT AND TEST THIS FUNCTION, ALSO "id" AND "valid" MIGHT CHANGE DEPENDING ON ANDREWS RESPONSE
 document.getElementById('login').addEventListener('click', async () => {
-    const response = await fetch('/login', {
+    const response = await fetch('/login', {    //THIS MUST BE THE ENTIRE URL, NOT JUST THE ENDPOINT
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
@@ -17,9 +17,9 @@ document.getElementById('login').addEventListener('click', async () => {
             window.id = responseJSON.id;
             location.href = "input.html";
         }
-    }
-    else{
-        window.alert("Username and/or password does not match")
+        else {
+            window.alert("Invalid Username or Password")
+        }
     }
 });
 
