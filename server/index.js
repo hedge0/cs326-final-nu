@@ -8,18 +8,28 @@ app.use(express.json());
 const app = express();
 const port = 3000;
 
+let datastore = {};
 
-
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
   });
 
+
 app.post('/login', (req, res) => {
-    const k = req.body["username"]
-    const v = req.body["password"]
-    datastore[k] = v;
-    res.send('Sent');
+    const username = req.body["username"]
+    const password = req.body["password"]
+    //ask elias on what how are we storing username and passwords.
+    //really just a guess 
+    if (datastore[username] !== null){
+      if (datastore[username] === password) {
+        res.send(true);
+      }
+    }
+    else {
+      res.send(false);
+    }
 });
 
 app.get('*', (req, res) => {
