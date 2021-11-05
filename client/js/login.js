@@ -11,12 +11,15 @@ document.getElementById('login').addEventListener('click', async () => {
         })
     });
 
-    if (response.ok) {
+    if (response) {
         const responseJSON = await response.json();
         if (responseJSON.valid) {
             window.id = responseJSON.id;
             location.href = "input.html";
         }
+    }
+    else{
+        window.alert("Username and/or password does not match")
     }
 });
 
