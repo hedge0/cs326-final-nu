@@ -70,8 +70,8 @@ document.getElementById('signout').addEventListener('click', () => {
 function createTable(data) {
     let table = document.getElementById('table');
     let row = `<tr>
-                    <td>${data.sentiment}</td>
-                    <td>${data.languages}</td>
+                    <td id = "tablesentiment" >${data.sentiment}</td>
+                    <td id = "tablelanguages">${data.languages}</td>
               </tr>`;
     table.innerHTML += row;
 } 
