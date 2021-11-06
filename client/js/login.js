@@ -3,11 +3,11 @@ document.getElementById('login').addEventListener('click', async () => {
     const response = await fetch('/login', {    //THIS MUST BE THE ENTIRE URL, NOT JUST THE ENDPOINT
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json;charset=utf-8'
+            'Content-Type': 'application/json;charset=utf-8'
         },
-        body: JSON.stringify({ 
-            username : document.getElementById("username").value, 
-            password : document.getElementById("password").value 
+        body: JSON.stringify({
+            username: document.getElementById("username").value,
+            password: document.getElementById("password").value
         })
     });
 
@@ -33,7 +33,7 @@ document.getElementById("show-password").addEventListener('change', () => {
         for (const field of password_fields) {
             field.type = 'username';
         }
-    } 
+    }
     else {
         for (const field of password_fields) {
             field.type = 'password';
