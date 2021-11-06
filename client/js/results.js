@@ -20,7 +20,6 @@ document.getElementById('update_sentiment').addEventListener('click', async () =
         })
     });
 
-
 });
 
 document.getElementById('update_languages').addEventListener('click', async () => {
