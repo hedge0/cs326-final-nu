@@ -1,9 +1,9 @@
-let myArray = { 'text': 'RECORD HIGH', 'sentiment': '80', 'languages': 'English', 'date': '10/14/1990' };
-
-window.onload = createTable(myArray);
-
-
-
+// Get data on load to create table
+window.addEventListener('load', async () => {
+    let sentiment = await window.sentiment;
+    let languages = await window.languages;
+    createTable({ 'sentiment': sentiment, 'languages': languages });
+});
 
 
 
@@ -38,7 +38,6 @@ document.getElementById('update_languages').addEventListener('click', () => {
 });
 
 document.getElementById('delete').addEventListener('click', () => {
-    let table = document.getElementById('table');
     const response = await fetch('/', {//double check this later 
         method: 'DELETE',
         headers: {
@@ -48,13 +47,11 @@ document.getElementById('delete').addEventListener('click', () => {
             language: document.getElementById('update_language_value')
         })
     });
+
     if (response.ok) {
         const responseJSON = await response.json();
         if (responseJSON.valid) {
             location.href = "input.html";
-        }
-        else {
-            window.alert("delete failure")
         }
     }
 });
