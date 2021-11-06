@@ -6,10 +6,12 @@ let myArray = [
     {'text':'RECORD HIGH', 'sentiment':'80', 'languages':'English', 'date':'10/14/1990'}
 ]
 
-createTable(myArray)
-$(document).ready(function() {
-    $('#data').DataTable();
-} );
+window.addEventListener('load', async () => {
+    createTable(myArray)
+    $(document).ready(function() {
+        $('#data').DataTable();
+    } );
+});
 
 document.getElementById('analyze').addEventListener('click', () => {
     location.href = "input.html";
