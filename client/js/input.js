@@ -5,7 +5,7 @@ document.getElementById('analyze').addEventListener('click', async () => {
             'Content-Type': 'application/json;charset=utf-8'
         },
         body: JSON.stringify({
-            username: await window.username;
+            username: await window.username,
             text: document.getElementById("input").value
         })
     });
