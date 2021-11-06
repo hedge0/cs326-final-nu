@@ -17,7 +17,7 @@ window.addEventListener('load', async () => {
             'Content-Type': 'application/json;charset=utf-8'
         },
         body: JSON.stringify({
-            nyarray: await window.myArray
+            myarray: await window.myArray
         })
     });
 
