@@ -13,7 +13,7 @@ document.getElementById('login').addEventListener('click', async () => {
     if (response.ok) {
         const responseJSON = await response.json();
         if (responseJSON.valid) {
-            window.id = responseJSON.id;
+            window.username = responseJSON.username;
             location.href = "input.html";
         }
         else {

@@ -15,7 +15,7 @@ document.getElementById('signup').addEventListener('click', () => {
         const responseJSON = await response.json();
         if (responseJSON.valid) {
             if (password === confirmpassword) {
-                window.id = responseJSON.id;
+                window.username = responseJSON.username;
                 location.href = "login.html";
             }
             else {

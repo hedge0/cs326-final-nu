@@ -7,7 +7,7 @@ window.addEventListener('load', async () => {
 
 
 
-document.getElementById('update_sentiment').addEventListener('click', () => {
+document.getElementById('update_sentiment').addEventListener('click', async () => {
     let table = document.getElementById('table');
     const response = await fetch('/updateSentiment', {
         method: 'POST',
@@ -15,6 +15,7 @@ document.getElementById('update_sentiment').addEventListener('click', () => {
             'Content-Type': 'application/json;charset=utf-8'
         },
         body: JSON.stringify({
+            username: await window.username,
             sentiment: document.getElementById('update_sentiment_value')
         })
     });
@@ -22,7 +23,7 @@ document.getElementById('update_sentiment').addEventListener('click', () => {
 
 });
 
-document.getElementById('update_languages').addEventListener('click', () => {
+document.getElementById('update_languages').addEventListener('click', async () => {
     let table = document.getElementById('table');
     const response = await fetch('/updateLanguage', {
         method: 'POST',
@@ -30,6 +31,8 @@ document.getElementById('update_languages').addEventListener('click', () => {
             'Content-Type': 'application/json;charset=utf-8'
         },
         body: JSON.stringify({
+            username: await window.username,
+            text: await window.text,
             language: document.getElementById('table')
         })
     });
@@ -37,14 +40,15 @@ document.getElementById('update_languages').addEventListener('click', () => {
 
 });
 
-document.getElementById('delete').addEventListener('click', () => {
+document.getElementById('delete').addEventListener('click', async () => {
     const response = await fetch('/', {//double check this later 
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
         },
         body: JSON.stringify({
-            language: document.getElementById('update_language_value')
+            username: await window.username,
+            text: await window.text
         })
     });
 
@@ -54,26 +58,6 @@ document.getElementById('delete').addEventListener('click', () => {
             location.href = "input.html";
         }
     }
-});
-
-
-
-
-
-
-
-document.getElementById('analyze').addEventListener('click', () => {
-    location.href = "input.html";
-    const response = await fetch('/analyze', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify({
-            sentiment: document.getElementById('update_sentiment_value'),
-            language: document.getElementById('update_languages_value')
-        })
-    });
 });
 
 document.getElementById('getlogs').addEventListener('click', () => {
