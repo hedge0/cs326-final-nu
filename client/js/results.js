@@ -1,4 +1,4 @@
-let myArray = { 'Text': 'RECORD HIGH', 'Sentiment': '80', 'Languages': 'English', 'Date': '10/14/1990' };
+let myArray = { 'text': 'RECORD HIGH', 'sentiment': '80', 'languages': 'English', 'date': '10/14/1990' };
 
 window.onload = createTable(myArray);
 
@@ -51,7 +51,6 @@ document.getElementById('delete').addEventListener('click', () => {
     if (response.ok) {
         const responseJSON = await response.json();
         if (responseJSON.valid) {
-            window.id = responseJSON.id;
             location.href = "input.html";
         }
         else {
@@ -91,8 +90,8 @@ document.getElementById('signout').addEventListener('click', () => {
 function createTable(data) {
     let table = document.getElementById('table');
     let row = `<tr>
-                    <td>${data.Sentiment}</td>
-                    <td>${data.Languages}</td>
+                    <td>${data.sentiment}</td>
+                    <td>${data.languages}</td>
               </tr>`;
     table.innerHTML += row;
 } 

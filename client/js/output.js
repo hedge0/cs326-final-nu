@@ -1,36 +1,9 @@
 //test array, not final
 let myArray = [
-    {'Text':'RECORD HIGH', 'Sentiment':'80', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'80', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'80', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'90', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'50', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'70', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'80', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'80', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'90', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'50', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'70', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'80', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'90', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'50', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'70', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'80', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'90', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'50', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'70', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'80', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'90', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'50', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'70', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'80', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'90', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'50', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'70', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'80', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'90', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'50', 'Languages':'English', 'Date':'10/14/1990'},
-    {'Text':'RECORD HIGH', 'Sentiment':'70', 'Languages':'English', 'Date':'10/14/1990'}
+    {'text':'RECORD HIGH', 'sentiment':'80', 'languages':'English', 'date':'10/14/1990'},
+    {'text':'RECORD HIGH', 'sentiment':'80', 'languages':'English', 'date':'10/14/1990'},
+    {'text':'RECORD HIGH', 'sentiment':'80', 'languages':'English', 'date':'10/14/1990'},
+    {'text':'RECORD HIGH', 'sentiment':'80', 'languages':'English', 'date':'10/14/1990'}
 ]
 
 createTable(myArray)
@@ -51,10 +24,10 @@ function createTable(data){
     let table = document.getElementById('table');
     for (let i = 0; i < data.length; i++) {
         let row = `<tr>
-                        <td>${data[i].Text}</td>
-                        <td>${data[i].Sentiment}</td>
-                        <td>${data[i].Languages}</td>
-                        <td>${data[i].Date}</td>
+                        <td>${data[i].text}</td>
+                        <td>${data[i].sentiment}</td>
+                        <td>${data[i].languages}</td>
+                        <td>${data[i].date}</td>
                   </tr>`;
         table.innerHTML += row;
     }
