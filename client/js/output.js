@@ -1,16 +1,26 @@
 //test array, not final
-let myArray = [
-    {'text':'RECORD HIGH', 'sentiment':'80', 'languages':'English', 'date':'10/14/1990'},
-    {'text':'RECORD HIGH', 'sentiment':'80', 'languages':'English', 'date':'10/14/1990'},
-    {'text':'RECORD HIGH', 'sentiment':'80', 'languages':'English', 'date':'10/14/1990'},
-    {'text':'RECORD HIGH', 'sentiment':'80', 'languages':'English', 'date':'10/14/1990'}
+window.myArray = [
+    { 'text': 'RECORD HIGH', 'sentiment': '80', 'languages': 'English', 'date': '10/14/1990' },
+    { 'text': 'RECORD HIGH', 'sentiment': '80', 'languages': 'English', 'date': '10/14/1990' },
+    { 'text': 'RECORD HIGH', 'sentiment': '80', 'languages': 'English', 'date': '10/14/1990' },
+    { 'text': 'RECORD HIGH', 'sentiment': '80', 'languages': 'English', 'date': '10/14/1990' }
 ]
 
 window.addEventListener('load', async () => {
     createTable(myArray)
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#data').DataTable();
-    } );
+    });
+    const response = await fetch({//double check this later 
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({
+            nyarray: await window.myArray
+        })
+    });
+
 });
 
 document.getElementById('analyze').addEventListener('click', () => {
@@ -22,7 +32,7 @@ document.getElementById('signout').addEventListener('click', () => {
 });
 
 
-function createTable(data){
+function createTable(data) {
     let table = document.getElementById('table');
     for (let i = 0; i < data.length; i++) {
         let row = `<tr>
