@@ -22,7 +22,7 @@ These are the following pages that will be used for our application:
 * results
     * This will be the result page. This page will carry all the metrics of the previously inputted text.
     There is a sign out button to exit the account which brings you to the login page and a "analyze again" button that will bring you to the input page to do it once again. there is also a button for updating sentiment and language which stays on this page.
-    ![alt text](https://user-images.githubusercontent.com/28848384/140631713-1270bcd1-ea36-4f19-98fd-f8c187190a61.pngg)
+    ![alt text](https://user-images.githubusercontent.com/28848384/140631713-1270bcd1-ea36-4f19-98fd-f8c187190a61.png)
 # Heroku URL 
 * https://dashboard.heroku.com/teams/team-nu-cs326-f2021/apps 
 
