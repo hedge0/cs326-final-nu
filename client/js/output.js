@@ -1,13 +1,14 @@
 
 window.addEventListener('load', async () => {
 
-    const response = await fetch("http://localhost:3000/getUserLogs",{//double check this later 
+    const response = await fetch("http://localhost:3000/getUserLogs", {//double check this later 
         method: 'GET',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
         },
         body: JSON.stringify({
-            username: window.username
+            username: window.username,
+            text: window.text
         })
     });
 

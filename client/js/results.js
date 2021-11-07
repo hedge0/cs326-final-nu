@@ -16,7 +16,8 @@ document.getElementById('update_sentiment').addEventListener('click', async () =
         },
         body: JSON.stringify({
             username: await window.username,
-            sentiment: document.getElementById('update_sentiment_value')
+            sentiment: document.getElementById('update_sentiment_value'),
+            text: window.text
         })
     });
 
