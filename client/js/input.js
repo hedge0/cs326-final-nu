@@ -12,10 +12,15 @@ document.getElementById('analyze').addEventListener('click', async () => {
 
     if (response.ok) {
         const responseJSON = await response.json();
-        window.text = responseJSON.text;
-        window.sentiment = responseJSON.sentiment;
-        window.languages = responseJSON.languages;
-        location.href = "results.html";
+        if (responseJSON.valid) {
+            window.text = responseJSON.text;
+            window.sentiment = responseJSON.sentiment;
+            window.language = responseJSON.language;
+            location.href = "results.html";
+        }
+        else {
+            console.log("An error has occured");s
+        }
     }
 });
 
