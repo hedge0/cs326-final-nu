@@ -46,18 +46,21 @@ app.post('/signup', (req, res) => {
 // '/analyze' 
 // '/updateSentiment'
 //'/updateLanguage'
+//'/delete'
 app.post('/analyze', (req, res) => {
   const username = req.body["username"];
-  const sentiment = req.body["update_sentiment_value"]
-  const language = req.body["update_languages_value"]
+  const text = req.body["text"];
+  const sentiment = req.body["sentiment"];
+  const language = req.body["language"];
   res.send({
     valid: true//later on actually analyze 
   });
 });
-=
+
 app.post('/updateSentiment', (req, res) => {
   const username = req.body["username"];
-  const sentiment = req.body["update_sentiment_value"]
+  const text = req.body["text"]
+  const sentiment = req.body["sentiment"]
   res.send({
     valid: true//later on actually analyze 
   });
@@ -70,9 +73,16 @@ app.post('/updateLanguage', (req, res) => {
   });
 });
 
+app.delete('/delete', (req, res) => {
+  const username = req.body["username"];
+  const text = req.body["text"];
+  //later on actually delete
+  res.send({
+    valid:true
+  });
+});
 
 //get user log
-
 app.get('/getUserLog', (req, res) => {
   //req body fields: valid, id, history
   let response = [
