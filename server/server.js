@@ -44,26 +44,26 @@ app.post('/signup', (req, res) => {
 
 //four different requests:
 // '/analyze' 
-// '/getResults'
 // '/updateSentiment'
 //'/updateLanguage'
 app.post('/analyze', (req, res) => {
+  const username = req.body["username"];
   const sentiment = req.body["update_sentiment_value"]
   const language = req.body["update_languages_value"]
   res.send({
     valid: true//later on actually analyze 
   });
 });
-app.get('/getResults', (req, res) => {
-
-});
+=
 app.post('/updateSentiment', (req, res) => {
+  const username = req.body["username"];
   const sentiment = req.body["update_sentiment_value"]
   res.send({
     valid: true//later on actually analyze 
   });
 })
 app.post('/updateLanguage', (req, res) => {
+  const username = req.body["username"];
   const language = req.body["update_languages_value"]
   res.send({
     valid: true//later on actually analyze 
