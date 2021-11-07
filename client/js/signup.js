@@ -7,20 +7,23 @@ document.getElementById('signup').addEventListener('click', () => {
         body: JSON.stringify({
             username: document.getElementById("username").value,
             password: document.getElementById("password").value,
-            confirmpassword: document.getElementById("confirmpassword").value
         })
     });
 
     if (response.ok) {
         const responseJSON = await response.json();
         if (responseJSON.valid) {
-            if (password === confirmpassword) {
-                window.username = responseJSON.username;
-                location.href = "login.html";
-            }
-            else {
-                alert("these passwords don't match. try again.")
-            }
+            window.username = responseJSON.username;
+            location.href = "login.html";
+
+            //password checking will be done locally
+            // if (password === confirmpassword) {
+            //     window.username = responseJSON.username;
+            //     location.href = "login.html";
+            // }
+            // else {
+            //     alert("these passwords don't match. try again.")
+            // }
         }
     }
 });
