@@ -11,6 +11,7 @@
 
 * Benjamin Rao brao980 
     implemented Signup, other functions and globalized variables. 
+    
 * Andrew Sun asun2
     Created the backend with endpoints and verified them with requests on the front end. Worked out some of the logic on the frontend side of the code.
 
