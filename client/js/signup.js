@@ -28,6 +28,9 @@ document.getElementById('signup').addEventListener('click', () => {
             }
         }
     }
+    else {
+        alert("these passwords don't match. try again.")
+    }
 });
 
 document.getElementById("show-password").addEventListener('change', () => {
