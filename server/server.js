@@ -92,11 +92,10 @@ app.get('/getUserLog', (req, res) => {
     { 'text': 'RECORD HIGH', 'sentiment': '80', 'languages': 'English', 'date': '10/14/1990' },
     { 'text': 'RECORD HIGH', 'sentiment': '80', 'languages': 'English', 'date': '10/14/1990' }
   ];
-  res.send(JSON.stringify{
+  res.send(JSON.stringify({
     valid: true,
     response: userLogs
-  }
-  );
+  }));
 });
 
 
