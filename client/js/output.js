@@ -1,25 +1,29 @@
-//test array, not final
-window.myArray = [
-    { 'text': 'RECORD HIGH', 'sentiment': '80', 'languages': 'English', 'date': '10/14/1990' },
-    { 'text': 'RECORD HIGH', 'sentiment': '80', 'languages': 'English', 'date': '10/14/1990' },
-    { 'text': 'RECORD HIGH', 'sentiment': '80', 'languages': 'English', 'date': '10/14/1990' },
-    { 'text': 'RECORD HIGH', 'sentiment': '80', 'languages': 'English', 'date': '10/14/1990' }
-]
+
 
 window.addEventListener('load', async () => {
-    createTable(myArray)
-    $(document).ready(function () {
-        $('#data').DataTable();
-    });
-    const response = await fetch({//double check this later 
+
+    const response = await fetch("http://localhost:3000/getUserLogs",{//double check this later 
         method: 'GET',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
         },
         body: JSON.stringify({
-            myarray: await window.myArray
+            username: window.username
         })
     });
+
+    if (response.ok) {
+        if (response.valid) {
+            let data = response.json();
+            createTable(data);
+            $(document).ready(function () {
+                $('#data').DataTable();
+            });
+        }
+        else {
+            console.log('user history not found');
+        }
+    }
 
 });
 
