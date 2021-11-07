@@ -1,5 +1,7 @@
 # Representation of APIs
 
+![API Representation 326](https://user-images.githubusercontent.com/9648650/140632286-b9ec555a-c0eb-4bb5-97b0-12a46bb8b894.jpeg)
+
 # Descriptions of client interface
 These are the following pages that will be used for our application:
 * Login
@@ -14,6 +16,9 @@ These are the following pages that will be used for our application:
 * output 
     * this will be the output results page. This page will contain the results/metrics of the rest of the user's history of inputted texts/results previous inputs. There is a sign out button to exit the account which brings you to the login page and a "analyze again" button that will bring you to the input page to do it once again. there is also a button for updating sentiment and language which stays on this page.
     ![alt text](https://user-images.githubusercontent.com/28848384/140631722-429e2320-abf5-4cfd-b15b-9dd6d256bfba.png)
+    * with dummy data
+    ![image](https://user-images.githubusercontent.com/9648650/140632274-91af2ccb-4872-49be-b1a6-7904d0754c68.png)
+
 * results
     * This will be the result page. This page will carry all the metrics of the previously inputted text.
     There is a sign out button to exit the account which brings you to the login page and a "analyze again" button that will bring you to the input page to do it once again. there is also a button for updating sentiment and language which stays on this page.
