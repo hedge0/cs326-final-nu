@@ -78,24 +78,24 @@ app.delete('/delete', (req, res) => {
   const text = req.body["text"];
   //later on actually delete
   res.send({
-    valid:true
+    valid: true
   });
 });
 
 //get user log
 app.get('/getUserLog', (req, res) => {
   //req body fields: valid, id, history
-  let response = [
+  let userLogs = [
     {'text':'RECORD HIGH', 'sentiment':'80', 'languages':'English', 'date':'10/14/1990'},
     {'text':'RECORD HIGH', 'sentiment':'80', 'languages':'English', 'date':'10/14/1990'},
     {'text':'RECORD HIGH', 'sentiment':'80', 'languages':'English', 'date':'10/14/1990'},
     {'text':'RECORD HIGH', 'sentiment':'80', 'languages':'English', 'date':'10/14/1990'}
   ];
-
-  res.send(response);
-
+  res.send(JSON.stringify{
+    valid: true,
+    response: userLogs}
+    );
 });
-
 
 
 
