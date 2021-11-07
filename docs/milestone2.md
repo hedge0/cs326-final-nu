@@ -7,7 +7,7 @@
 
 # breakdown of labor
 * Benjamin Rao brao980 
-
+    implemented Signup, other functions and globalized variables. 
 * Andrew Sun asun2
 
 * Elias Martin hedge0 

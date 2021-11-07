@@ -1,30 +1,35 @@
 document.getElementById('signup').addEventListener('click', () => {
-    const response = await fetch('http://localhost:3000/signup', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify({
-            username: document.getElementById("username").value,
-            password: document.getElementById("password").value,
-        })
-    });
+    if (document.getElementById("password").value === document.getElementById("confirm").value) {
+        const response = await fetch('http://localhost:3000/signup', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify({
+                username: document.getElementById("username").value,
+                password: document.getElementById("password").value,
+            })
+        });
 
-    if (response.ok) {
-        const responseJSON = await response.json();
-        if (responseJSON.valid) {
-            window.username = responseJSON.username;
-            location.href = "login.html";
+        if (response.ok) {
+            const responseJSON = await response.json();
+            if (responseJSON.valid) {
+                window.username = responseJSON.username;
+                location.href = "login.html";
 
-            //password checking will be done locally
-            // if (password === confirmpassword) {
-            //     window.username = responseJSON.username;
-            //     location.href = "login.html";
-            // }
-            // else {
-            //     alert("these passwords don't match. try again.")
-            // }
+                //password checking will be done locally
+                // if (password === confirmpassword) {
+                //     window.username = responseJSON.username;
+                //     location.href = "login.html";
+                // }
+                // else {
+                //     alert("these passwords don't match. try again.")
+                // }
+            }
         }
+    }
+    else {
+        alert("these passwords don't match. try again.")
     }
 });
 
