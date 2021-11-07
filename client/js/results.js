@@ -9,7 +9,7 @@ window.addEventListener('load', async () => {
 
 document.getElementById('update_sentiment').addEventListener('click', async () => {
     let table = document.getElementById('table');
-    const response = await fetch('/updateSentiment', {
+    const response = await fetch('http://localhost:3000/updateSentiment', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
@@ -24,7 +24,7 @@ document.getElementById('update_sentiment').addEventListener('click', async () =
 
 document.getElementById('update_languages').addEventListener('click', async () => {
     let table = document.getElementById('table');
-    const response = await fetch('/updateLanguage', {
+    const response = await fetch('http://localhost:3000/updateLanguage', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
@@ -40,7 +40,7 @@ document.getElementById('update_languages').addEventListener('click', async () =
 });
 
 document.getElementById('delete').addEventListener('click', async () => {
-    const response = await fetch('/', {//double check this later 
+    const response = await fetch('http://localhost:3000/delete', {//double check this later 
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'

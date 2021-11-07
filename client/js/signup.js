@@ -1,5 +1,5 @@
 document.getElementById('signup').addEventListener('click', () => {
-    const response = await fetch('https://.com', {
+    const response = await fetch('http://localhost:3000/signup', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'

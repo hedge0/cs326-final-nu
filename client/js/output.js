@@ -1,5 +1,4 @@
 
-
 window.addEventListener('load', async () => {
 
     const response = await fetch("http://localhost:3000/getUserLogs",{//double check this later 
