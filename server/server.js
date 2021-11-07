@@ -54,7 +54,7 @@ app.post('/analyze', (req, res) => {
     valid: true//later on actually analyze 
   });
 });
-=
+
 app.post('/updateSentiment', (req, res) => {
   const username = req.body["username"];
   const sentiment = req.body["update_sentiment_value"]
@@ -76,10 +76,10 @@ app.post('/updateLanguage', (req, res) => {
 app.get('/getUserLog', (req, res) => {
   //req body fields: valid, id, history
   let response = [
-    {'text':'RECORD HIGH', 'sentiment':'80', 'languages':'English', 'date':'10/14/1990'},
-    {'text':'RECORD HIGH', 'sentiment':'80', 'languages':'English', 'date':'10/14/1990'},
-    {'text':'RECORD HIGH', 'sentiment':'80', 'languages':'English', 'date':'10/14/1990'},
-    {'text':'RECORD HIGH', 'sentiment':'80', 'languages':'English', 'date':'10/14/1990'}
+    { 'text': 'RECORD HIGH', 'sentiment': '80', 'languages': 'English', 'date': '10/14/1990' },
+    { 'text': 'RECORD HIGH', 'sentiment': '80', 'languages': 'English', 'date': '10/14/1990' },
+    { 'text': 'RECORD HIGH', 'sentiment': '80', 'languages': 'English', 'date': '10/14/1990' },
+    { 'text': 'RECORD HIGH', 'sentiment': '80', 'languages': 'English', 'date': '10/14/1990' }
   ];
 
   res.send(response);
