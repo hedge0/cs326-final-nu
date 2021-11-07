@@ -8,7 +8,6 @@ window.addEventListener('load', async () => {
         },
         body: JSON.stringify({
             username: window.username,
-            text: window.text
         })
     });
 
