@@ -15,7 +15,7 @@ document.getElementById('signup').addEventListener('click', async () => {
             const responseJSON = await response.json();
             if (responseJSON.valid) {
                 window.username = responseJSON.username;
-                location.href = "login.html";
+                location.href = "input.html";
             }
         }
     }

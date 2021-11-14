@@ -7,6 +7,7 @@
     "doc": "docs"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "particles.js": "^2.0.0"
   },

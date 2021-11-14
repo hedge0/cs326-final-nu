@@ -1,8 +1,6 @@
 'use strict';
-import {join} from 'path';
-import {readFileSync, existsSync} from 'fs';
-import {parse} from 'url';
 import express from 'express';
+import cors from 'cors';
 
 const app = express();
 const port = 5500;
@@ -10,8 +8,9 @@ app.use(express.json());
 app.use(express.urlencoded({
   extended: true
 }));
+app.use(cors());
 
-// login endpoint
+
 app.post('/login', (req, res) => {
   const username = req.body["username"]
   const password = req.body["password"]
@@ -24,7 +23,7 @@ app.post('/login', (req, res) => {
   });
 });
 
-// signup endpoint
+
 app.post('/signup', (req, res) => {
   const username = req.body["username"]
   const password = req.body["password"]
@@ -38,7 +37,7 @@ app.post('/signup', (req, res) => {
   });
 });
 
-// analyze endpoint
+
 app.post('/analyze', (req, res) => {
   const username = req.body["username"];
   const text = req.body["text"];
@@ -53,7 +52,7 @@ app.post('/analyze', (req, res) => {
   });
 });
 
-// updateSentiment endpoint
+
 app.patch('/updateSentiment', (req, res) => {
   const username = req.body["username"];
   const text = req.body["text"]
@@ -67,7 +66,7 @@ app.patch('/updateSentiment', (req, res) => {
   });
 });
 
-// updateLanguage endpoint
+
 app.patch('/updateLanguage', (req, res) => {
   const username = req.body["username"];
   const language = req.body["update_languages_value"]
@@ -80,7 +79,7 @@ app.patch('/updateLanguage', (req, res) => {
   });
 });
 
-// delete endpoint
+
 app.delete('/delete', (req, res) => {
   const username = req.body["username"];
   const text = req.body["text"];
@@ -93,7 +92,7 @@ app.delete('/delete', (req, res) => {
   });
 });
 
-// getUserLog endpoint
+
 app.get('/getUserLog', (req, res) => {
   //req body fields: valid, id, history
   const username = req.body["username"];
@@ -110,14 +109,7 @@ app.get('/getUserLog', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-  const parsed = parse(req.url, true);
-  const filename = parsed.pathname === '/' ? "/client" : parsed.pathname.replace('/', '');
-  const  path = join("client/", filename);
-  console.log("trying to serve " + path + "...");
-  if (existsSync(path)) {
-    res.write(readFileSync(path));
-    res.end();
-  }
+  
 });
 
 
