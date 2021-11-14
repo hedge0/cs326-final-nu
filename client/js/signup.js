@@ -1,13 +1,13 @@
-document.getElementById('signup').addEventListener('click', () => {
+document.getElementById('signup').addEventListener('click', async () => {
     if (document.getElementById("password").value === document.getElementById("confirm").value) {
-        const response = await fetch('http://localhost:3000/signup', {
+        const response = await fetch('http://localhost:5500/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
             },
             body: JSON.stringify({
                 username: document.getElementById("username").value,
-                password: document.getElementById("password").value,
+                password: document.getElementById("password").value
             })
         });
 
@@ -20,20 +20,19 @@ document.getElementById('signup').addEventListener('click', () => {
         }
     }
     else {
-        alert("these passwords don't match. try again.")
+        alert("Passwords don't match. Try again.")
     }
 });
 
 document.getElementById("show-password").addEventListener('change', () => {
-    const password_fields = document.getElementsByName("password");
-    if (this.checked) {
-        for (const field of password_fields) {
-            field.type = 'username';
-        }
+    let password = document.getElementById("password");
+    let confirm = document.getElementById("confirm");
+    if (password.type === "password" && confirm.type === "password") {
+        password.type = "text";
+        confirm.type = "text";
     }
     else {
-        for (const field of password_fields) {
-            field.type = 'password';
-        }
+        password.type = "password";
+        confirm.type = "password";
     }
 });

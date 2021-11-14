@@ -1,5 +1,5 @@
 document.getElementById('analyze').addEventListener('click', async () => {
-    const response = await fetch('http://localhost:3000/analyze', {
+    const response = await fetch('http://localhost:5500/analyze', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'

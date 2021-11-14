@@ -1,34 +1,26 @@
 'use strict';
-
 const express = require('express');
 const app = express();
-app.use(express.json());
-const port = 3000;
-
-let datastore = {};
-
+const port = 5500;
 app.use(express.json());
 app.use(express.urlencoded({
   extended: true
 }));
 
-
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-});
-
-
+// login endpoint
 app.post('/login', (req, res) => {
   const username = req.body["username"]
   const password = req.body["password"]
 
+  console.log(username);
+
   res.send({
     valid: true,
-    id: username
+    username: username
   });
 });
 
-
+// signup endpoint
 app.post('/signup', (req, res) => {
   const username = req.body["username"]
   const password = req.body["password"]
@@ -36,18 +28,11 @@ app.post('/signup', (req, res) => {
   //later on, check if in database, if so, return response.valid = false
   res.send({
     valid: true,
-    id: username
+    username: username
   });
 });
 
-
-// four different requests:
-// analyze
-// updateSentiment
-// updateLanguage
-// delete
-
-
+// analyze endpoint
 app.post('/analyze', (req, res) => {
   const username = req.body["username"];
   const text = req.body["text"];
@@ -60,6 +45,7 @@ app.post('/analyze', (req, res) => {
   });
 });
 
+// updateSentiment endpoint
 app.post('/updateSentiment', (req, res) => {
   const username = req.body["username"];
   const text = req.body["text"]
@@ -69,7 +55,9 @@ app.post('/updateSentiment', (req, res) => {
   res.send({
     valid: true
   });
-})
+});
+
+// updateLanguage endpoint
 app.post('/updateLanguage', (req, res) => {
   const username = req.body["username"];
   const language = req.body["update_languages_value"]
@@ -80,6 +68,7 @@ app.post('/updateLanguage', (req, res) => {
   });
 });
 
+// delete endpoint
 app.delete('/delete', (req, res) => {
   const username = req.body["username"];
   const text = req.body["text"];
@@ -90,7 +79,7 @@ app.delete('/delete', (req, res) => {
   });
 });
 
-//get user log
+// getUserLog endpoint
 app.get('/getUserLog', (req, res) => {
   //req body fields: valid, id, history
   const username = req.body["username"];
@@ -107,11 +96,11 @@ app.get('/getUserLog', (req, res) => {
 });
 
 
-
 app.get('*', (req, res) => {
-  res.send('NO FOOL, BAD COMMAND');
+  res.send('BAD COMMAND');
 });
 
+
 app.listen(port, () => {
-  console.log(`App listening at http://localhost:${port}`);
+  console.log(`app listening at http://localhost:${port}`);
 });

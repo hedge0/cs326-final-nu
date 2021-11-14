@@ -1,13 +1,12 @@
 document.getElementById('login').addEventListener('click', async () => {
-    const response = await fetch('http://localhost:3000/login', {
+    const response = await fetch('http://localhost:5500/login', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8'
+            'Content-Type': 'application/json;charset=utf-8;*'
         },
         body: JSON.stringify({
             username: document.getElementById("username").value,
-            password: document.getElementById("password").value,
-            text: window.text
+            password: document.getElementById("password").value
         })
     });
 
@@ -28,15 +27,11 @@ document.getElementById('signup').addEventListener('click', () => {
 });
 
 document.getElementById("show-password").addEventListener('change', () => {
-    const password_fields = document.getElementsByName("password");
-    if (this.checked) {
-        for (const field of password_fields) {
-            field.type = 'username';
-        }
+    let password = document.getElementById("password");
+    if (password.type === "password") {
+        password.type = "text";
     }
     else {
-        for (const field of password_fields) {
-            field.type = 'password';
-        }
+        password.type = "password";
     }
 });
