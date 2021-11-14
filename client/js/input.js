@@ -2,7 +2,7 @@ document.getElementById('analyze').addEventListener('click', async () => {
     const response = await fetch('http://localhost:5500/analyze', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({
             username: await window.username,

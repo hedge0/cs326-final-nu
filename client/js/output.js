@@ -2,7 +2,7 @@ window.addEventListener('load', async () => {
     const response = await fetch("http://localhost:5500/getUserLog", {
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({
             username: window.username,

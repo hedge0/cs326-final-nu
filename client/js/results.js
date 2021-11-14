@@ -6,13 +6,12 @@ window.addEventListener('load', async () => {
 });
 
 
-
 document.getElementById('update_sentiment').addEventListener('click', async () => {
     let table = document.getElementById('table');
     const response = await fetch('http://localhost:5500/updateSentiment', {
-        method: 'POST',
+        method: 'PATCH',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({
             username: await window.username,
@@ -29,7 +28,7 @@ document.getElementById('update_sentiment').addEventListener('click', async () =
 document.getElementById('update_languages').addEventListener('click', async () => {
     let table = document.getElementById('table');
     const response = await fetch('http://localhost:5500/updateLanguage', {
-        method: 'POST',
+        method: 'PATCH',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
         },

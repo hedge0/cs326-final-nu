@@ -29,6 +29,8 @@ app.post('/signup', (req, res) => {
   const username = req.body["username"]
   const password = req.body["password"]
 
+  console.log(username);
+
   //later on, check if in database, if so, return response.valid = false
   res.send({
     valid: true,
@@ -42,6 +44,8 @@ app.post('/analyze', (req, res) => {
   const text = req.body["text"];
   const sentiment = req.body["sentiment"];
   const language = req.body["language"];
+
+  console.log(username);
   
   //later on actually analyze 
   res.send({
@@ -50,10 +54,12 @@ app.post('/analyze', (req, res) => {
 });
 
 // updateSentiment endpoint
-app.post('/updateSentiment', (req, res) => {
+app.patch('/updateSentiment', (req, res) => {
   const username = req.body["username"];
   const text = req.body["text"]
   const sentiment = req.body["sentiment"]
+
+  console.log(username);
   
   //later on actually analyze 
   res.send({
@@ -62,9 +68,11 @@ app.post('/updateSentiment', (req, res) => {
 });
 
 // updateLanguage endpoint
-app.post('/updateLanguage', (req, res) => {
+app.patch('/updateLanguage', (req, res) => {
   const username = req.body["username"];
   const language = req.body["update_languages_value"]
+
+  console.log(username);
   
   //later on actually analyze
   res.send({
@@ -76,6 +84,8 @@ app.post('/updateLanguage', (req, res) => {
 app.delete('/delete', (req, res) => {
   const username = req.body["username"];
   const text = req.body["text"];
+
+  console.log(username);
   
   //later on actually delete
   res.send({
@@ -98,7 +108,6 @@ app.get('/getUserLog', (req, res) => {
     data: userLogs
   }));
 });
-
 
 app.get('*', (req, res) => {
   const parsed = parse(req.url, true);
