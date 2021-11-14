@@ -103,14 +103,11 @@ app.get('/getUserLog', (req, res) => {
 app.get('*', (req, res) => {
   const parsed = parse(req.url, true);
   const filename = parsed.pathname === '/' ? "/client" : parsed.pathname.replace('/', '');
-  const path = join("client/", filename);
+  const  path = join("client/", filename);
   console.log("trying to serve " + path + "...");
   if (existsSync(path)) {
-      if (filename.endsWith("html")) {
-          res.writeHead(200, {"Content-Type" : "text/html"});
-          res.write(readFileSync(path));
-          res.end();
-      }
+    res.write(readFileSync(path));
+    res.end();
   }
 });
 
