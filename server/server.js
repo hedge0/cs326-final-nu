@@ -95,7 +95,7 @@ app.get('/getUserLog', (req, res) => {
   ];
   res.send(JSON.stringify({
     valid: true,
-    response: userLogs
+    data: userLogs
   }));
 });
 
@@ -104,8 +104,13 @@ app.get('*', (req, res) => {
   const parsed = parse(req.url, true);
   const filename = parsed.pathname === '/' ? "/client" : parsed.pathname.replace('/', '');
   const path = join("client/", filename);
+  console.log("trying to serve " + path + "...");
   if (existsSync(path)) {
-    res.send(readFileSync(path));
+      if (filename.endsWith("html")) {
+          res.writeHead(200, {"Content-Type" : "text/html"});
+          res.write(readFileSync(path));
+          res.end();
+      }
   }
 });
 
