@@ -16,15 +16,6 @@ document.getElementById('signup').addEventListener('click', () => {
             if (responseJSON.valid) {
                 window.username = responseJSON.username;
                 location.href = "login.html";
-
-                //password checking will be done locally
-                // if (password === confirmpassword) {
-                //     window.username = responseJSON.username;
-                //     location.href = "login.html";
-                // }
-                // else {
-                //     alert("these passwords don't match. try again.")
-                // }
             }
         }
     }

@@ -1,7 +1,5 @@
-
 window.addEventListener('load', async () => {
-
-    const response = await fetch("http://localhost:3000/getUserLogs", {//double check this later 
+    const response = await fetch("http://localhost:3000/getUserLogs", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
@@ -23,7 +21,6 @@ window.addEventListener('load', async () => {
             console.log('user history not found');
         }
     }
-
 });
 
 document.getElementById('analyze').addEventListener('click', () => {

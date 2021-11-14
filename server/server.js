@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 const express = require('express');
 app.use(express.json());
 const app = express();
@@ -23,6 +21,7 @@ app.get('/', (req, res) => {
 app.post('/login', (req, res) => {
   const username = req.body["username"]
   const password = req.body["password"]
+
   res.send({
     valid: true,
     id: username
@@ -33,6 +32,7 @@ app.post('/login', (req, res) => {
 app.post('/signup', (req, res) => {
   const username = req.body["username"]
   const password = req.body["password"]
+
   //later on, check if in database, if so, return response.valid = false
   res.send({
     valid: true,
@@ -41,19 +41,22 @@ app.post('/signup', (req, res) => {
 });
 
 
+// four different requests:
+// analyze
+// updateSentiment
+// updateLanguage
+// delete
 
-//four different requests:
-// '/analyze' 
-// '/updateSentiment'
-//'/updateLanguage'
-//'/delete'
+
 app.post('/analyze', (req, res) => {
   const username = req.body["username"];
   const text = req.body["text"];
   const sentiment = req.body["sentiment"];
   const language = req.body["language"];
+  
+  //later on actually analyze 
   res.send({
-    valid: true//later on actually analyze 
+    valid: true
   });
 });
 
@@ -61,21 +64,26 @@ app.post('/updateSentiment', (req, res) => {
   const username = req.body["username"];
   const text = req.body["text"]
   const sentiment = req.body["sentiment"]
+  
+  //later on actually analyze 
   res.send({
-    valid: true//later on actually analyze 
+    valid: true
   });
 })
 app.post('/updateLanguage', (req, res) => {
   const username = req.body["username"];
   const language = req.body["update_languages_value"]
+  
+  //later on actually analyze
   res.send({
-    valid: true//later on actually analyze 
+    valid: true 
   });
 });
 
 app.delete('/delete', (req, res) => {
   const username = req.body["username"];
   const text = req.body["text"];
+  
   //later on actually delete
   res.send({
     valid: true
@@ -107,4 +115,3 @@ app.get('*', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
-

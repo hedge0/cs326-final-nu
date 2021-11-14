@@ -40,14 +40,14 @@ document.getElementById('update_languages').addEventListener('click', async () =
             language: document.getElementById('table')
         })
     });
+    
     if (response.ok) {
         window.alert("Language updated");
     }
-
 });
 
 document.getElementById('delete').addEventListener('click', async () => {
-    const response = await fetch('http://localhost:3000/delete', {//double check this later 
+    const response = await fetch('http://localhost:3000/delete', {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'

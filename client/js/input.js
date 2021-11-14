@@ -1,5 +1,5 @@
 document.getElementById('analyze').addEventListener('click', async () => {
-    const response = await fetch('http://localhost:3000/analyze', {    //THIS MUST BE THE ENTIRE URL, NOT JUST THE ENDPOINT
+    const response = await fetch('http://localhost:3000/analyze', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
