@@ -1,5 +1,5 @@
 window.addEventListener('load', async () => {
-    const response = await fetch("http://localhost:5500/getUserLogs", {
+    const response = await fetch("http://localhost:5500/getUserLog", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
@@ -10,8 +10,9 @@ window.addEventListener('load', async () => {
     });
 
     if (response.ok) {
-        if (response.valid) {
-            let data = response.json();
+        const responseJSON = await response.json();
+        if (responseJSON.valid) {
+            let data = responseJSON.data;
             createTable(data);
             $(document).ready(function () {
                 $('#data').DataTable();
