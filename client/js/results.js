@@ -24,7 +24,6 @@ document.getElementById('update_sentiment').addEventListener('click', async () =
     if (response.ok) {
         window.alert("Sentiment updated");
     }
-
 });
 
 document.getElementById('update_languages').addEventListener('click', async () => {
