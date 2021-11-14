@@ -1,6 +1,7 @@
 'use strict';
 import {join} from 'path';
 import {readFileSync, existsSync} from 'fs';
+import {parse} from 'url';
 import express from 'express';
 
 const app = express();
@@ -100,7 +101,8 @@ app.get('/getUserLog', (req, res) => {
 
 
 app.get('*', (req, res) => {
-  const filename = parsed.pathname === '/' ? "login.html" : parsed.pathname.replace('/', '');
+  const parsed = parse(req.url, true);
+  const filename = parsed.pathname === '/' ? "/client" : parsed.pathname.replace('/', '');
   const path = join("client/", filename);
   if (existsSync(path)) {
     res.send(readFileSync(path));
