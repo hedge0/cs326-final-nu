@@ -5,9 +5,7 @@ import cors from 'cors';
 const app = express();
 const port = 5500;
 app.use(express.json());
-app.use(express.urlencoded({
-  extended: true
-}));
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 
@@ -16,6 +14,7 @@ app.post('/login', (req, res) => {
   const password = req.body["password"]
 
   console.log(username);
+  console.log(password);
 
   res.send({
     valid: true,
@@ -29,6 +28,7 @@ app.post('/signup', (req, res) => {
   const password = req.body["password"]
 
   console.log(username);
+  console.log(password);
 
   //later on, check if in database, if so, return response.valid = false
   res.send({
@@ -41,14 +41,15 @@ app.post('/signup', (req, res) => {
 app.post('/analyze', (req, res) => {
   const username = req.body["username"];
   const text = req.body["text"];
-  const sentiment = req.body["sentiment"];
-  const language = req.body["language"];
 
   console.log(username);
+  console.log(text);
   
   //later on actually analyze 
   res.send({
-    valid: true
+    text: text,
+    sentiment: 70,
+    language: "English"
   });
 });
 
@@ -106,10 +107,6 @@ app.get('/getUserLog', (req, res) => {
     valid: true,
     data: userLogs
   }));
-});
-
-app.get('*', (req, res) => {
-  
 });
 
 

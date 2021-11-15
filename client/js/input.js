@@ -5,7 +5,7 @@ document.getElementById('analyze').addEventListener('click', async () => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            username: await window.username,
+            username: window.username,  //FIX THIS
             text: document.getElementById("input").value
         })
     });
@@ -13,13 +13,13 @@ document.getElementById('analyze').addEventListener('click', async () => {
     if (response.ok) {
         const responseJSON = await response.json();
         if (responseJSON.valid) {
-            window.text = responseJSON.text;
-            window.sentiment = responseJSON.sentiment;
-            window.language = responseJSON.language;
-            location.href = "results.html";
+            //window.text = responseJSON.text;
+            //window.sentiment = responseJSON.sentiment;
+            //window.language = responseJSON.language;
+            //location.href = "results.html";
         }
         else {
-            console.log("An error has occured");s
+            console.log("An error has occured");
         }
     }
 });

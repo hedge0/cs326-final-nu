@@ -2,7 +2,7 @@ document.getElementById('login').addEventListener('click', async () => {
     const response = await fetch('http://localhost:5500/login', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json*'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({
             username: document.getElementById("username").value,
@@ -13,11 +13,8 @@ document.getElementById('login').addEventListener('click', async () => {
     if (response.ok) {
         const responseJSON = await response.json();
         if (responseJSON.valid) {
-            window.username = responseJSON.username;
+            window.username = "Hedge";
             location.href = "input.html";
-        }
-        else {
-            window.alert("Invalid Username or Password")
         }
     }
 });
