@@ -1,3 +1,6 @@
+const storage = window.sessionStorage;
+
+
 document.getElementById('analyze').addEventListener('click', async () => {
     const response = await fetch('http://localhost:5500/analyze', {
         method: 'POST',
@@ -5,25 +8,22 @@ document.getElementById('analyze').addEventListener('click', async () => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            username: window.username,  //FIX THIS
+            username: storage.getItem("username"),
             text: document.getElementById("input").value
         })
     });
 
     if (response.ok) {
         const responseJSON = await response.json();
-        if (responseJSON.valid) {
-            //window.text = responseJSON.text;
-            //window.sentiment = responseJSON.sentiment;
-            //window.language = responseJSON.language;
-            //location.href = "results.html";
-        }
-        else {
-            console.log("An error has occured");
-        }
+        storage.setItem("text", responseJSON.text);
+        storage.setItem("sentiment", responseJSON.sentiment);
+        storage.setItem("language", responseJSON.language);
+        location.href = "results.html";
     }
 });
 
+
 document.getElementById('signout').addEventListener('click', () => {
+    storage.clear();
     location.href = "login.html";
 });

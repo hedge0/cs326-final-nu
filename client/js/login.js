@@ -1,3 +1,6 @@
+const storage = window.sessionStorage;
+
+
 document.getElementById('login').addEventListener('click', async () => {
     const response = await fetch('http://localhost:5500/login', {
         method: 'POST',
@@ -13,15 +16,17 @@ document.getElementById('login').addEventListener('click', async () => {
     if (response.ok) {
         const responseJSON = await response.json();
         if (responseJSON.valid) {
-            window.username = "Hedge";
+            storage.setItem("username", responseJSON.username);
             location.href = "input.html";
         }
     }
 });
 
+
 document.getElementById('signup').addEventListener('click', () => {
     location.href = "signup.html";
 });
+
 
 document.getElementById("show-password").addEventListener('change', () => {
     let password = document.getElementById("password");

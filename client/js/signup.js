@@ -1,3 +1,6 @@
+const storage = window.sessionStorage;
+
+
 document.getElementById('signup').addEventListener('click', async () => {
     if (document.getElementById("password").value === document.getElementById("confirm").value) {
         const response = await fetch('http://localhost:5500/signup', {
@@ -14,7 +17,7 @@ document.getElementById('signup').addEventListener('click', async () => {
         if (response.ok) {
             const responseJSON = await response.json();
             if (responseJSON.valid) {
-                window.username = responseJSON.username;
+                storage.setItem("username", responseJSON.username);
                 location.href = "input.html";
             }
         }
@@ -23,6 +26,7 @@ document.getElementById('signup').addEventListener('click', async () => {
         alert("Passwords don't match. Try again.")
     }
 });
+
 
 document.getElementById("show-password").addEventListener('change', () => {
     let password = document.getElementById("password");

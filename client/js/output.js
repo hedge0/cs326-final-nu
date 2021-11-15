@@ -1,3 +1,6 @@
+const storage = window.sessionStorage;
+
+
 window.addEventListener('load', async () => {
     const response = await fetch("http://localhost:5500/getUserLog", {
         method: 'GET',
@@ -24,11 +27,14 @@ window.addEventListener('load', async () => {
     }
 });
 
+
 document.getElementById('analyze').addEventListener('click', () => {
     location.href = "input.html";
 });
 
+
 document.getElementById('signout').addEventListener('click', () => {
+    storage.clear();
     location.href = "login.html";
 });
 

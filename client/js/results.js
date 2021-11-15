@@ -1,82 +1,112 @@
-// Get data on load to create table
+const storage = window.sessionStorage;
+
+
 window.addEventListener('load', async () => {
-    let sentiment = await window.sentiment;
-    let languages = await window.languages;
+    let sentiment = storage.getItem("sentiment");
+    let languages = storage.getItem("language");
     createTable({ 'sentiment': sentiment, 'languages': languages });
 });
 
 
 document.getElementById('update_sentiment').addEventListener('click', async () => {
-    let table = document.getElementById('table');
+    const updateVal = document.getElementById('update_sentiment_value').value;
     const response = await fetch('http://localhost:5500/updateSentiment', {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            username: await window.username,
-            sentiment: document.getElementById('update_sentiment_value'),
-            text: window.text
-        })
-    });
-
-    if (response.ok) {
-        window.alert("Sentiment updated");
-    }
-});
-
-document.getElementById('update_languages').addEventListener('click', async () => {
-    let table = document.getElementById('table');
-    const response = await fetch('http://localhost:5500/updateLanguage', {
-        method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify({
-            username: await window.username,
-            text: await window.text,
-            language: document.getElementById('table')
-        })
-    });
-    
-    if (response.ok) {
-        window.alert("Language updated");
-    }
-});
-
-document.getElementById('delete').addEventListener('click', async () => {
-    const response = await fetch('http://localhost:5500/delete', {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify({
-            username: await window.username,
-            text: await window.text
+            username: storage.getItem("username"),
+            text: storage.getItem("text"),
+            sentiment: updateVal
         })
     });
 
     if (response.ok) {
         const responseJSON = await response.json();
         if (responseJSON.valid) {
+            let val = document.getElementById('sentiment_value');
+            val.innerText = updateVal;
+        }
+    }
+});
+
+
+document.getElementById('update_languages').addEventListener('click', async () => {
+    const updateVal = document.getElementById('update_languages_value').value;
+    const response = await fetch('http://localhost:5500/updateLanguage', {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            username: storage.getItem("username"),
+            text: storage.getItem("text"),
+            language: updateVal
+        })
+    });
+    
+    if (response.ok) {
+        const responseJSON = await response.json();
+        if (responseJSON.valid) {
+            let val = document.getElementById('languages_value');
+            val.innerText = updateVal;
+        }
+    }
+});
+
+
+document.getElementById('delete').addEventListener('click', async () => {
+    const response = await fetch('http://localhost:5500/delete', {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            username: storage.getItem("username"),
+            text: storage.getItem("text")
+        })
+    });
+
+    if (response.ok) {
+        const responseJSON = await response.json();
+        if (responseJSON.valid) {
+            storage.removeItem("text");
+            storage.removeItem("sentiment");
+            storage.removeItem("language");
             location.href = "input.html";
         }
     }
 });
 
+
+document.getElementById('analyze').addEventListener('click', () => {
+    storage.removeItem("text");
+    storage.removeItem("sentiment");
+    storage.removeItem("language");
+    location.href = "input.html";
+});
+
+
 document.getElementById('getlogs').addEventListener('click', () => {
+    storage.removeItem("text");
+    storage.removeItem("sentiment");
+    storage.removeItem("language");
     location.href = "output.html";
 });
 
+
 document.getElementById('signout').addEventListener('click', () => {
+    storage.clear();
     location.href = "login.html";
 });
+
 
 function createTable(data) {
     let table = document.getElementById('table');
     let row = `<tr>
-                    <td id = "tablesentiment" >${data.sentiment}</td>
-                    <td id = "tablelanguages">${data.languages}</td>
+                    <td id = "sentiment_value">${data.sentiment}</td>
+                    <td id = "languages_value">${data.languages}</td>
               </tr>`;
     table.innerHTML += row;
 } 

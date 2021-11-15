@@ -10,11 +10,8 @@ app.use(cors());
 
 
 app.post('/login', (req, res) => {
-  const username = req.body["username"]
-  const password = req.body["password"]
-
-  console.log(username);
-  console.log(password);
+  const username = req.body["username"];
+  const password = req.body["password"];
 
   res.send({
     valid: true,
@@ -24,11 +21,8 @@ app.post('/login', (req, res) => {
 
 
 app.post('/signup', (req, res) => {
-  const username = req.body["username"]
-  const password = req.body["password"]
-
-  console.log(username);
-  console.log(password);
+  const username = req.body["username"];
+  const password = req.body["password"];
 
   //later on, check if in database, if so, return response.valid = false
   res.send({
@@ -41,9 +35,6 @@ app.post('/signup', (req, res) => {
 app.post('/analyze', (req, res) => {
   const username = req.body["username"];
   const text = req.body["text"];
-
-  console.log(username);
-  console.log(text);
   
   //later on actually analyze 
   res.send({
@@ -56,10 +47,8 @@ app.post('/analyze', (req, res) => {
 
 app.patch('/updateSentiment', (req, res) => {
   const username = req.body["username"];
-  const text = req.body["text"]
-  const sentiment = req.body["sentiment"]
-
-  console.log(username);
+  const text = req.body["text"];
+  const sentiment = req.body["sentiment"];
   
   //later on actually analyze 
   res.send({
@@ -70,9 +59,8 @@ app.patch('/updateSentiment', (req, res) => {
 
 app.patch('/updateLanguage', (req, res) => {
   const username = req.body["username"];
-  const language = req.body["update_languages_value"]
-
-  console.log(username);
+  const text = req.body["text"];
+  const language = req.body["update_languages_value"];
   
   //later on actually analyze
   res.send({
@@ -84,8 +72,6 @@ app.patch('/updateLanguage', (req, res) => {
 app.delete('/delete', (req, res) => {
   const username = req.body["username"];
   const text = req.body["text"];
-
-  console.log(username);
   
   //later on actually delete
   res.send({
