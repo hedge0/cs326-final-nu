@@ -32,8 +32,8 @@ app.post('/signup', (req, res) => {
 });
 
 
-app.post('/analyze', (req, res) => {
-  const username = req.body["username"];
+app.post('/analyze/:username', (req, res) => {
+  const username = req.params.username;
   const text = req.body["text"];
   
   //later on actually analyze 
@@ -45,8 +45,8 @@ app.post('/analyze', (req, res) => {
 });
 
 
-app.patch('/updateSentiment', (req, res) => {
-  const username = req.body["username"];
+app.patch('/updateSentiment/:username', (req, res) => {
+  const username = req.params.username;
   const text = req.body["text"];
   const sentiment = req.body["sentiment"];
   
@@ -57,8 +57,8 @@ app.patch('/updateSentiment', (req, res) => {
 });
 
 
-app.patch('/updateLanguage', (req, res) => {
-  const username = req.body["username"];
+app.patch('/updateLanguage/:username', (req, res) => {
+  const username = req.params.username;
   const text = req.body["text"];
   const language = req.body["update_languages_value"];
   
@@ -69,8 +69,8 @@ app.patch('/updateLanguage', (req, res) => {
 });
 
 
-app.delete('/delete', (req, res) => {
-  const username = req.body["username"];
+app.delete('/delete/:username', (req, res) => {
+  const username = req.params.username;
   const text = req.body["text"];
   
   //later on actually delete
@@ -80,9 +80,9 @@ app.delete('/delete', (req, res) => {
 });
 
 
-app.get('/getUserLog', (req, res) => {
+app.get('/getUserLog/:username', (req, res) => {
   //req body fields: valid, id, history
-  const username = req.body["username"];
+  const username = req.params.username;
   let userLogs = [
     { 'text': 'RECORD HIGH', 'sentiment': '80', 'languages': 'English', 'date': '10/14/1990' },
     { 'text': 'RECORD HIGH', 'sentiment': '80', 'languages': 'English', 'date': '10/14/1990' },

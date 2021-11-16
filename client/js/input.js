@@ -2,13 +2,12 @@ const storage = window.sessionStorage;
 
 
 document.getElementById('analyze').addEventListener('click', async () => {
-    const response = await fetch('http://localhost:5500/analyze', {
+    const response = await fetch(`http://localhost:5500/analyze/${storage.getItem("username")}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            username: storage.getItem("username"),
             text: document.getElementById("input").value
         })
     });

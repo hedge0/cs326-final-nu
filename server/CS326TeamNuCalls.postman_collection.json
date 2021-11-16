@@ -68,7 +68,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"hedge\",\r\n    \"text\": \"wow hello there\",\r\n    \"sentiment\": 60,\r\n    \"language\": \"English\"\r\n}",
+					"raw": "{\r\n    \"text\": \"wow hello there\",\r\n    \"sentiment\": 60,\r\n    \"language\": \"English\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -76,14 +76,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5500/analyze",
+					"raw": "http://localhost:5500/analyze/hedge",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5500",
 					"path": [
-						"analyze"
+						"analyze",
+						"hedge"
 					]
 				}
 			},
@@ -96,7 +97,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"hedge\",\r\n    \"text\": \"wow hello there\",\r\n    \"sentiment\": 60\r\n}",
+					"raw": "{\r\n    \"text\": \"wow hello there\",\r\n    \"sentiment\": 60\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -104,14 +105,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5500/updateSentiment",
+					"raw": "http://localhost:5500/updateSentiment/hedge",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5500",
 					"path": [
-						"updateSentiment"
+						"updateSentiment",
+						"hedge"
 					]
 				}
 			},
@@ -124,7 +126,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"hedge\",\r\n    \"text\": \"wow hello there\",\r\n    \"language\": \"English\"\r\n}",
+					"raw": "{\r\n    \"text\": \"wow hello there\",\r\n    \"language\": \"English\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -132,14 +134,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5500/updateLanguage",
+					"raw": "http://localhost:5500/updateLanguage/hedge",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5500",
 					"path": [
-						"updateLanguage"
+						"updateLanguage",
+						"hedge"
 					]
 				}
 			},
@@ -152,7 +155,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"hedge\",\r\n    \"text\": \"wow hello there\"\r\n}",
+					"raw": "{\r\n    \"text\": \"wow hello there\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -160,14 +163,35 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5500/delete",
+					"raw": "http://localhost:5500/delete/hedge",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5500",
 					"path": [
-						"delete"
+						"delete",
+						"hedge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserLog",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5500/getUserLog/hedge",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5500",
+					"path": [
+						"getUserLog",
+						"hedge"
 					]
 				}
 			},

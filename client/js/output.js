@@ -2,27 +2,20 @@ const storage = window.sessionStorage;
 
 
 window.addEventListener('load', async () => {
-    const response = await fetch("http://localhost:5500/getUserLog", {
+    const response = await fetch(`http://localhost:5500/getUserLog/${storage.getItem("username")}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            username: window.username,
-        })
+        }
     });
 
     if (response.ok) {
         const responseJSON = await response.json();
         if (responseJSON.valid) {
-            let data = responseJSON.data;
-            createTable(data);
+            createTable(responseJSON.data);
             $(document).ready(function () {
                 $('#data').DataTable();
             });
-        }
-        else {
-            console.log('user history not found');
         }
     }
 });
