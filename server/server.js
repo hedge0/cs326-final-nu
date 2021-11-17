@@ -36,7 +36,7 @@ app.post('/analyze/:username', (req, res) => {
   const username = req.params.username;
   const text = req.body["text"];
   
-  //later on actually analyze 
+  //later on actually analyze and store results in database
   res.send({
     text: text,
     sentiment: 70,
