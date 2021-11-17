@@ -7,9 +7,11 @@ import dateTime from "node-datetime";
 import { Passport } from 'passport';
 
 
+
 const expressSession = require('express-session');  // for managing session state
 const passport = Passport();            // handles authentication
 const LocalStrategy = require('passport-local').Strategy; // username/password strategy
+AWS.config.loadFromPath("../secrets.json");
 const comprehend = new AWS.Comprehend();
 const app = express();
 const port = 5500;
