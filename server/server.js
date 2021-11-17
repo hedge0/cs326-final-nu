@@ -1,7 +1,9 @@
 'use strict';
 import express from 'express';
 import cors from 'cors';
+import AWS from "aws-sdk";
 
+const comprehend = new AWS.Comprehend();
 const app = express();
 const port = 5500;
 app.use(express.json());
@@ -35,6 +37,23 @@ app.post('/signup', (req, res) => {
 app.post('/analyze/:username', (req, res) => {
   const username = req.params.username;
   const text = req.body["text"];
+
+  comprehend.batchDetectDominantLanguage({ TextList: "I love apples" }, function (err, data) {
+    if (err) {
+      console.log(err, err.stack);
+    }
+    else {
+      console.log(data);
+      comprehend.detectSentiment({ Text: "I love apples", LanguageCode: "en" }, function (err, data) {
+        if (err) {
+          console.log(err, err.stack);
+        }
+        else {
+          console.log(data);
+        }
+      });
+    }
+  });
   
   //later on actually analyze and store results in database
   res.send({
