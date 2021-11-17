@@ -39,7 +39,6 @@ bower_components
 build/Release
 
 # Dependency directories
-node_modules/
 jspm_packages/
 
 # Snowpack dependency directory (https://snowpack.dev/)
@@ -117,4 +116,5 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-.secrets.json
+# added custom secrets file
+secrets.json
