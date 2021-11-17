@@ -24,8 +24,18 @@ const session = {
   saveUninitialized: false
 };
 
-// Passport configuration
+let users = {}; //list of users, will create mongodb for this
 
+
+const findUser = (name) => {
+  return users[name];
+}
+
+const validatePassword = (usr, pwd) => {
+  return (users[usr] === pwd);
+}
+
+// Passport configuration
 const strategy = new LocalStrategy(
   async (username, password, done) => {
     if (!findUser(username)) {
