@@ -4,6 +4,7 @@ import cors from 'cors';
 import AWS from "aws-sdk";
 import dateTime from "node-datetime";
 
+AWS.config.loadFromPath("../secrets.json");
 const comprehend = new AWS.Comprehend();
 const app = express();
 const port = 5500;
