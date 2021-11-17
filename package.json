@@ -14,7 +14,7 @@
     "particles.js": "^2.0.0"
   },
   "scripts": {
-    "test": "start"
+    "test": "server/server.js"
   },
   "repository": {
     "type": "git",
