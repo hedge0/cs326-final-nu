@@ -2,14 +2,65 @@
 import express from 'express';
 import cors from 'cors';
 import AWS from "aws-sdk";
+import passport from 'passport;'
 import dateTime from "node-datetime";
+import { Passport } from 'passport';
 
+
+const expressSession = require('express-session');  // for managing session state
+const passport = Passport();            // handles authentication
+const LocalStrategy = require('passport-local').Strategy; // username/password strategy
 const comprehend = new AWS.Comprehend();
 const app = express();
 const port = 5500;
+
+// Session configuration
+
+const session = {
+  secret : process.env.SECRET || 'SECRET', // set this encryption key in Heroku config (never in GitHub)!
+  resave : false,
+  saveUninitialized: false
+};
+
+// Passport configuration
+
+const strategy = new LocalStrategy(
+  async (username, password, done) => {
+    if (!findUser(username)) {
+        // no such user
+        return done(null, false, { 'message' : 'Wrong username' });
+    }
+    if (!validatePassword(username, password)) {
+        // invalid password
+        // should disable logins after N messages
+        // delay return to rate-limit brute-force attacks
+        await new Promise((r) => setTimeout(r, 2000)); // two second delay
+        return done(null, false, { 'message' : 'Wrong password' });
+    }
+    // success!
+    // should create a user object here, associated with a unique identifier
+    return done(null, username);
+});
+
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+
+app.use(expressSession(session));
+passport.use(strategy);
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Convert user object to a unique identifier.
+passport.serializeUser((user, done) => {
+  done(null, user);
+});
+// Convert a unique identifier to a user object.
+passport.deserializeUser((uid, done) => {
+  done(null, uid);
+});
 
 
 app.post('/login', (req, res) => {
