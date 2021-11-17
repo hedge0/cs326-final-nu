@@ -2,6 +2,7 @@
 import express from 'express';
 import cors from 'cors';
 import AWS from "aws-sdk";
+import dateTime from "node-datetime";
 
 const comprehend = new AWS.Comprehend();
 const app = express();
@@ -37,6 +38,9 @@ app.post('/signup', (req, res) => {
 app.post('/analyze/:username', (req, res) => {
   const username = req.params.username;
   const text = req.body["text"];
+  const date = dateTime.create().format('Y-m-d H:M:S');
+  let sentiment;
+  let language;
 
   comprehend.batchDetectDominantLanguage({ TextList: "I love apples" }, function (err, data) {
     if (err) {
@@ -58,8 +62,8 @@ app.post('/analyze/:username', (req, res) => {
   //later on actually analyze and store results in database
   res.send({
     text: text,
-    sentiment: 70,
-    language: "English"
+    sentiment: sentiment,
+    language: language
   });
 });
 
