@@ -88,7 +88,7 @@ app.post('/login', (req, res) => {
 app.post('/signup', (req, res) => {
   const username = req.body["username"];
   const password = req.body["password"];
-
+  
   //later on, check if in database, if so, return response.valid = false
   res.send({
     valid: true,
@@ -219,6 +219,10 @@ app.get('/getUserLog/:username', (req, res) => {
     valid: true,
     data: userLogs
   }));
+});
+
+app.get("*", (req, res) =>{ 
+
 });
 
 
