@@ -6,9 +6,11 @@ import dateTime from "node-datetime";
 import expressSession from 'express-session'; // for managing session state    
 import passport from 'passport'; // handles authentication
 import passportLocal from 'passport-local';
-import e from 'express';
+import path from 'path';
 import { get_auth, put_auth, put_data, update_sentiment_data, update_language_data, delete_data, get_data } from './crud.js'
 
+
+let __dirname = path.resolve();
 
 const LocalStrategy = passportLocal.Strategy; // username/password strategy
 AWS.config.loadFromPath("secrets.json");
@@ -59,6 +61,7 @@ const strategy = new LocalStrategy(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+app.use(express.static('client'));
 
 app.use(expressSession(session));
 passport.use(strategy);
@@ -218,7 +221,7 @@ app.get('/getUserLog/:username', async (req, res) => {
 });
 
 app.get("*", (req, res) => {
-
+  res.sendFile(path.join(__dirname, '/client/login.html'));
 });
 
 
