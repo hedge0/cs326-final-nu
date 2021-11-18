@@ -5,6 +5,7 @@ import AWS from "aws-sdk";
 import dateTime from "node-datetime";
 import expressSession from 'express-session'; // for managing session state    
 import passport from 'passport'; // handles authentication
+import e from 'express';
 
 
 const LocalStrategy = passport.Strategy; // username/password strategy
@@ -107,8 +108,43 @@ app.post('/analyze/:username', (req, res) => {
       console.log(err, err.stack);
     }
     else {
-      language = data["Languages"].slice(-1)[0]["LanguageCode"];
-      comprehend.detectSentiment({ Text: text, LanguageCode: language }, function (err, data) {
+      const iso = data["Languages"].slice(-1)[0]["LanguageCode"];
+
+      if (iso === 'en') {
+        language = 'ENGLISH';
+      }
+      else if (iso === 'es') {
+        language = 'SPANISH';
+      }
+      else if (iso === 'fr') {
+        language = 'FRENCH';
+      }
+      else if (iso === 'de') {
+        language = 'GERMAN';
+      }
+      else if (iso === 'pt') {
+        language = 'PORTUGUESE';
+      }
+      else if (iso === 'ar') {
+        language = 'ARABIC';
+      }
+      else if (iso === 'hi') {
+        language = 'HINDI';
+      }
+      else if (iso === 'ja') {
+        language = 'JAPANESE';
+      }
+      else if (iso === 'ko') {
+        language = 'KOREAN';
+      }
+      else if (iso === 'zh') {
+        language = 'CHINESE';
+      }
+      else if (iso === 'zh-TW') {
+        language = 'CHINESE (T)';
+      }
+
+      comprehend.detectSentiment({ Text: text, LanguageCode: iso }, function (err, data) {
         if (err) {
           console.log(err, err.stack);
         }
