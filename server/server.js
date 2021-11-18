@@ -88,7 +88,7 @@ app.post('/login', (req, res) => {
 app.post('/signup', (req, res) => {
   const username = req.body["username"];
   const password = req.body["password"];
-  
+
   //later on, check if in database, if so, return response.valid = false
   res.send({
     valid: true,
@@ -146,7 +146,7 @@ app.post('/analyze/:username', (req, res) => {
       }
       else {
         iso = 'en';
-        language = "NONE";
+        language = 'NONE';
       }
 
       comprehend.detectSentiment({ Text: text, LanguageCode: iso }, function (err, data) {
@@ -221,7 +221,7 @@ app.get('/getUserLog/:username', (req, res) => {
   }));
 });
 
-app.get("*", (req, res) =>{ 
+app.get("*", (req, res) => {
 
 });
 
