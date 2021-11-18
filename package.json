@@ -10,8 +10,11 @@
     "aws-sdk": "^2.1030.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "express-session": "^1.17.2",
     "node-datetime": "^2.1.2",
-    "particles.js": "^2.0.0"
+    "particles.js": "^2.0.0",
+    "passport": "^0.5.0",
+    "passport-local": "^1.0.0"
   },
   "scripts": {
     "test": "node server/server.js",
