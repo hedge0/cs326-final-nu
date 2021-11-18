@@ -5,9 +5,10 @@ import AWS from "aws-sdk";
 import dateTime from "node-datetime";
 import expressSession from 'express-session'; // for managing session state    
 import passport from 'passport'; // handles authentication
+import passportLocal from 'passport-local';
 
 
-const LocalStrategy = passport.Strategy; // username/password strategy
+const LocalStrategy = passportLocal.Strategy; // username/password strategy
 AWS.config.loadFromPath("secrets.json");
 const comprehend = new AWS.Comprehend();
 const app = express();
