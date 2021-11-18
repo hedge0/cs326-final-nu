@@ -109,7 +109,7 @@ app.post('/analyze/:username', (req, res) => {
       console.log(err, err.stack);
     }
     else {
-      const iso = data["Languages"].slice(-1)[0]["LanguageCode"];
+      let iso = data["Languages"].slice(-1)[0]["LanguageCode"];
 
       if (iso === 'en') {
         language = 'ENGLISH';
