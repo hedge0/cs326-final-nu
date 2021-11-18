@@ -27,18 +27,37 @@
                 <table class = "table">
                     <tr>
                         <th>Sentiment</th>
-                        <th>Languages</th>
+                        <th>Language</th>
                     </tr>
                     <tbody id="table"></tbody>
                 </table>
             </div>
             <div class = "box2"></div>
             <div class = "box2">
-                <input class = "form-control" placeholder = "Update Sentiment" id = "update_sentiment_value" name = "update_sentiment_value" style = "display:inline-block; width:60%; margin-right: 10px;">
+                <select class = "form-select" aria-label = "Default select example" id = "update_sentiment_value" style = "display:inline-block; width:60%; margin-right: 10px;">
+                    <option selected>Update Sentiment</option>
+                    <option value = "POSITIVE">Positive</option>
+                    <option value = "NEGATIVE">Negative</option>
+                    <option value = "NEUTRAL">Neutral</option>
+                    <option value = "MIXED">Mixed</option>
+                </select>
                 <button class = "btn btn-primary" type = "button" id = "update_sentiment" style = "display:inline-block; width:20%; min-width:175px;">Update</button>
             </div>
             <div class = "box2">
-                <input class = "form-control" placeholder = "Update Languages" id = "update_languages_value" name = "update_languages_value" style = "display:inline-block; width:60%; margin-right: 10px;">
+                <select class = "form-select" aria-label = "Default select example" id = "update_languages_value" style = "display:inline-block; width:60%; margin-right: 10px;">
+                    <option selected>Update Language</option>
+                    <option value = "ENGLISH">English</option>
+                    <option value = "SPANISH">Spanish</option>
+                    <option value = "FRENCH">French</option>
+                    <option value = "GERMAN">German</option>
+                    <option value = "PORTUGUESE">Portuguese</option>
+                    <option value = "ARABIC">Arabic</option>
+                    <option value = "HINDI">Hindi</option>
+                    <option value = "JAPANESE">Japanese</option>
+                    <option value = "KOREAN">Korean</option>
+                    <option value = "CHINESE">Chinese</option>
+                    <option value = "CHINESE (T)">Chinese (T)</option>
+                </select>
                 <button class = "btn btn-primary" type = "button" id = "update_languages" style = "display:inline-block; width:20%; min-width:175px;">Update</button>
             </div>
             <div class = "box2">

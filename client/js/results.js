@@ -10,22 +10,25 @@ window.addEventListener('load', async () => {
 
 document.getElementById('update_sentiment').addEventListener('click', async () => {
     const updateVal = document.getElementById('update_sentiment_value').value;
-    const response = await fetch(`http://localhost:5500/updateSentiment/${storage.getItem("username")}`, {
-        method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            text: storage.getItem("text"),
-            sentiment: updateVal
-        })
-    });
 
-    if (response.ok) {
-        const responseJSON = await response.json();
-        if (responseJSON.valid) {
-            let val = document.getElementById('sentiment_value');
-            val.innerText = updateVal;
+    if (updateVal !== "Update Sentiment") {
+        const response = await fetch(`http://localhost:5500/updateSentiment/${storage.getItem("username")}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                text: storage.getItem("text"),
+                sentiment: updateVal
+            })
+        });
+
+        if (response.ok) {
+            const responseJSON = await response.json();
+            if (responseJSON.valid) {
+                let val = document.getElementById('sentiment_value');
+                val.innerText = updateVal;
+            }
         }
     }
 });
@@ -33,22 +36,25 @@ document.getElementById('update_sentiment').addEventListener('click', async () =
 
 document.getElementById('update_languages').addEventListener('click', async () => {
     const updateVal = document.getElementById('update_languages_value').value;
-    const response = await fetch(`http://localhost:5500/updateLanguage/${storage.getItem("username")}`, {
-        method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            text: storage.getItem("text"),
-            language: updateVal
-        })
-    });
-    
-    if (response.ok) {
-        const responseJSON = await response.json();
-        if (responseJSON.valid) {
-            let val = document.getElementById('languages_value');
-            val.innerText = updateVal;
+
+    if (updateVal !== "Update Language") {
+        const response = await fetch(`http://localhost:5500/updateLanguage/${storage.getItem("username")}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                text: storage.getItem("text"),
+                language: updateVal
+            })
+        });
+        
+        if (response.ok) {
+            const responseJSON = await response.json();
+            if (responseJSON.valid) {
+                let val = document.getElementById('languages_value');
+                val.innerText = updateVal;
+            }
         }
     }
 });
