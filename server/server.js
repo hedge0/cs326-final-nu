@@ -7,6 +7,7 @@ import expressSession from 'express-session'; // for managing session state
 import passport from 'passport'; // handles authentication
 import passportLocal from 'passport-local';
 import e from 'express';
+import { get_auth, put_auth, put_data, update_sentiment_data, update_language_data, delete_data, get_data } from './crud.js'
 
 
 const LocalStrategy = passportLocal.Strategy; // username/password strategy
@@ -74,7 +75,7 @@ passport.deserializeUser((uid, done) => {
 });
 
 
-app.post('/login', (req, res) => {
+app.post('/login', async (req, res) => {
   const username = req.body["username"];
   const password = req.body["password"];
 
@@ -85,7 +86,7 @@ app.post('/login', (req, res) => {
 });
 
 
-app.post('/signup', (req, res) => {
+app.post('/signup', async (req, res) => {
   const username = req.body["username"];
   const password = req.body["password"];
 
@@ -97,7 +98,7 @@ app.post('/signup', (req, res) => {
 });
 
 
-app.post('/analyze/:username', (req, res) => {
+app.post('/analyze/:username', async (req, res) => {
   const username = req.params.username;
   const text = req.body["text"];
   const date = dateTime.create().format('Y-m-d H:M:S');
@@ -170,7 +171,7 @@ app.post('/analyze/:username', (req, res) => {
 });
 
 
-app.patch('/updateSentiment/:username', (req, res) => {
+app.patch('/updateSentiment/:username', async (req, res) => {
   const username = req.params.username;
   const text = req.body["text"];
   const sentiment = req.body["sentiment"];
@@ -182,7 +183,7 @@ app.patch('/updateSentiment/:username', (req, res) => {
 });
 
 
-app.patch('/updateLanguage/:username', (req, res) => {
+app.patch('/updateLanguage/:username', async (req, res) => {
   const username = req.params.username;
   const text = req.body["text"];
   const language = req.body["update_languages_value"];
@@ -194,7 +195,7 @@ app.patch('/updateLanguage/:username', (req, res) => {
 });
 
 
-app.delete('/delete/:username', (req, res) => {
+app.delete('/delete/:username', async (req, res) => {
   const username = req.params.username;
   const text = req.body["text"];
 
@@ -205,15 +206,10 @@ app.delete('/delete/:username', (req, res) => {
 });
 
 
-app.get('/getUserLog/:username', (req, res) => {
+app.get('/getUserLog/:username', async (req, res) => {
   //req body fields: valid, id, history
   const username = req.params.username;
-  let userLogs = [
-    { 'text': 'RECORD HIGH', 'sentiment': '80', 'languages': 'English', 'date': '10/14/1990' },
-    { 'text': 'RECORD HIGH', 'sentiment': '80', 'languages': 'English', 'date': '10/14/1990' },
-    { 'text': 'RECORD HIGH', 'sentiment': '80', 'languages': 'English', 'date': '10/14/1990' },
-    { 'text': 'RECORD HIGH', 'sentiment': '80', 'languages': 'English', 'date': '10/14/1990' }
-  ];
+  let userLogs = await get_data(username);
 
   res.send(JSON.stringify({
     valid: true,
