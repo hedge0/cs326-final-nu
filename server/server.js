@@ -18,8 +18,8 @@ const port = 5500;
 // Session configuration
 
 const session = {
-  secret : process.env.SECRET || 'SECRET', // set this encryption key in Heroku config (never in GitHub)!
-  resave : false,
+  secret: process.env.SECRET || 'SECRET', // set this encryption key in Heroku config (never in GitHub)!
+  resave: false,
   saveUninitialized: false
 };
 
@@ -38,20 +38,20 @@ const validatePassword = (usr, pwd) => {
 const strategy = new LocalStrategy(
   async (username, password, done) => {
     if (!findUser(username)) {
-        // no such user
-        return done(null, false, { 'message' : 'Wrong username' });
+      // no such user
+      return done(null, false, { 'message': 'Wrong username' });
     }
     if (!validatePassword(username, password)) {
-        // invalid password
-        // should disable logins after N messages
-        // delay return to rate-limit brute-force attacks
-        await new Promise((r) => setTimeout(r, 2000)); // two second delay
-        return done(null, false, { 'message' : 'Wrong password' });
+      // invalid password
+      // should disable logins after N messages
+      // delay return to rate-limit brute-force attacks
+      await new Promise((r) => setTimeout(r, 2000)); // two second delay
+      return done(null, false, { 'message': 'Wrong password' });
     }
     // success!
     // should create a user object here, associated with a unique identifier
     return done(null, username);
-});
+  });
 
 
 
@@ -144,6 +144,10 @@ app.post('/analyze/:username', (req, res) => {
       else if (iso === 'zh-TW') {
         language = 'CHINESE (T)';
       }
+      else {
+        iso = 'en';
+        language = "NONE";
+      }
 
       comprehend.detectSentiment({ Text: text, LanguageCode: iso }, function (err, data) {
         if (err) {
@@ -170,7 +174,7 @@ app.patch('/updateSentiment/:username', (req, res) => {
   const username = req.params.username;
   const text = req.body["text"];
   const sentiment = req.body["sentiment"];
-  
+
   //later on actually analyze 
   res.send({
     valid: true
@@ -182,10 +186,10 @@ app.patch('/updateLanguage/:username', (req, res) => {
   const username = req.params.username;
   const text = req.body["text"];
   const language = req.body["update_languages_value"];
-  
+
   //later on actually analyze
   res.send({
-    valid: true 
+    valid: true
   });
 });
 
@@ -193,7 +197,7 @@ app.patch('/updateLanguage/:username', (req, res) => {
 app.delete('/delete/:username', (req, res) => {
   const username = req.params.username;
   const text = req.body["text"];
-  
+
   //later on actually delete
   res.send({
     valid: true
@@ -210,7 +214,7 @@ app.get('/getUserLog/:username', (req, res) => {
     { 'text': 'RECORD HIGH', 'sentiment': '80', 'languages': 'English', 'date': '10/14/1990' },
     { 'text': 'RECORD HIGH', 'sentiment': '80', 'languages': 'English', 'date': '10/14/1990' }
   ];
-  
+
   res.send(JSON.stringify({
     valid: true,
     data: userLogs
