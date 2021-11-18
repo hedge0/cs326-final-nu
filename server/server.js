@@ -4,7 +4,7 @@ import cors from 'cors';
 import AWS from "aws-sdk";
 import dateTime from "node-datetime";
 
-AWS.config.loadFromPath("../secrets.json");
+AWS.config.loadFromPath("secrets.json");
 const comprehend = new AWS.Comprehend();
 const app = express();
 const port = 5500;
@@ -40,31 +40,32 @@ app.post('/analyze/:username', (req, res) => {
   const username = req.params.username;
   const text = req.body["text"];
   const date = dateTime.create().format('Y-m-d H:M:S');
-  let sentiment;
-  let language;
+  let sentiment = null;
+  let language = null;
 
-  comprehend.batchDetectDominantLanguage({ TextList: "I love apples" }, function (err, data) {
+  comprehend.detectDominantLanguage({ Text: text }, function (err, data) {
     if (err) {
       console.log(err, err.stack);
     }
     else {
-      console.log(data);
-      comprehend.detectSentiment({ Text: "I love apples", LanguageCode: "en" }, function (err, data) {
+      language = data["Languages"].slice(-1)[0]["LanguageCode"];
+      comprehend.detectSentiment({ Text: text, LanguageCode: language }, function (err, data) {
         if (err) {
           console.log(err, err.stack);
         }
         else {
-          console.log(data);
+          sentiment = data["Sentiment"];
+
+          //later on actually analyze and store results in database
+          res.send({
+            valid: true,
+            text: text,
+            sentiment: sentiment,
+            language: language
+          });
         }
       });
     }
-  });
-  
-  //later on actually analyze and store results in database
-  res.send({
-    text: text,
-    sentiment: sentiment,
-    language: language
   });
 });
 

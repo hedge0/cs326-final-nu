@@ -14,10 +14,12 @@ document.getElementById('analyze').addEventListener('click', async () => {
 
     if (response.ok) {
         const responseJSON = await response.json();
-        storage.setItem("text", responseJSON.text);
-        storage.setItem("sentiment", responseJSON.sentiment);
-        storage.setItem("language", responseJSON.language);
-        location.href = "results.html";
+        if (responseJSON.valid) {
+            storage.setItem("text", responseJSON.text);
+            storage.setItem("sentiment", responseJSON.sentiment);
+            storage.setItem("language", responseJSON.language);
+            location.href = "results.html";
+        }
     }
 });
 
