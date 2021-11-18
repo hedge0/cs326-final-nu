@@ -2,10 +2,13 @@
 import express from 'express';
 import cors from 'cors';
 import AWS from "aws-sdk";
-import passport from 'passport;'
+import passport from 'passport'
 import dateTime from "node-datetime";
-import { Passport } from 'passport';
+import expressSession from 'express-session'; // for managing session state    
+import passport from 'passport'; // handles authentication
 
+
+const LocalStrategy = passport.Strategy; // username/password strategy
 AWS.config.loadFromPath("secrets.json");
 const comprehend = new AWS.Comprehend();
 const app = express();
