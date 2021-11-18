@@ -2,7 +2,6 @@
 import express from 'express';
 import cors from 'cors';
 import AWS from "aws-sdk";
-import passport from 'passport'
 import dateTime from "node-datetime";
 import expressSession from 'express-session'; // for managing session state    
 import passport from 'passport'; // handles authentication
