@@ -217,6 +217,10 @@ app.get('/getUserLog/:username', (req, res) => {
   }));
 });
 
+app.get("*", (req, res) =>{ 
+
+});
+
 
 app.listen(port, () => {
   console.log(`app listening at http://localhost:${port}`);
