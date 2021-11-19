@@ -85,11 +85,11 @@ app.post('/login', async (req, res) => {
   const username = req.body["username"];
   const password = req.body["password"];
   const params = {
-      TableName: table1,
-      KeyConditionExpression: "username = :val",
-      ExpressionAttributeValues: {
-          ":val": username
-      }
+    TableName: table1,
+    KeyConditionExpression: "username = :val",
+    ExpressionAttributeValues: {
+      ":val": username
+    }
   };
   let db_response = await db.get(params);
   
@@ -112,11 +112,11 @@ app.post('/signup', async (req, res) => {
   const username = req.body["username"];
   const password = req.body["password"];
   const params = {
-      TableName: table1,
-      Items: {
-          username: username,
-          password: password
-      }
+    TableName: table1,
+    Items: {
+      username: username,
+      password: password
+    }
   }
   let db_response = await db.put(params);
 
@@ -186,14 +186,14 @@ app.post('/analyze/:username', (req, res) => {
         else {
           sentiment = data["Sentiment"];
           let params = {
-              TableName: table1,
-              Items: {
-                  username: username,
-                  text: text,
-                  sentiment: sentiment,
-                  language: language,
-                  date: date
-              }
+            TableName: table1,
+            Items: {
+              username: username,
+              text: text,
+              sentiment: sentiment,
+              language: language,
+              date: date
+            }
           }
           let db_response = await db.put(params);
 
@@ -252,10 +252,10 @@ app.delete('/delete/:username', async (req, res) => {
   const text = req.body["text"];
   //TO DO
   const params = {
-      TableName: table2,
-      Key: {
-        username: username
-      }
+    TableName: table2,
+    Key: {
+      username: username
+    }
   };
 
   res.send({
@@ -267,11 +267,11 @@ app.delete('/delete/:username', async (req, res) => {
 app.get('/getUserLog/:username', async (req, res) => {
   const username = req.params.username;
   const params = {
-      TableName: table2,
-      KeyConditionExpression: "username = :val",
-      ExpressionAttributeValues: {
-          ":val": username
-      }
+    TableName: table2,
+    KeyConditionExpression: "username = :val",
+    ExpressionAttributeValues: {
+      ":val": username
+    }
   };
   let userLogs = await db.get(params);
 
