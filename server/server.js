@@ -207,6 +207,13 @@ app.post('/analyze/:username', (req, res) => {
       });
     }
   });
+
+  res.send({
+    valid: false,
+    text: text,
+    sentiment: sentiment,
+    language: language
+  });
 });
 
 
