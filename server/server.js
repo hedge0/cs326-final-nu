@@ -214,11 +214,11 @@ app.patch('/updateSentiment/:username', async (req, res) => {
   const username = req.params.username;
   const text = req.body["text"];
   const sentiment = req.body["sentiment"];
+  //TO DO
   const params = {
     TableName: table2,
   }
 
-  //later on actually analyze 
   res.send({
     valid: true
   });
@@ -229,11 +229,11 @@ app.patch('/updateLanguage/:username', async (req, res) => {
   const username = req.params.username;
   const text = req.body["text"];
   const language = req.body["update_languages_value"];
+  //TO DO
   const params = {
     TableName: table2,
   }
 
-  //later on actually analyze
   res.send({
     valid: true
   });
@@ -243,6 +243,7 @@ app.patch('/updateLanguage/:username', async (req, res) => {
 app.delete('/delete/:username', async (req, res) => {
   const username = req.params.username;
   const text = req.body["text"];
+  //TO DO
   const params = {
       TableName: table2,
       Key: {
