@@ -58,8 +58,10 @@ export async function put_data(username, text, sentiment, language, date) {
         TableName: table1,
         Items: {
             username: username,
-            //text: text,
-
+            text: text,
+            sentiment: sentiment,
+            language: language,
+            date: date
         }
     }
 
@@ -89,8 +91,7 @@ export async function update_sentiment_data(username, text, sentiment) {
             TableName: table1,
             Item: {
                 Key: username,
-                //text:text,
-                //sentiment:sentiment
+
             }
         };
 
