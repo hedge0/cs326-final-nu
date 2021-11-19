@@ -7,7 +7,22 @@ const table1 = 'auth_table';
 const table2 = 'data_table';
 
 // authentication
-export async function get_auth(username, password) {
+export async function get_auth(usr, pwd) {
+    let response = {};
+    let items;
+    let params = {
+            TableName: table1,
+            username: usr,
+            password: pwd
+        };
+
+    do {
+        items = await DynamoDB.query(params).promise();
+        
+    } 
+    while(typeof items.LastEvaluatedKey !== "undefined");
+
+    return response;
 
 }
 
