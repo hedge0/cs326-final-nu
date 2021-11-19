@@ -8,6 +8,7 @@ import passport from 'passport'; // handles authentication
 import passportLocal from 'passport-local';
 import path from 'path';
 import { get_auth, put_auth, put_data, update_sentiment_data, update_language_data, delete_data, get_data } from './crud.js'
+import e from 'express';
 
 
 let __dirname = path.resolve();
@@ -82,10 +83,23 @@ app.post('/login', async (req, res) => {
   const username = req.body["username"];
   const password = req.body["password"];
 
-  res.send({
-    valid: true,
-    username: username
-  });
+  //could do something more with sessions
+  let db_response = await get_auth(username, password);
+  
+  if (db_response.password === password) {
+    res.send({
+      valid: true,
+      username: username
+    });
+  }
+
+  else {
+    res.send({
+      valid: false
+    })
+  }
+
+
 });
 
 
@@ -93,22 +107,32 @@ app.post('/signup', async (req, res) => {
   const username = req.body["username"];
   const password = req.body["password"];
 
+  let db_response = await put_auth(username, password);
+
   //later on, check if in database, if so, return response.valid = false
-  res.send({
-    valid: true,
-    username: username
-  });
+  if (db_response) {
+    res.send({
+      valid: true,
+      username: username
+    });
+  }
+  else {
+    res.send({
+      valid: false
+    })
+  }
+
 });
 
 
-app.post('/analyze/:username', async (req, res) => {
+app.post('/analyze/:username', (req, res) => {
   const username = req.params.username;
   const text = req.body["text"];
   const date = dateTime.create().format('Y-m-d H:M:S');
   let sentiment = null;
   let language = null;
 
-  comprehend.detectDominantLanguage({ Text: text }, function (err, data) {
+  comprehend.detectDominantLanguage({ Text: text }, async function (err, data) {
     if (err) {
       console.log(err, err.stack);
     }
