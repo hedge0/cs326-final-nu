@@ -92,7 +92,7 @@ app.post('/analyze/:username', (req, res) => {
   let sentiment = null;
   let language = null;
 
-  comprehend.detectDominantLanguage({ Text: text }, async function (err, data) {
+  comprehend.detectDominantLanguage({ Text: text }, function (err, data) {
     if (err) {
       console.log(err, err.stack);
     }
@@ -137,7 +137,7 @@ app.post('/analyze/:username', (req, res) => {
         language = 'NONE';
       }
 
-      comprehend.detectSentiment({ Text: text, LanguageCode: iso }, function (err, data) {
+      comprehend.detectSentiment({ Text: text, LanguageCode: iso }, async function (err, data) {
         if (err) {
           console.log(err, err.stack);
         }
