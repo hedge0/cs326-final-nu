@@ -229,12 +229,15 @@ app.delete('/delete/:username', async (req, res) => {
   const params = {
     TableName: table2,
     Key: {
-      username: username
+      username: username,
+      text: text
     }
   };
-
+  let db_response = await db.delete(params);
   res.send({
-    valid: true
+    valid: db_response,
+    username: username,
+    text: text
   });
 });
 
