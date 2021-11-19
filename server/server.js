@@ -35,7 +35,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.static('client'));
-
 app.use(expressSession(session));
 
 
@@ -76,7 +75,7 @@ app.post('/signup', async (req, res) => {
       username: username,
       password: password
     }
-  }
+  };
   let db_response = await db.put(params);
 
   res.send({
@@ -144,7 +143,7 @@ app.post('/analyze/:username', (req, res) => {
         }
         else {
           sentiment = data["Sentiment"];
-          let params = {
+          const params = {
             TableName: table2,
             Items: {
               username: username,
@@ -153,7 +152,7 @@ app.post('/analyze/:username', (req, res) => {
               language: language,
               date: date
             }
-          }
+          };
           let db_response = await db.put(params);
 
           res.send({
@@ -180,16 +179,19 @@ app.patch('/updateSentiment/:username', async (req, res) => {
   const username = req.params.username;
   const text = req.body["text"];
   const sentiment = req.body["sentiment"];
-  //TO DO
   const params = {
     TableName: table2,
-    key: {
+    Key: {
       username: username,
-      text: text,
-      sentiment: sentiment
+      text: text
+    },
+    UpdateExpression: "set sentiment = :val",
+    ExpressionAttributeValues:{
+      ":val": sentiment
     }
-  }
+  };
   let db_response = await db.update(params);
+
   res.send({
     valid: db_response,
     username: username,
@@ -203,16 +205,19 @@ app.patch('/updateLanguage/:username', async (req, res) => {
   const username = req.params.username;
   const text = req.body["text"];
   const language = req.body["update_languages_value"];
-  //TO DO
   const params = {
     TableName: table2,
-    key: {
+    Key: {
       username: username,
-      text: text,
-      language: language
+      text: text
+    },
+    UpdateExpression: "set language = :val",
+    ExpressionAttributeValues:{
+      ":val": language
     }
-  }
+  };
   let db_response = await db.update(params);
+
   res.send({
     valid: db_response,
     username: username,
@@ -225,7 +230,6 @@ app.patch('/updateLanguage/:username', async (req, res) => {
 app.delete('/delete/:username', async (req, res) => {
   const username = req.params.username;
   const text = req.body["text"];
-  //TO DO
   const params = {
     TableName: table2,
     Key: {
@@ -234,6 +238,7 @@ app.delete('/delete/:username', async (req, res) => {
     }
   };
   let db_response = await db.delete(params);
+
   res.send({
     valid: db_response,
     username: username,
