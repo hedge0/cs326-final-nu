@@ -186,7 +186,7 @@ app.post('/analyze/:username', (req, res) => {
         else {
           sentiment = data["Sentiment"];
           let params = {
-            TableName: table1,
+            TableName: table2,
             Items: {
               username: username,
               text: text,
