@@ -29,36 +29,6 @@ const session = {
   saveUninitialized: false
 };
 
-let users = {}; //list of users, will create mongodb for this
-
-
-const findUser = (name) => {
-  return users[name];
-}
-
-const validatePassword = (usr, pwd) => {
-  return (users[usr] === pwd);
-}
-
-// Passport configuration
-const strategy = new LocalStrategy(
-  async (username, password, done) => {
-    if (!findUser(username)) {
-      // no such user
-      return done(null, false, { 'message': 'Wrong username' });
-    }
-    if (!validatePassword(username, password)) {
-      // invalid password
-      // should disable logins after N messages
-      // delay return to rate-limit brute-force attacks
-      await new Promise((r) => setTimeout(r, 2000)); // two second delay
-      return done(null, false, { 'message': 'Wrong password' });
-    }
-    // success!
-    // should create a user object here, associated with a unique identifier
-    return done(null, username);
-  });
-
 
 
 app.use(express.json());
@@ -67,18 +37,7 @@ app.use(cors());
 app.use(express.static('client'));
 
 app.use(expressSession(session));
-passport.use(strategy);
-app.use(passport.initialize());
-app.use(passport.session());
 
-// Convert user object to a unique identifier.
-passport.serializeUser((user, done) => {
-  done(null, user);
-});
-// Convert a unique identifier to a user object.
-passport.deserializeUser((uid, done) => {
-  done(null, uid);
-});
 
 
 app.post('/login', async (req, res) => {
