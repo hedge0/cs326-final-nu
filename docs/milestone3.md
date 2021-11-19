@@ -1,3 +1,5 @@
+# Documentation of our database
+
 # breakdown of labor
 * Group
     Design of the api, and json schema.
