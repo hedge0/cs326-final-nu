@@ -8,25 +8,46 @@ const table2 = 'data_table';
 
 // authentication
 export async function get_auth(usr, pwd) {
-    let response = {};
+    let response = [];
     let items;
     let params = {
-            TableName: table1,
-            username: usr,
-            password: pwd
-        };
+        TableName : table1,
+        KeyConditionExpression: "username = :val",
+        ExpressionAttributeValues: {
+            ":val": username
+        }
+    };
 
     do {
         items = await DynamoDB.query(params).promise();
-        
+        items.Items.forEach((item) => response.push(item));
+        params.ExclusiveStartKey = items.LastEvaluatedKey;
     } 
     while(typeof items.LastEvaluatedKey !== "undefined");
 
-    return response;
-
+    return response[0];
 }
 
 export async function put_auth(username, password) {
+    let response;
+    let params = {
+        TableName : table1,
+        Items : {
+            username: username,
+            password: password
+        }
+    }
+
+    try {
+        await DynamoDB.put(params).promise();
+        response = true;
+    }
+    catch(e) {
+        console.log(e);
+        response = false;
+    }
+
+    return response;
 
 }
 
