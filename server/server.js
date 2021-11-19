@@ -51,7 +51,7 @@ app.post('/login', async (req, res) => {
     }
   };
   let db_response = await db.get(params);
-  
+
   if (db_response[0].password === password) {
     res.send({
       valid: true,
@@ -183,6 +183,11 @@ app.patch('/updateSentiment/:username', async (req, res) => {
   //TO DO
   const params = {
     TableName: table2,
+    key: {
+      username: username,
+      text: text,
+      sentiment: sentiment
+    }
   }
 
   res.send({
@@ -198,6 +203,11 @@ app.patch('/updateLanguage/:username', async (req, res) => {
   //TO DO
   const params = {
     TableName: table2,
+    key: {
+      username: username,
+      text: text,
+      language: language
+    }
   }
 
   res.send({
