@@ -71,7 +71,7 @@ app.post('/signup', async (req, res) => {
   const password = req.body["password"];
   const params = {
     TableName: table1,
-    Items: {
+    Item: {
       username: username,
       password: password
     }
@@ -145,7 +145,7 @@ app.post('/analyze/:username', (req, res) => {
           sentiment = data["Sentiment"];
           const params = {
             TableName: table2,
-            Items: {
+            Item: {
               username: username,
               text: text,
               sentiment: sentiment,
@@ -164,13 +164,6 @@ app.post('/analyze/:username', (req, res) => {
         }
       });
     }
-  });
-
-  res.send({
-    valid: false,
-    text: text,
-    sentiment: sentiment,
-    language: language
   });
 });
 

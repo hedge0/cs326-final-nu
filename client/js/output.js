@@ -38,7 +38,7 @@ function createTable(data) {
         let row = `<tr>
                         <td>${data[i].text}</td>
                         <td>${data[i].sentiment}</td>
-                        <td>${data[i].languages}</td>
+                        <td>${data[i].language}</td>
                         <td>${data[i].date}</td>
                   </tr>`;
         table.innerHTML += row;
