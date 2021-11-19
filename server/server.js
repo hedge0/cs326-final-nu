@@ -189,9 +189,12 @@ app.patch('/updateSentiment/:username', async (req, res) => {
       sentiment: sentiment
     }
   }
-
+  let db_response = await db.update(params);
   res.send({
-    valid: true
+    valid: db_response,
+    username: username,
+    text: text,
+    sentiment: sentiment
   });
 });
 
@@ -209,9 +212,12 @@ app.patch('/updateLanguage/:username', async (req, res) => {
       language: language
     }
   }
-
+  let db_response = await db.update(params);
   res.send({
-    valid: true
+    valid: db_response,
+    username: username,
+    text: text,
+    language: language
   });
 });
 
