@@ -7,20 +7,22 @@ import expressSession from 'express-session'; // for managing session state
 import passport from 'passport'; // handles authentication
 import passportLocal from 'passport-local';
 import path from 'path';
-import { get_auth, put_auth, put_data, update_sentiment_data, update_language_data, delete_data, get_data } from './crud.js'
+import { Dynamo } from './crud.js'
 import e from 'express';
 
 
 let __dirname = path.resolve();
-
 const LocalStrategy = passportLocal.Strategy; // username/password strategy
 AWS.config.loadFromPath("secrets.json");
 const comprehend = new AWS.Comprehend();
+const table1 = 'auth_table';
+const table2 = 'data_table';
 const app = express();
 const port = 5500;
+const db = new Dynamo();
+
 
 // Session configuration
-
 const session = {
   secret: process.env.SECRET || 'SECRET', // set this encryption key in Heroku config (never in GitHub)!
   resave: false,
@@ -82,46 +84,46 @@ passport.deserializeUser((uid, done) => {
 app.post('/login', async (req, res) => {
   const username = req.body["username"];
   const password = req.body["password"];
-
-  //could do something more with sessions
-  let db_response = await get_auth(username, password);
+  const params = {
+      TableName: table1,
+      KeyConditionExpression: "username = :val",
+      ExpressionAttributeValues: {
+          ":val": username
+      }
+  };
+  let db_response = await db.get(params);
   
-  if (db_response.password === password) {
+  if (db_response[0].password === password) {
     res.send({
       valid: true,
       username: username
     });
   }
-
   else {
     res.send({
-      valid: false
+      valid: false,
+      username: username
     })
   }
-
-
 });
 
 
 app.post('/signup', async (req, res) => {
   const username = req.body["username"];
   const password = req.body["password"];
-
-  let db_response = await put_auth(username, password);
-
-  //later on, check if in database, if so, return response.valid = false
-  if (db_response) {
-    res.send({
-      valid: true,
-      username: username
-    });
+  const params = {
+      TableName: table1,
+      Items: {
+          username: username,
+          password: password
+      }
   }
-  else {
-    res.send({
-      valid: false
-    })
-  }
+  let db_response = await db.put(params);
 
+  res.send({
+    valid: db_response,
+    username: username
+  });
 });
 
 
@@ -183,10 +185,20 @@ app.post('/analyze/:username', (req, res) => {
         }
         else {
           sentiment = data["Sentiment"];
+          let params = {
+              TableName: table1,
+              Items: {
+                  username: username,
+                  text: text,
+                  sentiment: sentiment,
+                  language: language,
+                  date: date
+              }
+          }
+          let db_response = await db.put(params);
 
-          //later on actually analyze and store results in database
           res.send({
-            valid: true,
+            valid: db_response,
             text: text,
             sentiment: sentiment,
             language: language
@@ -202,6 +214,9 @@ app.patch('/updateSentiment/:username', async (req, res) => {
   const username = req.params.username;
   const text = req.body["text"];
   const sentiment = req.body["sentiment"];
+  const params = {
+    TableName: table2,
+  }
 
   //later on actually analyze 
   res.send({
@@ -214,6 +229,9 @@ app.patch('/updateLanguage/:username', async (req, res) => {
   const username = req.params.username;
   const text = req.body["text"];
   const language = req.body["update_languages_value"];
+  const params = {
+    TableName: table2,
+  }
 
   //later on actually analyze
   res.send({
@@ -225,8 +243,13 @@ app.patch('/updateLanguage/:username', async (req, res) => {
 app.delete('/delete/:username', async (req, res) => {
   const username = req.params.username;
   const text = req.body["text"];
+  const params = {
+      TableName: table2,
+      Key: {
+        username: username
+      }
+  };
 
-  //later on actually delete
   res.send({
     valid: true
   });
@@ -234,9 +257,15 @@ app.delete('/delete/:username', async (req, res) => {
 
 
 app.get('/getUserLog/:username', async (req, res) => {
-  //req body fields: valid, id, history
   const username = req.params.username;
-  let userLogs = await get_data(username);
+  const params = {
+      TableName: table2,
+      KeyConditionExpression: "username = :val",
+      ExpressionAttributeValues: {
+          ":val": username
+      }
+  };
+  let userLogs = await db.get(params);
 
   res.send(JSON.stringify({
     valid: true,
