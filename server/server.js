@@ -18,7 +18,7 @@ const comprehend = new AWS.Comprehend();
 const table1 = 'auth_table';
 const table2 = 'data_table';
 const app = express();
-const port = 5500;
+const port = process.env.PORT || 5500;
 const db = new Dynamo();
 
 
