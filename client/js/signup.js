@@ -1,5 +1,5 @@
 const storage = window.sessionStorage;
-const port = process.env.PORT || 5500;
+const port = 5500;
 
 
 document.getElementById('signup').addEventListener('click', async () => {
