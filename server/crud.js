@@ -1,8 +1,11 @@
 'use strict';
 import AWS from "aws-sdk";
 
-AWS.config.loadFromPath("secrets.json");
-const DynamoDB = new AWS.DynamoDB.DocumentClient();
+const DynamoDB = new AWS.DynamoDB.DocumentClient({ 
+    "accessKeyId": process.env.accessKeyId, 
+    "secretAccessKey": process.env.secretAccessKey, 
+    "region": process.env.region
+});
 
 export class Dynamo {
 

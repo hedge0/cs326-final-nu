@@ -13,8 +13,11 @@ import e from 'express';
 
 let __dirname = path.resolve();
 const LocalStrategy = passportLocal.Strategy; // username/password strategy
-AWS.config.loadFromPath("secrets.json");
-const comprehend = new AWS.Comprehend();
+const comprehend = new AWS.Comprehend({ 
+  "accessKeyId": process.env.accessKeyId, 
+  "secretAccessKey": process.env.secretAccessKey, 
+  "region": process.env.region
+});
 const table1 = 'auth_table';
 const table2 = 'data_table';
 const app = express();
