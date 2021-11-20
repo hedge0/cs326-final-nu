@@ -1,10 +1,9 @@
 const storage = window.sessionStorage;
-const port = 5500;
 
 
 document.getElementById('signup').addEventListener('click', async () => {
     if (document.getElementById("password").value === document.getElementById("confirm").value) {
-        const response = await fetch(`http://localhost:${port}/signup`, {
+        const response = await fetch('https://sentiment-analyzer-team-nu.herokuapp.com/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

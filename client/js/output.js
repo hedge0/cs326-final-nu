@@ -1,9 +1,8 @@
 const storage = window.sessionStorage;
-const port = 5500;
 
 
 window.addEventListener('load', async () => {
-    const response = await fetch(`http://localhost:${port}/getUserLog/${storage.getItem("username")}`, {
+    const response = await fetch(`https://sentiment-analyzer-team-nu.herokuapp.com/getUserLog/${storage.getItem("username")}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
