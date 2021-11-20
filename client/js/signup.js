@@ -1,9 +1,10 @@
 const storage = window.sessionStorage;
+const port = process.env.PORT || 5500;
 
 
 document.getElementById('signup').addEventListener('click', async () => {
     if (document.getElementById("password").value === document.getElementById("confirm").value) {
-        const response = await fetch('http://localhost:5500/signup', {
+        const response = await fetch(`http://localhost:${port}/signup`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

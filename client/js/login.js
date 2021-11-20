@@ -1,8 +1,9 @@
 const storage = window.sessionStorage;
+const port = process.env.PORT || 5500;
 
 
 document.getElementById('login').addEventListener('click', async () => {
-    const response = await fetch('http://localhost:5500/login', {
+    const response = await fetch(`http://localhost:${port}/login`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

@@ -1,4 +1,5 @@
 const storage = window.sessionStorage;
+const port = process.env.PORT || 5500;
 
 
 window.addEventListener('load', async () => {
@@ -12,7 +13,7 @@ document.getElementById('update_sentiment').addEventListener('click', async () =
     const updateVal = document.getElementById('update_sentiment_value').value;
 
     if (updateVal !== "Update Sentiment") {
-        const response = await fetch(`http://localhost:5500/updateSentiment/${storage.getItem("username")}`, {
+        const response = await fetch(`http://localhost:${port}/updateSentiment/${storage.getItem("username")}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
@@ -38,7 +39,7 @@ document.getElementById('update_languages').addEventListener('click', async () =
     const updateVal = document.getElementById('update_languages_value').value;
 
     if (updateVal !== "Update Language") {
-        const response = await fetch(`http://localhost:5500/updateLanguage/${storage.getItem("username")}`, {
+        const response = await fetch(`http://localhost:${port}/updateLanguage/${storage.getItem("username")}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
@@ -61,7 +62,7 @@ document.getElementById('update_languages').addEventListener('click', async () =
 
 
 document.getElementById('delete').addEventListener('click', async () => {
-    const response = await fetch(`http://localhost:5500/delete/${storage.getItem("username")}`, {
+    const response = await fetch(`http://localhost:${port}/delete/${storage.getItem("username")}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'

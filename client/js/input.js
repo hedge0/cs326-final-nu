@@ -1,8 +1,9 @@
 const storage = window.sessionStorage;
+const port = process.env.PORT || 5500;
 
 
 document.getElementById('analyze').addEventListener('click', async () => {
-    const response = await fetch(`http://localhost:5500/analyze/${storage.getItem("username")}`, {
+    const response = await fetch(`http://localhost:${port}/analyze/${storage.getItem("username")}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
