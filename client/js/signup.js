@@ -21,9 +21,12 @@ document.getElementById('signup').addEventListener('click', async () => {
                 location.href = "input.html";
             }
         }
+        else {
+            alert(responseJSON.alert);
+        }
     }
     else {
-        alert("Passwords don't match. Try again.")
+        alert("Passwords don't match. Try again.");
     }
 });
 

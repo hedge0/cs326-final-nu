@@ -19,6 +19,9 @@ document.getElementById('login').addEventListener('click', async () => {
             storage.setItem("username", responseJSON.username);
             location.href = "input.html";
         }
+        else {
+            alert(responseJSON.alert);
+        }
     }
 });
 
