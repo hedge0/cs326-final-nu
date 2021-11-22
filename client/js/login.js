@@ -20,7 +20,7 @@ document.getElementById('login').addEventListener('click', async () => {
             location.href = "input.html";
         }
         else {
-            alert(responseJSON.alert);
+            alert("Incorrect password or username.");
         }
     }
 });
