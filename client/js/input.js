@@ -20,6 +20,9 @@ document.getElementById('analyze').addEventListener('click', async () => {
             storage.setItem("language", responseJSON.language);
             location.href = "results.html";
         }
+        else {
+            alert("this text has already been analyzed");
+        }
     }
 });
 
