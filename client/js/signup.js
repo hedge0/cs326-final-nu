@@ -22,7 +22,7 @@ document.getElementById('signup').addEventListener('click', async () => {
             }
         }
         else {
-            alert(responseJSON.alert);
+            alert("passwords do not match. Try again.");
         }
     }
     else {
