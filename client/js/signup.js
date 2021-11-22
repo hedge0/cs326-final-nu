@@ -20,9 +20,9 @@ document.getElementById('signup').addEventListener('click', async () => {
                 storage.setItem("username", responseJSON.username);
                 location.href = "input.html";
             }
-        }
-        else {
-            alert("passwords do not match. Try again.");
+            else {
+                alert("Username already in use");
+            }
         }
     }
     else {
