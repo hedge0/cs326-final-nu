@@ -34,7 +34,7 @@ document.getElementById('signout').addEventListener('click', () => {
 
 
 
-document.getElementById('download').addEventListener('click', () => {
+document.getElementById('download').addEventListener('click', async () => {
     console.log(`${storage.getItem("username")}`);
     const response = await fetch(`https://sentiment-analyzer-team-nu.herokuapp.com/getUserLog/${storage.getItem("username")}`, {
         method: 'GET',
