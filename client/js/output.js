@@ -1,5 +1,7 @@
 const storage = window.sessionStorage;
-import JSON2CSV from json2csv
+import JSON2CSV from "json2csv/JSON2CSVParser";
+
+const JSON2CSV = new JSON2CSVParser();
 
 window.addEventListener('load', async () => {
     const response = await fetch(`https://sentiment-analyzer-team-nu.herokuapp.com/getUserLog/${storage.getItem("username")}`, {
