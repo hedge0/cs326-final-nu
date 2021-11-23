@@ -1,5 +1,5 @@
 const storage = window.sessionStorage;
-
+import JSON2CSV from json2csv
 
 window.addEventListener('load', async () => {
     const response = await fetch(`https://sentiment-analyzer-team-nu.herokuapp.com/getUserLog/${storage.getItem("username")}`, {
@@ -35,7 +35,6 @@ document.getElementById('signout').addEventListener('click', () => {
 
 
 document.getElementById('download').addEventListener('click', async () => {
-    console.log(`${storage.getItem("username")}`);
     const response = await fetch(`https://sentiment-analyzer-team-nu.herokuapp.com/getUserLog/${storage.getItem("username")}`, {
         method: 'GET',
         headers: {
@@ -52,12 +51,12 @@ document.getElementById('download').addEventListener('click', async () => {
                 language: "Language",
                 date: "Date"
             }
-            let json = JSON.parse(responseJSON.data);
+            let json = responseJSON.data;
             json.unshift(headers);
             let csv = JSON2CSV(json);
-            var downloadLink = document.createElement("a");
-            var blob = new Blob(["\ufeff", csv]);
-            var url = URL.createObjectURL(blob);
+            let downloadLink = document.createElement("a");
+            let blob = new Blob(["\ufeff", csv]);
+            let url = URL.createObjectURL(blob);
             downloadLink.href = url;
             downloadLink.download = "data.csv";
             
