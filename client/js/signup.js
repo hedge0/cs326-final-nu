@@ -21,7 +21,7 @@ document.getElementById('signup').addEventListener('click', async () => {
                 location.href = "input.html";
             }
             else {
-                alert("Username already in use");
+                alert("Username already in use.");
             }
         }
     }

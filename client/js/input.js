@@ -21,7 +21,7 @@ document.getElementById('analyze').addEventListener('click', async () => {
             location.href = "results.html";
         }
         else {
-            alert("this text has already been analyzed");
+            alert("This text has already been analyzed.");
         }
     }
 });

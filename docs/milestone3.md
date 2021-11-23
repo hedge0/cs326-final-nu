@@ -10,5 +10,9 @@ instead of using MongoDB, our group used DyanmoDB. We had this checked off by pr
     implemented 
 * Andrew Sun asun2
 
-* Elias Martin hedge0 
-
+* Elias Martin hedge0
+    - fixed client / server issues from milestone 2 (fetch requests and express server werent communicating properly).
+    - fixed client side to better incorperate server side data.
+    - implemented AWS Comprehend api in backend.
+    - implemented skeleton crud functions via dynamodb for ben and andrew to use in the server.
+    - brushed up extra bugs I found.
