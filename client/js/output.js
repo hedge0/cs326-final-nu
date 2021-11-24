@@ -64,10 +64,7 @@ function JSON2CSV(objArray) {
             }
         } else {
             for (var index in array[i]) {
-                value = array[i][index];
-                console.log(value);
-                value = value.replace(/\n/g, ' ');
-                console.log(value);
+                value = array[i][index].replace(/\n/g, ' ');
                 line += value + ',';
             }
         }
@@ -80,7 +77,6 @@ function JSON2CSV(objArray) {
 
 
 document.getElementById('download').addEventListener('click', async () => {
-    // const response = await fetch(`https://sentiment-analyzer-team-nu.herokuapp.com/getUserLog/${storage.getItem("username")}`, {
     const response = await fetch(`https://sentiment-analyzer-team-nu.herokuapp.com/getUserLog/${storage.getItem("username")}`, {
         method: 'GET',
         headers: {
