@@ -7,7 +7,10 @@ instead of using MongoDB, our group used DyanmoDB. We had this checked off by pr
 * Group
 
 * Benjamin Rao brao980 
-    implemented 
+    - added alerts to non matching  user inputs 
+    - created base case for language detection as we were having issues with it not working as desired. 
+    - implemented some request handling functions in server.js 
+    - some bug fixes
 * Andrew Sun asun2
     - implemented server connection to database for user authentication with crud functions that elias made.
     - some error handling on client side
