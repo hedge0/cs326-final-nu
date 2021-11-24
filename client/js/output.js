@@ -1,47 +1,5 @@
 const storage = window.sessionStorage;
 
-function JSON2CSV(objArray) {
-    var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
-    var str = '';
-    var line = '';
-
-    if ($("#labels").is(':checked')) {
-        var head = array[0];
-        if ($("#quote").is(':checked')) {
-            for (var index in array[0]) {
-                var value = index + "";
-                line += '"' + value.replace(/"/g, '""') + '",';
-            }
-        } else {
-            for (var index in array[0]) {
-                line += index + ',';
-            }
-        }
-
-        line = line.slice(0, -1);
-        str += line + '\r\n';
-    }
-
-    for (var i = 0; i < array.length; i++) {
-        var line = '';
-
-        if ($("#quote").is(':checked')) {
-            for (var index in array[i]) {
-                var value = array[i][index] + "";
-                line += '"' + value.replace(/"/g, '""') + '",';
-            }
-        } else {
-            for (var index in array[i]) {
-                line += array[i][index] + ',';
-            }
-        }
-
-        line = line.slice(0, -1);
-        str += line + '\r\n';
-    }
-    return str;
-}
-
 window.addEventListener('load', async () => {
     const response = await fetch(`https://sentiment-analyzer-team-nu.herokuapp.com/getUserLog/${storage.getItem("username")}`, {
         method: 'GET',
@@ -73,6 +31,49 @@ document.getElementById('signout').addEventListener('click', () => {
 });
 
 
+function JSON2CSV(objArray) {
+    var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
+
+    var str = '';
+    var line = '';
+
+    if ($("#labels").is(':checked')) {
+        var head = array[0];
+        if ($("#quote").is(':checked')) {
+            for (var index in array[0]) {
+                var value = index + "";
+                line += '"' + value.replace(/"/g, '""') + '",';
+            }
+        } else {
+            for (var index in array[0]) {
+                line += index + ',';
+            }
+        }
+
+        line = line.slice(0, -1);
+        str += line + '\r\n';
+    }
+
+    for (var i = 0; i < array.length; i++) {
+        var line = '';
+
+        if ($("#quote").is(':checked')) {
+            for (var index in array[i]) {
+                var value = array[i][index] + "";
+                line += '"' + value.replace(/"/g, '""') + '",';
+            }
+        } else {
+            for (var index in array[i]) {
+                value = array[i][index].replace(/\n/g, ' ');
+                line += value + ',';
+            }
+        }
+
+        line = line.slice(0, -1);
+        str += line + '\r\n';
+    }
+    return str;
+}
 
 
 document.getElementById('download').addEventListener('click', async () => {
@@ -87,14 +88,16 @@ document.getElementById('download').addEventListener('click', async () => {
         const responseJSON = await response.json();
         if (responseJSON.valid) {
             const headers = {
-                text: 'Text',
+                date: "Date",
+                username: "Username",
+                text: "Text",
                 sentiment: "Sentiment",
-                language: "Language",
-                date: "Date"
+                language: "language"
             }
             let json = responseJSON.data;
             json.unshift(headers);
             let csv = JSON2CSV(json);
+            console.log(csv);
             let downloadLink = document.createElement("a");
             let blob = new Blob(["\ufeff", csv]);
             let url = URL.createObjectURL(blob);
