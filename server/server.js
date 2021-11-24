@@ -10,6 +10,8 @@ import path from 'path';
 import { Dynamo } from './crud.js'
 import e from 'express';
 
+const LocalStrategy = passportLocal.Strategy; // username/password strategy
+
 
 let __dirname = path.resolve();
 const comprehend = new AWS.Comprehend({ 
@@ -23,13 +25,20 @@ const app = express();
 const port = process.env.PORT || 5500;
 const db = new Dynamo();
 
+// Session configuration
+const session = {
+  secret: process.env.SECRET || 'SECRET', // set this encryption key in Heroku config (never in GitHub)!
+  resave: false,
+  saveUninitialized: false
+};
+
 
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.static('client'));
-
+app.use(expressSession(session));
 
 
 
@@ -242,7 +251,7 @@ app.get('/getUserLog/:username', async (req, res) => {
     ExpressionAttributeValues: {
       ":val": username
     }
-  };s
+  };
   let userLogs = await db.get(params);
   
   res.send(JSON.stringify({
