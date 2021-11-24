@@ -10,6 +10,7 @@ instead of using MongoDB, our group used DyanmoDB. We had this checked off by pr
     implemented 
 * Andrew Sun asun2
     - implemented server connection to database for user authentication with crud functions that elias made.
+    - some error handling on client side
     - implemented a function to convert json arrays to csv format.
     - implemented a download button by saving userlogs as a csv file.
     - bug fixes that I found
