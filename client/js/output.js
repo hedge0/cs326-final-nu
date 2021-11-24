@@ -64,7 +64,9 @@ function JSON2CSV(objArray) {
             }
         } else {
             for (var index in array[i]) {
+                
                 value = array[i][index].replace(/\n/g, ' ');
+                value = value.replace(/,/g, '');
                 line += value + ',';
             }
         }
