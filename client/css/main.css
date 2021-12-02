@@ -38,12 +38,12 @@ label[type=results] {
     text-align: center;
     display: flex;
     flex-direction: column;
-    overflow: auto;
 }
 
 .box1 {
     position: relative;
     height: auto;
+    overflow-x: hidden;
     height: 80%;
 }
 
