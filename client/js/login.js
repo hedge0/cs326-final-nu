@@ -7,8 +7,8 @@ document.getElementById('login').addEventListener('click', async () => {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      username: document.getElementById('username_1').value,
-      password: document.getElementById('password_1').value
+      username: document.getElementById('username').value,
+      password: document.getElementById('password').value
     })
   })
 
@@ -28,7 +28,7 @@ document.getElementById('signup').addEventListener('click', () => {
 })
 
 document.getElementById('show-password').addEventListener('change', () => {
-  const password = document.getElementById('password_1')
+  const password = document.getElementById('password')
   if (password.type === 'password') {
     password.type = 'text'
   } else {
