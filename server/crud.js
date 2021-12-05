@@ -9,17 +9,14 @@ const DynamoDB = new AWS.DynamoDB.DocumentClient({
 
 export class Dynamo {
   async put (params) {
-    let response = false
-
     try {
       await DynamoDB.put(params).promise()
     } catch (err) {
       console.log(err)
-      return response
+      return false
     }
 
-    response = true
-    return response
+    return true
   }
 
   async get (params) {
@@ -37,30 +34,24 @@ export class Dynamo {
   }
 
   async update (params) {
-    let response = false
-
     try {
       await DynamoDB.update(params).promise()
     } catch (err) {
       console.log(err)
-      return response
+      return false
     }
 
-    response = true
-    return response
+    return true
   }
 
   async delete (params) {
-    let response = false
-
     try {
       await DynamoDB.delete(params).promise()
     } catch (err) {
       console.log(err)
-      return response
+      return false
     }
 
-    response = true
-    return response
+    return true
   }
 }

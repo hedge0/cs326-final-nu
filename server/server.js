@@ -70,19 +70,35 @@ app.post('/login', async (req, res) => {
 app.post('/signup', async (req, res) => {
   const username = req.body.username
   const password = req.body.password
-  const params = {
+  const params1 = {
     TableName: table1,
-    Item: {
-      username: username,
-      password: password
+    KeyConditionExpression: 'username = :val',
+    ExpressionAttributeValues: {
+      ':val': username
     }
   }
-  const db_response = await db.put(params)
+  const db_response1 = await db.get(params1)
 
-  res.send({
-    valid: db_response,
-    username: username
-  })
+  if (db_response1.length === 0) {
+    const params2 = {
+      TableName: table1,
+      Item: {
+        username: username,
+        password: password
+      }
+    }
+    const db_response2 = await db.put(params2)
+  
+    res.send({
+      valid: db_response2,
+      username: username
+    })
+  } else {
+    res.send({
+      valid: false,
+      username: username
+    })
+  }
 })
 
 app.post('/analyze/:username', (req, res) => {
