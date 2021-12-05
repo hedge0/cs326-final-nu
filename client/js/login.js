@@ -1,9 +1,6 @@
 const storage = window.sessionStorage
 
 document.getElementById('login').addEventListener('click', async () => {
-  console.log(document.getElementById('username').value);
-  console.log(document.getElementById('password').value);
-
   const response = await fetch('https://sentiment-analyzer-team-nu.herokuapp.com/login', {
     method: 'POST',
     headers: {
