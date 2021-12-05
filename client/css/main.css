@@ -84,7 +84,7 @@ label[type=results] {
     position: absolute;
 }
 
-#username, #password, #confirm {
+#username_1, #password_1, #username_2, #password_2, #confirm {
     display: inline-block; 
     width: 75%;
 }
