@@ -1,15 +1,15 @@
 const storage = window.sessionStorage
 
 document.getElementById('signup').addEventListener('click', async () => {
-  if (document.getElementById('password').value === document.getElementById('confirm').value) {
+  if (document.getElementById('password_2').value === document.getElementById('confirm').value) {
     const response = await fetch('https://sentiment-analyzer-team-nu.herokuapp.com/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        username: document.getElementById('username').value,
-        password: document.getElementById('password').value
+        username: document.getElementById('username_2').value,
+        password: document.getElementById('password_2').value
       })
     })
 
@@ -28,7 +28,7 @@ document.getElementById('signup').addEventListener('click', async () => {
 })
 
 document.getElementById('show-password').addEventListener('change', () => {
-  const password = document.getElementById('password')
+  const password = document.getElementById('password_2')
   const confirm = document.getElementById('confirm')
   if (password.type === 'password' && confirm.type === 'password') {
     password.type = 'text'
