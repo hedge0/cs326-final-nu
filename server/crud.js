@@ -13,11 +13,12 @@ export class Dynamo {
 
     try {
       await DynamoDB.put(params).promise()
-      response = true
     } catch (err) {
       console.log(err)
+      return response
     }
 
+    response = true
     return response
   }
 
@@ -40,11 +41,12 @@ export class Dynamo {
 
     try {
       await DynamoDB.update(params).promise()
-      response = true
     } catch (err) {
       console.log(err)
+      return response
     }
 
+    response = true
     return response
   }
 
@@ -53,11 +55,12 @@ export class Dynamo {
 
     try {
       await DynamoDB.delete(params).promise()
-      response = true
     } catch (err) {
       console.log(err)
+      return response
     }
 
+    response = true
     return response
   }
 }
