@@ -49,7 +49,12 @@ app.post('/login', async (req, res) => {
   }
   const db_response = await db.get(params)
 
-  if (db_response[0].password === password) {
+  if (db_response.length === 0) {
+    res.send({
+      valid: false,
+      username: username
+    })
+  } else if (db_response[0].password === password) {
     res.send({
       valid: true,
       username: username
