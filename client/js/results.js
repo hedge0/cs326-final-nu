@@ -78,7 +78,7 @@ document.getElementById('delete').addEventListener('click', async () => {
   }
 })
 
-document.getElementById('analyze').addEventListener('click', () => {
+document.getElementById('analyze_again').addEventListener('click', () => {
   storage.removeItem('text')
   storage.removeItem('sentiment')
   storage.removeItem('language')
@@ -92,7 +92,7 @@ document.getElementById('getlogs').addEventListener('click', () => {
   location.href = 'output.html'
 })
 
-document.getElementById('signout').addEventListener('click', () => {
+document.getElementById('signout_2').addEventListener('click', () => {
   storage.clear()
   location.href = 'login.html'
 })

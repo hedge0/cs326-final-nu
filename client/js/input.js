@@ -24,7 +24,7 @@ document.getElementById('analyze').addEventListener('click', async () => {
   }
 })
 
-document.getElementById('signout').addEventListener('click', () => {
+document.getElementById('signout_1').addEventListener('click', () => {
   storage.clear()
   location.href = 'login.html'
 })

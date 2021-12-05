@@ -83,3 +83,42 @@ label[type=results] {
     background-repeat: repeat;
     position: absolute;
 }
+
+#username, #password, #confirm {
+    display: inline-block; 
+    width: 75%;
+}
+
+#signup, #login, #analyze, #signout_1 {
+    width: 40%;
+}
+
+#input {
+    display: inline-block;
+    width: 75%;
+    resize: none;
+}
+
+#analyze_again, #signout_2, #getlogs, #download {
+    width: 20%; 
+    min-width: 175px;
+}
+
+#update_sentiment, #update_languages {
+    display: inline-block;
+    width: 20%;
+    min-width: 175px;
+}
+
+#update_sentiment_value, #update_languages_value {
+    display: inline-block;
+    width: 60%;
+    margin-right: 10px;
+}
+
+#delete {
+    display: inline-block; 
+    width: 20%; 
+    min-width: 175px; 
+    margin-left: 61.25%;
+}

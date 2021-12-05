@@ -19,11 +19,11 @@ window.addEventListener('load', async () => {
   }
 })
 
-document.getElementById('analyze').addEventListener('click', () => {
+document.getElementById('analyze_again').addEventListener('click', () => {
   location.href = 'input.html'
 })
 
-document.getElementById('signout').addEventListener('click', () => {
+document.getElementById('signout_2').addEventListener('click', () => {
   storage.clear()
   location.href = 'login.html'
 })
