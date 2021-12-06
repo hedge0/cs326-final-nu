@@ -9,6 +9,8 @@ import passportLocal from 'passport-local'
 import path from 'path'
 import { Dynamo } from './crud.js'
 import e from 'express'
+import miniCrypt from './miniCrypt.js'
+
 
 const LocalStrategy = passportLocal.Strategy // username/password strategy
 
@@ -24,8 +26,7 @@ const app = express()
 const port = process.env.PORT || 5500
 const db = new Dynamo()
 
-const minicrypt = require('./server/miniCrypt');
-const mc = new minicrypt();
+const mc = new miniCrypt();
 
 // Session configuration
 const session = {
