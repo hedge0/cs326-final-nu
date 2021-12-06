@@ -52,6 +52,7 @@ app.post('/login', async (req, res) => {
     }
   }
   const db_response = await db.get(params)
+  console.log(db_response[0]);
   
 
   if (db_response.length === 0) {
@@ -59,7 +60,7 @@ app.post('/login', async (req, res) => {
       valid: false,
       username: username
     })
-  } else if (mc.check(password, db_response[0].salt, db_resposne[0].hash)) {
+  } else if (mc.check(password, db_response[0].salt, db_response[0].hash)) {
     res.send({
       valid: true,
       username: username
@@ -75,8 +76,11 @@ app.post('/login', async (req, res) => {
 app.post('/signup', async (req, res) => {
   const username = req.body.username
   const password = req.body.password
-  const salt = mc.hash(password)[0];
-  const hash = mc.hash(password)[1];
+  const combo = mc.hash(password);
+  const salt = combo[0];
+  const hash = combo[1];
+
+  console.log(mc.hash(password))
   const params1 = {
     TableName: table1,
     KeyConditionExpression: 'username = :val',
