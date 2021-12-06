@@ -24,6 +24,9 @@ const app = express()
 const port = process.env.PORT || 5500
 const db = new Dynamo()
 
+const minicrypt = require('./server/miniCrypt');
+const mc = new minicrypt();
+
 // Session configuration
 const session = {
   secret: process.env.SECRET || 'SECRET', // set this encryption key in Heroku config (never in GitHub)!
@@ -48,13 +51,14 @@ app.post('/login', async (req, res) => {
     }
   }
   const db_response = await db.get(params)
+  
 
   if (db_response.length === 0) {
     res.send({
       valid: false,
       username: username
     })
-  } else if (db_response[0].password === password) {
+  } else if (mc.check(password, db_response[0].salt, db_resposne[0].hash)) {
     res.send({
       valid: true,
       username: username
@@ -70,6 +74,8 @@ app.post('/login', async (req, res) => {
 app.post('/signup', async (req, res) => {
   const username = req.body.username
   const password = req.body.password
+  const salt = mc.hash(password)[0];
+  const hash = mc.hash(password)[1];
   const params1 = {
     TableName: table1,
     KeyConditionExpression: 'username = :val',
@@ -84,7 +90,8 @@ app.post('/signup', async (req, res) => {
       TableName: table1,
       Item: {
         username: username,
-        password: password
+        salt: salt,
+        hash: hash
       }
     }
     const db_response2 = await db.put(params2)
