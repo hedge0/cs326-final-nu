@@ -9,6 +9,7 @@
   "dependencies": {
     "aws-sdk": "^2.1030.0",
     "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "json2csv": "^5.0.6",
