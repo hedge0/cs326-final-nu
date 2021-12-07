@@ -4,11 +4,9 @@ import cors from 'cors'
 import AWS from 'aws-sdk'
 import dateTime from 'node-datetime'
 import expressSession from 'express-session' // for managing session state
-import passport from 'passport' // handles authentication
 import passportLocal from 'passport-local'
 import path from 'path'
 import { Dynamo } from './crud.js'
-import e from 'express'
 import miniCrypt from './miniCrypt.js'
 
 
