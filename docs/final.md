@@ -1,5 +1,7 @@
 # Team Nu
-
+* Benjamin Rao brao980
+* Andrew Sun asun2
+* Elias Martin hedge0 
 ## Sentiment Analyzer
 
 ## Fall 2021
