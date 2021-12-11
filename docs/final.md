@@ -53,6 +53,23 @@ Our user interface is broken into 4 main sections- login, signup, results, and o
 Our application uses Amazon Dynamo for the database. We had this checked off by professor Berger and the TA's and they gave us the thumbs up for it.
  We chose to use dynamoDB as we are also using aws-sdk so it seemed logical and more fluid to use DyanmoDB. In the database we store the user's account credentials along with all of the previous logs of text sent. Our schema is represented below. 
 
+ #### User
+
+```
+{
+    username: //string from signup ,
+    salt: //salt value from minicrypt  ,
+    hash: // hash value from minicrypt
+}
+```
+
+**username** is the user's chosen username, and will alert when user has picked an already chosen username
+**salt** is the salt value of the user's password
+**hash** is the hash value of the user's password
+
+
+
+
 # URL routes
 * Login Page: accessible to all
 
@@ -109,7 +126,7 @@ We utilize password salting and hashing for authentication, utilizing SHA-256. F
     - general bug fixes, including table formatting, css fixes, and various functionality fixes.
 
 * Ben
--
+    -
 
 # Conclusion
 Our design process was mostly straightforward. We collaborated and decided what pages we needed and worked from there. After brainstorming and searching we finally decided on a style and background for our UI, later changing our primary color from orange to blue. 
