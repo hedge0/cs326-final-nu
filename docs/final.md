@@ -15,6 +15,7 @@ Sentiment Analyzer is a web application that gives users the ability to analyze 
 
 # User Interface
 Our user interface is broken into 4 main sections- login, signup, results, and output.
+
 # APIs
 
 | Endpoint | Functionality |
@@ -59,9 +60,19 @@ Our application uses Amazon Dynamo for the database. In the database we store th
 
 # Authentication/Authorization 
 
+We utilize password salting and hashing for authentication, utilizing SHA-256. 
+
 # Division of Labor
 
+Elias
+
+Andrew 
+
+Ben
+
 # Conclusion
+
+
 
 # Link
 
