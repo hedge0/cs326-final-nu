@@ -97,11 +97,7 @@ We utilize password salting and hashing for authentication, utilizing SHA-256. F
 Our design process was mostly straightforward. We collaborated and decided what pages we needed and worked from there. After brainstorming and searching we finally decided on a style and background for our UI, later changing our primary color from orange to blue. 
 
 We had some technical difficulties of varying degrees. In the early stages we had issues with our table, making it look good and modify dynamically. Another technical issue we ran into was with our database. Most if not all of our issues were solved through thorough testing and collaboration. 
-<<<<<<< HEAD
 As with all group projects we would occasionally run into scheduling conflicts,teammates would be busy for ceratin periods, etc but we were able to communicate and work around each others' availabilities. One things our team should have done more was review class content as they were often times very applicable to our project/project checkpoints. In addition checking in with TA's/UCA's as their advice is very helpful. This could have helped workload management and generally made our workflow smoother. 
-=======
-As with all group projects we would occasionally run into scheduling conflicts,teammates would be busy for certain periods, etc but we were able to communicate and work around each others' availabilities. One thing we would have liked to know ahead of time was to review class content as they were often times very applicable to our project/project checkpoints. This could have helped workload management and generally made our workflow smoother. 
->>>>>>> 572e4e0ff402493a5e45bb89ac561a0081191277
 
 This project was a journey with various bumps and challenges along the way and we are satisfied with our results. 
 
