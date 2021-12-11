@@ -42,11 +42,11 @@ Our user interface is broken into 4 main sections- login, signup, results, and o
 | ```GET /``` | Sends the client side files |
 | ```POST /signup``` | Handles new user sign up |
 | ```POST /login``` | Handles logging in |
-| ```POST /analyze/:username``` | Sends body of text and returns sentiment statistics |
-| ```UPDATE /updateSentiment/:username ``` | Overrides sentiment score of text in database|
-| ```UPDATE /updateLanguage/:username ``` | Overrides language of text in database|
-| ```DELETE /delete/:username``` | Deletes the current updated |
-| ```GET /getUserLog/:username``` | Retrieves previous user text scores |
+| ```POST /analyze/:username``` | Sends body of text and returns sentiment statistics / stores them in the database |
+| ```UPDATE /updateSentiment/:username ``` | Overrides sentiment of text |
+| ```UPDATE /updateLanguage/:username ``` | Overrides language of text |
+| ```DELETE /delete/:username``` | Deletes the current text entry |
+| ```GET /getUserLog/:username``` | Retrieves previous user text entries |
 
 
 # Database
