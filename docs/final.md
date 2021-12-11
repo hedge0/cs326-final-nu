@@ -14,7 +14,7 @@ Sentiment Analyzer is a web application that gives users the ability to analyze 
 * Elias Martin hedge0 
 
 # User Interface
-
+Our user interface is broken into 4 main sections- login, signup, results, and output.
 # APIs
 
 | Endpoint | Functionality |
