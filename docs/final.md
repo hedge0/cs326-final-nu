@@ -99,7 +99,14 @@ We utilize password salting and hashing for authentication, utilizing SHA-256. F
     - Worked on general bug fixes at all 3 stages including: making the html / css format properly, making the front end tables and fetch requests work, and making the back end database requests work (the reason for my large number of commits is mainly because I did a lot of the bug fixing / reformatting)
 
 * Andrew 
-- Created endpoints in the backend, front end features, user authentication using passport and minicrypt and session handling. 
+    - Created and implemented endpoints the backend for various features.
+    - Worked on user authentication using passport and minicrypt and session handling. 
+    - implemented server connection to database for user authentication with crud functions that elias made.
+    - some error handling on client side
+    - implemented a function to convert json arrays to csv format.
+    - implemented a download button by saving userlogs as a csv file.
+    - worked on creating a table in results.html on get request.
+    - general bug fixes, including table formatting, css fixes, and various functionality fixes.
 
 * Ben
 -
