@@ -44,7 +44,7 @@ Our application uses Amazon Dynamo for the database. In the database we store th
 
 * Signup Page: accessible to all
  
-```https://sentiment-analyzer-team-nu.herokuapp.com/signup``
+```https://sentiment-analyzer-team-nu.herokuapp.com/signup```
 
 * Analyze Text Page: only accessible to logged in users, redirect on not logged in
  
