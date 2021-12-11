@@ -80,11 +80,18 @@ Our application uses Amazon Dynamo for the database. We had this checked off by 
 We utilize password salting and hashing for authentication, utilizing SHA-256. For session handling, we acknowledge that if the user presses the back button after being signed out, they will receive a cached version of the site, however they will not be able to access any other portion of the web application due to the appropriate session not being set.
 
 # Division of Labor
+
+* Group 
+- Documentation, bugs and error handling, 
+
 * Elias
+- 
 
 * Andrew 
+- Created endpoints in the backend, front end features, user authentication using passport and minicrypt and session handling. 
 
 * Ben
+-
 
 # Conclusion
 The design process was mostly straightforward. We collaborated and decided what pages we needed and worked from there. After brainstorming and searching we finally decided on a style and background for our UI. 
