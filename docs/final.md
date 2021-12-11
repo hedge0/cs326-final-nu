@@ -63,9 +63,9 @@ Our application uses Amazon Dynamo for the database. We had this checked off by 
 }
 ```
 
-**username** is the user's chosen username, and will alert when user has picked an already chosen username
-**salt** is the salt value of the user's password
-**hash** is the hash value of the user's password
+- **username** is the user's chosen username, and will alert when user has picked an already chosen username
+- **salt** is the salt value of the user's password
+- **hash** is the hash value of the user's password
 
 
 
