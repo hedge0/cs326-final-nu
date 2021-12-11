@@ -109,7 +109,12 @@ We utilize password salting and hashing for authentication, utilizing SHA-256. F
     - general bug fixes, including table formatting, css fixes, and various functionality fixes.
 
 * Ben
--
+    - worked on initial output.html 
+    - worked on initial signup.html 
+    - implemented requests 
+    - implemented some back end functionality 
+    - general bug fixes, ex) added base case for language detection, alerts, etc 
+    - format fixes, eslint-ed javascript
 
 # Conclusion
 Our design process was mostly straightforward. We collaborated and decided what pages we needed and worked from there. After brainstorming and searching we finally decided on a style and background for our UI, later changing our primary color from orange to blue. 
