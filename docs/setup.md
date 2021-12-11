@@ -5,10 +5,6 @@
 3. Update node modules.
     `npm update`
 4. create secrets.json in the root directory with the following json schema and add in valid credentials: 
-    { 
-        "accessKeyId": "", 
-        "secretAccessKey": "", 
-        "region": ""
-    }
+    `{ "accessKeyId": "", "secretAccessKey": "", "region": "" }`
 5. Run the server for the app.
     `node server/server.js`
