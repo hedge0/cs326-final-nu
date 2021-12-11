@@ -82,14 +82,15 @@ We utilize password salting and hashing for authentication, utilizing SHA-256.
 
 # Division of Labor
 
-Elias
+* Elias
 
-Andrew 
+* Andrew 
 
-Ben
+* Ben
 
 # Conclusion
 
+The design process was mostly straightforward. We collaborated and decided what pages we needed and worked from there. After brainstorming and searching we finally decided on a style and background for our UI. 
 
 
 # Link
