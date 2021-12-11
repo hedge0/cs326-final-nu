@@ -1,11 +1,13 @@
-# Team Nu
+# Title
+Team Nu
 
-## Sentiment Analyzer
+# Subtitle
+Sentiment Analyzer
 
-## Semester: Fall 2021
+# Semester 
+Fall 2021
 
-## Overview: About Sentiment Analyzer
-
+# Overview: About Sentiment Analyzer
 Sentiment Analyzer is a web application that gives users the ability to analyze segments of text by Amazon's Comprehend services. Users have the ability to enter a document up to 20 KB in size, and in turn receive sentiment statistics. Users can also choose to update and override these statistics if they choose to, and download their history of submissions. We sought out to bring an easy to use interface around Amazon's Comprehend services.
 
 # Team Members
@@ -33,11 +35,11 @@ Our user interface is broken into 4 main sections- login, signup, results, and o
     * This will be the result page. This page will carry all the metrics of the previously inputted text.
     There is a sign out button to exit the account which brings you to the login page and a "analyze again" button that will bring you to the input page to do it once again. there is also a button for updating sentiment and language which stays on this page.
     ![alt text](https://user-images.githubusercontent.com/28848384/140631713-1270bcd1-ea36-4f19-98fd-f8c187190a61.png)
-# APIs
 
+# APIs
 | Endpoint | Functionality |
 | --- | --- |
-| ```GET /``` | Sends the login page |
+| ```GET /``` | Sends the client side files |
 | ```POST /signup``` | Handles new user sign up |
 | ```POST /login``` | Handles logging in |
 | ```POST /analyze/:username``` | Sends body of text and returns sentiment statistics |
@@ -48,12 +50,10 @@ Our user interface is broken into 4 main sections- login, signup, results, and o
 
 
 # Database
-
 Our application uses Amazon Dynamo for the database. We had this checked off by professor Berger and the TA's and they gave us the thumbs up for it.
  We chose to use dynamoDB as we are also using aws-sdk so it seemed logical and more fluid to use DyanmoDB. In the database we store the user's account credentials along with all of the previous logs of text sent. Our schema is represented below. 
 
 # URL routes
-
 * Login Page: accessible to all
 
 ```https://sentiment-analyzer-team-nu.herokuapp.com/```
@@ -77,11 +77,9 @@ Our application uses Amazon Dynamo for the database. We had this checked off by 
 ```https://sentiment-analyzer-team-nu.herokuapp.com/output.html```
 
 # Authentication/Authorization 
-
 We utilize password salting and hashing for authentication, utilizing SHA-256. For session handling, we acknowledge that if the user presses the back button after being signed out, they will receive a cached version of the site, however they will not be able to access any other portion of the web application due to the appropriate session not being set.
 
 # Division of Labor
-
 * Elias
 
 * Andrew 
@@ -89,10 +87,8 @@ We utilize password salting and hashing for authentication, utilizing SHA-256. F
 * Ben
 
 # Conclusion
-
 The design process was mostly straightforward. We collaborated and decided what pages we needed and worked from there. After brainstorming and searching we finally decided on a style and background for our UI. 
 
 
 # Link
-
 https://sentiment-analyzer-team-nu.herokuapp.com/
