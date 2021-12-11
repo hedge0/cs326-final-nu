@@ -15,7 +15,6 @@ Sentiment Analyzer is a web application that gives users the ability to analyze 
 
 # User Interface
 Our user interface is broken into 4 main sections- login, signup, results, and output.
-
 * Login
     * a typical log in page with a button to sign in with a username and password. there is also a button to create a new account that brings you to the signup page. after signing in the user is brought to the input page.  
 ![alt text](https://github.com/hedge0/cs326-final-nu/blob/main/docs/UI_images/login.png)
@@ -54,13 +53,43 @@ Our application uses Amazon Dynamo for the database. In the database we store th
 
 # URL routes
 
+* Login Page: accessible to all
 
+```https://sentiment-analyzer-team-nu.herokuapp.com/```
+
+```https://sentiment-analyzer-team-nu.herokuapp.com/login.html``` 
+
+* Signup Page: accessible to all
+ 
+```https://sentiment-analyzer-team-nu.herokuapp.com/signup```
+
+* Analyze Text Page: only accessible to logged in users, redirect on not logged in
+ 
+```https://sentiment-analyzer-team-nu.herokuapp.com/input.html```
+
+* Results Page: only accessible to logged in users, redirect on not logged in
+ 
+```https://sentiment-analyzer-team-nu.herokuapp.com/results.html```
+
+* Update Account Page: only accessible to logged in users, redirect on not logged in
+ 
+```https://sentiment-analyzer-team-nu.herokuapp.com/output.html```
 
 # Authentication/Authorization 
 
+We utilize password salting and hashing for authentication, utilizing SHA-256. 
+
 # Division of Labor
 
+Elias
+
+Andrew 
+
+Ben
+
 # Conclusion
+
+
 
 # Link
 
