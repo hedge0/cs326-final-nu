@@ -1,7 +1,6 @@
 const storage = window.sessionStorage
 
 window.addEventListener('load', async () => {
-
   const user = storage.getItem('username')
   if(!user) {
     storage.clear()
