@@ -49,7 +49,8 @@ Our user interface is broken into 4 main sections- login, signup, results, and o
 
 # Database
 
-Our application uses Amazon Dynamo for the database. In the database we store the user's account credentials along with all of the previous logs of text sent. Our schema is represented below.
+Our application uses Amazon Dynamo for the database. We had this checked off by professor Berger and the TA's and they gave us the thumbs up for it.
+ We chose to use dynamoDB as we are also using aws-sdk so it seemed logical and more fluid to use DyanmoDB. In the database we store the user's account credentials along with all of the previous logs of text sent. Our schema is represented below. 
 
 # URL routes
 
