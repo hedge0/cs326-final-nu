@@ -29,13 +29,20 @@ Sentiment Analyzer is a web application that gives users the ability to analyze 
 | ```GET /getUserLog/:username``` | Retrieves previous user text scores |
 
 
-
 # Database
 
+Our application uses Amazon Dynamo for the database. In the database we store the user's account credentials along with all of the previous logs of text sent. Our schema is represented below.
+
 # URL routes
+
+
 
 # Authentication/Authorization 
 
 # Division of Labor
 
 # Conclusion
+
+# Link
+
+https://sentiment-analyzer-team-nu.herokuapp.com/
