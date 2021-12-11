@@ -78,7 +78,7 @@ Our application uses Amazon Dynamo for the database. We had this checked off by 
 
 # Authentication/Authorization 
 
-We utilize password salting and hashing for authentication, utilizing SHA-256. 
+We utilize password salting and hashing for authentication, utilizing SHA-256. For session handling, we acknowledge that if the user presses the back button after being signed out, they will receive a cached version of the site, however they will not be able to access any other portion of the web application due to the appropriate session not being set.
 
 # Division of Labor
 
