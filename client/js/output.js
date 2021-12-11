@@ -1,6 +1,12 @@
 const storage = window.sessionStorage
 
 window.addEventListener('load', async () => {
+  const user = storage.getItem('username')
+  if(!user) {
+    storage.clear()
+    location.href = 'login.html'
+  }
+  
   const response = await fetch(`https://sentiment-analyzer-team-nu.herokuapp.com/getUserLog/${storage.getItem('username')}`, {
     method: 'GET',
     headers: {
@@ -15,6 +21,9 @@ window.addEventListener('load', async () => {
       $(document).ready(function () {
         $('#data').DataTable()
       })
+    }
+    else {
+
     }
   }
 })

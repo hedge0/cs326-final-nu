@@ -1,6 +1,13 @@
 const storage = window.sessionStorage
 
 window.addEventListener('load', async () => {
+
+  const user = storage.getItem('username')
+  if(!user) {
+    storage.clear()
+    location.href = 'login.html'
+  }
+  
   const sentiment = storage.getItem('sentiment')
   const languages = storage.getItem('language')
   createTable({ sentiment: sentiment, languages: languages })
