@@ -35,7 +35,27 @@ Our application uses Amazon Dynamo for the database. In the database we store th
 
 # URL routes
 
+* Login Page: accessible to all
 
+```https://sentiment-analyzer-team-nu.herokuapp.com/```
+
+```https://sentiment-analyzer-team-nu.herokuapp.com/login.html``` 
+
+* Signup Page: accessible to all
+ 
+```https://sentiment-analyzer-team-nu.herokuapp.com/signup``
+
+* Analyze Text Page: only accessible to logged in users, redirect on not logged in
+ 
+```https://sentiment-analyzer-team-nu.herokuapp.com/input.html```
+
+* Results Page: only accessible to logged in users, redirect on not logged in
+ 
+```https://sentiment-analyzer-team-nu.herokuapp.com/results.html```
+
+* Update Account Page: only accessible to logged in users, redirect on not logged in
+ 
+```https://sentiment-analyzer-team-nu.herokuapp.com/output.html```
 
 # Authentication/Authorization 
 
