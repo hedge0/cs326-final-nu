@@ -85,7 +85,18 @@ We utilize password salting and hashing for authentication, utilizing SHA-256. F
 - Documentation, bugs and error handling, 
 
 * Elias
-- 
+    - Worked on initial front end design and revisions
+    - Worked on large portions of the initial CSS
+    - Worked on the initial html for login.html and results.html
+    - Worked on implementing particles.js to make the website backround look nicer
+    - Worked on re-implementing html functionality (buttons, inputs, tables, etc) with bootstrap to make the website look nicer
+    - Worked on brushing up html and css to make more uniform and nicer
+    - Worked on tying together pages via event listeners for buttons
+    - Worked on adding javascript functionality to parse json data into html for rows of the tables
+    - Worked on the first fetch request to help ben implement the rest of the requests
+    - Worked on implementing aws tools such as dynamodb and comprehend for the backend
+    - Worked on writing a skeleton code crud.js file for us to use when accessing the database
+    - Worked on general bug fixes at all 3 stages including: making the html / css format properly, making the front end tables and fetch requests work, and making the back end database requests work (the reason for my large number of commits is mainly because I did a lot of the bug fixing / reformatting)
 
 * Andrew 
 - Created endpoints in the backend, front end features, user authentication using passport and minicrypt and session handling. 
@@ -96,8 +107,8 @@ We utilize password salting and hashing for authentication, utilizing SHA-256. F
 # Conclusion
 Our design process was mostly straightforward. We collaborated and decided what pages we needed and worked from there. After brainstorming and searching we finally decided on a style and background for our UI, later changing our primary color from orange to blue. 
 
-We had some technical difficulties of varying degrees. In the early stages we had issues with our table, making it look good and modify dynamically. Another technical issue we ran into was with our database. Most if not all of our issues were solved through thorough testing and collaboration. 
-As with all group projects we would occasionally run into scheduling conflicts,teammates would be busy for ceratin periods, etc but we were able to communicate and work around each others' availabilities. One things our team should have done more was review class content as they were often times very applicable to our project/project checkpoints. In addition checking in with TA's/UCA's as their advice is very helpful. This could have helped workload management and generally made our workflow smoother. 
+We had some technical difficulties of varying degrees. In the early stages we had issues with our table, making it look good and also dynamically 
+As with all group projects we would occasionally run into scheduling conflicts,teammates would be busy for ceratin periods, etc but we were able to communicate and work around each others' availabilities. One thing we would have liked to know ahead of time was to review class content as they were often times very applicable to our project/project checkpoints. This could have helped workload management and generally made our workflow smoother. 
 
 This project was a journey with various bumps and challenges along the way and we are satisfied with our results. 
 
