@@ -6,7 +6,7 @@
 
 ## Overview: About Sentiment Analyzer
 
-Sentiment Analyzer is a web application that gives users the ability to analyze segments of text by Amazon's Comprehend services. Users have the ability to enter a document up to 20 KB in size, and in turn receive sentiment statistics. Users can also choose to update and override these statistics if they choose to, and download their history of submissions.. We sought out to bring an easy to use interface around Amazon's Comprehend services.
+Sentiment Analyzer is a web application that gives users the ability to analyze segments of text by Amazon's Comprehend services. Users have the ability to enter a document up to 20 KB in size, and in turn receive sentiment statistics. Users can also choose to update and override these statistics if they choose to, and download their history of submissions. We sought out to bring an easy to use interface around Amazon's Comprehend services.
 
 # Team Members
 * Benjamin Rao brao980
@@ -16,6 +16,19 @@ Sentiment Analyzer is a web application that gives users the ability to analyze 
 # User Interface
 
 # APIs
+
+| Endpoint | Functionality |
+| --- | --- |
+| ```GET /``` | Sends the login page |
+| ```POST /signup``` | Handles new user sign up |
+| ```POST /login``` | Handles logging in |
+| ```POST /analyze/:username``` | Sends body of text and returns sentiment statistics |
+| ```UPDATE /updateSentiment/:username ``` | Overrides sentiment score of text in database|
+| ```UPDATE /updateLanguage/:username ``` | Overrides language of text in database|
+| ```DELETE /delete/:username``` | Deletes the current updated |
+| ```GET /getUserLog/:username``` | Retrieves previous user text scores |
+
+
 
 # Database
 
