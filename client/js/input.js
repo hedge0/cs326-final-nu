@@ -1,5 +1,11 @@
 const storage = window.sessionStorage
-
+window.addEventListener('load', async () => {
+  const user = storage.getItem('username')
+  if (!user) {
+    storage.clear()
+    location.href = 'login.html'
+  }
+})
 document.getElementById('analyze').addEventListener('click', async () => {
   const response = await fetch(`https://sentiment-analyzer-team-nu.herokuapp.com/analyze/${storage.getItem('username')}`, {
     method: 'POST',
