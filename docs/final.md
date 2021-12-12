@@ -143,3 +143,6 @@ This project was a journey with various bumps and challenges along the way and w
 
 # Link
 https://sentiment-analyzer-team-nu.herokuapp.com/
+
+# Video Walkthrough
+https://youtu.be/MmMBr_33FVQ
