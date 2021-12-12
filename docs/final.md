@@ -18,16 +18,16 @@ Sentiment Analyzer is a web application that gives users the ability to analyze 
 # User Interface
 Our user interface is broken into 4 main sections- login, signup, results, and output.
 * Login
-    * a typical log in page with a button to sign in with a username and password. there is also a button to create a new account that brings you to the signup page. after signing in the user is brought to the input page.  
+    * A typical log in page with a button to sign in with a username and password. There is also a button to create a new account that brings you to the signup page. After signing in the user is brought to the input page.  
 ![alt text](https://github.com/hedge0/cs326-final-nu/blob/main/docs/UI_images/login.png)
 * Signup
-    * standard sign up page, sign up button, asks for a username, password and confirmation of the password. There is also a checkbox for showing password. after signing up the user is brought back to the sign in page. 
+    * Standard sign up page, sign up button, asks for a username, password and confirmation of the password. There is also a checkbox for showing password. after signing up the user is brought back to the sign in page. 
  ![alt text](https://github.com/hedge0/cs326-final-nu/blob/main/docs/UI_images/signup.png)
 * input 
-    * this will be the input page of the text where users can put in whatever they want to be analyzed and scored by hitting the anaylze button which brings them to the output page. In addition there is a sign out button you can sign out of your account which holds a history of inputted text.
+    * This will be the input page of the text where users can put in whatever they want to be analyzed and scored by hitting the analyze button which brings them to the output page. In addition there is a sign out button you can sign out of your account which holds a history of inputted text.
   ![alt text](https://github.com/hedge0/cs326-final-nu/blob/main/docs/UI_images/input.png)
 * output 
-    * this will be the output results page. This page will contain the results/metrics of the rest of the user's history of inputted texts/results previous inputs. There is a sign out button to exit the account which brings you to the login page and a "analyze again" button that will bring you to the input page to do it once again. there is also a button for updating sentiment and language which stays on this page.
+    * This will be the output results page. This page will contain the results/metrics of the rest of the user's history of inputted texts/results previous inputs. There is a sign out button to exit the account which brings you to the login page and a "analyze again" button that will bring you to the input page to do it once again. there is also a button for updating sentiment and language which stays on this page.
     ![alt text](https://user-images.githubusercontent.com/28848384/140631722-429e2320-abf5-4cfd-b15b-9dd6d256bfba.png)
     * with dummy data
     ![image](https://user-images.githubusercontent.com/9648650/140632274-91af2ccb-4872-49be-b1a6-7904d0754c68.png)
