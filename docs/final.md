@@ -53,7 +53,7 @@ Our user interface is broken into 4 main sections- login, signup, results, and o
 Our application uses Amazon Dynamo for the database. We had this checked off by professor Berger and the TA's and they gave us the thumbs up for it.
  We chose to use dynamoDB as we are also using aws-sdk so it seemed logical and more fluid to use DyanmoDB. In the database we store the user's account credentials along with all of the previous logs of text sent. Our schema is represented below. 
 
- #### User
+ #### auth_table
 
 ```
 {
@@ -63,9 +63,28 @@ Our application uses Amazon Dynamo for the database. We had this checked off by 
 }
 ```
 
-- **username** is the user's chosen username, and will alert when user has picked an already chosen username
-- **salt** is the salt value of the user's password
-- **hash** is the hash value of the user's password
+- **username** is the user's chosen username, and will alert when user has picked an already chosen username. This will be the primary key.
+- **salt** is the salt value of the user's password.
+- **hash** is the hash value of the user's password.
+
+
+#### data_table
+
+```
+{
+    username: //string from signup ,
+    text: // text to be analyzed  ,
+    date: // date of log ,
+    language: // language of text ,
+    sentiment: // sentiment score of text
+}
+```
+
+- **username** is the user's chosen username, and this will be the primary key.
+- **text** is the sort key, and contains the text that has been analyzed.
+- **date** is the salt value of the user's password.
+- **language** is the language value of the text.
+- **sentiment** is the sentiment score of the text.
 
 
 
