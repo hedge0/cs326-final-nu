@@ -202,9 +202,12 @@ app.patch('/updateSentiment/:username', async (req, res) => {
       username: username,
       text: text
     },
-    UpdateExpression: 'set sentiment = :val',
+    UpdateExpression: 'set #ts = :val',
     ExpressionAttributeValues: {
       ':val': sentiment
+    },
+    ExpressionAttributeNames: {
+      "#ts": "sentiment"
     }
   }
   const db_response = await db.update(params)
@@ -227,9 +230,12 @@ app.patch('/updateLanguage/:username', async (req, res) => {
       username: username,
       text: text
     },
-    UpdateExpression: 'set language = :val',
+    UpdateExpression: 'set #ts = :val',
     ExpressionAttributeValues: {
       ':val': language
+    },
+    ExpressionAttributeNames: {
+      "#ts": "language"
     }
   }
   const db_response = await db.update(params)
