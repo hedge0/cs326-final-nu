@@ -220,7 +220,7 @@ app.patch('/updateSentiment/:username', async (req, res) => {
 app.patch('/updateLanguage/:username', async (req, res) => {
   const username = req.params.username
   const text = req.body.text
-  const language = req.body.update_languages_value
+  const language = req.body.language
   const params = {
     TableName: table2,
     Key: {
